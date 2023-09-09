@@ -1,0 +1,15 @@
+const PendingApprovals = () => {
+  return (
+    <div
+      style={{
+        background:
+          "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
+      }}
+      className="bg-white rounded-[11px] w-[30.21vw] max-w-[600px] "
+    >
+      PendingApprovals
+    </div>
+  );
+};
+
+export default PendingApprovals;
