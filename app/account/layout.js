@@ -26,6 +26,7 @@ const layout = ({ children }) => {
           <section className="my-[46px] w-full mr-[46px]">{children}</section>
         </div>
 
+
         <Footer />
       </main>
     </div>
