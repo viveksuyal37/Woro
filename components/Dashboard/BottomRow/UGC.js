@@ -3,11 +3,14 @@ const UGC = () => {
     <div
       style={{
         background:
-          "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
+          "linear-gradient(91deg, rgba(135, 33, 244, 0.30) 8.9%, rgba(194, 63, 168, 0.30) 59.14%, rgba(242, 86, 107, 0.30) 95.33%)",
       }}
-      className="bg-white rounded-[11px] h-full w-full"
+      className="bg-white rounded-[11px] h-full w-full flex justify-end items-center p-[20px]"
     >
-      UGC
+      <div className="flex text-[14px] flex-col">
+        <h6 className="text-[18px] font-bold">Introducing UGC</h6>
+        <p>User generated Content</p>
+      </div>
     </div>
   );
 };

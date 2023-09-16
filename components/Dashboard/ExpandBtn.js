@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const ExpandBtn = () => {
   return (
-    <div className="w-[22px] h-[22px] bg-[#454545] flex items-center justify-center rounded-full ">
+    <div className="w-[22px] h-[22px] bg-[#454545] cursor-pointer flex items-center justify-center rounded-full ">
       <Image
         src="/assets/images/dashboard/expand.png"
         alt="expand button"

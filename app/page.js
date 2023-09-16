@@ -1,41 +1,5 @@
-/*Custom components */
-import PendingApprovals from "@/components/Dashboard/BottomRow/PendingApprovals";
-import PostInfo from "@/components/Dashboard/BottomRow/PostInfo";
-import TrendingNow from "@/components/Dashboard/BottomRow/TrendingNow";
-import UGC from "@/components/Dashboard/BottomRow/UGC";
-import DriveContainer from "@/components/Dashboard/Drives/DriveContainer";
+const page = () => {
+  return <div className="flex items-center justify-center w-full h-full text-xl">Home page</div>;
+};
 
-import RecentNotifications from "@/components/Dashboard/RecentNotifications/RecentNotifications";
-import RowTwoLeft from "@/components/Dashboard/RowTwoLeft/RowTwoLeft";
-import AccountsContainer from "@/components/Dashboard/SocialMediaAccounts/AccountsContainer";
-
-export default function Home() {
-  return (
-    <main>
-      {/* dashboard top (2rows)*/}
-      <div className="flex  justify-between mt-[22px] gap-[22px]">
-        {/* left dashboard */}
-        <div className="flex flex-col gap-[25px]">
-          {/* row1 */}
-          <AccountsContainer />
-          {/* row2 */}
-          <RowTwoLeft />
-        </div>
-
-        <div className="flex flex-col gap-[25px] w-[16.5789vw] max-w-[400px]">
-          {/* right dashboard */}
-          <DriveContainer />
-          <RecentNotifications />
-          {/* <RecentMessages /> */}
-        </div>
-      </div>
-      {/*bottom dashboard */}
-      <div className="flex mt-[22px] h-[202px] gap-[22px] justify-between">
-        <PostInfo />
-        <PendingApprovals />
-
-        <TrendingNow />
-      </div>
-    </main>
-  );
-}
+export default page;

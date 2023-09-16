@@ -4,7 +4,7 @@ import MidFooter from "./MidFooter";
 
 const Footer = () => {
   return (
-    <footer className="flex items-center justify-between mt-[22px] gap-[20px]">
+    <footer className="fixed bottom-[46px] flex items-center justify-between mt-[22px] gap-[20px]">
       {/* left */}
       <LeftFooter />
 

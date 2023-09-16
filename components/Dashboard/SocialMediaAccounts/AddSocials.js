@@ -1,8 +1,12 @@
-import Image from "next/image";
-
 const AddSocials = () => {
   return (
-    <div className="flex flex-col items-center justify-center rounded-[20px] border-2 border-[#263238] border-dashed w-[174px] gap-[10px]">
+    <div
+      style={{
+        background:
+          "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
+      }}
+      className="flex flex-col items-center justify-center rounded-[20px]  w-[174px] gap-[10px] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]"
+    >
       {/* add btn*/}
       <div className="bg-woro-blue w-[40px] h-[40px] flex items-center justify-center rounded-full">
         <svg

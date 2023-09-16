@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const DriveCard = () => {
   return (
-    <div className="flex w-[85px] flex-col items-center justify-center rounded-[10px] gap-[3px] bg-white p-[3px_24px]">
+    <div className="flex w-[85px] flex-col items-center justify-center rounded-[10px] gap-[3px] bg-white p-[3px_24px] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]">
       <Image
         alt=""
         src="/assets/images/dashboard/onedrive.png"
