@@ -49,7 +49,13 @@ export default function Home() {
           <RowTwoLeft expandedCard={expandedCard} />
         </div>
 
-        <div className="flex flex-col gap-[25px] w-[16.5789vw] max-w-[400px]">
+        <div
+          className={classNames(
+            "flex flex-col gap-[25px] ",
+            { "w-full h-full": expandedCard === "recentNotification" },
+            { "w-[16.5789vw] max-w-[400px]": !expandedCard }
+          )}
+        >
           {/* right dashboard */}
           <DriveContainer expandedCard={expandedCard} />
           <RecentNotifications
