@@ -1,3 +1,10 @@
+"use client";
+
+/*redux*/
+import { Provider } from "react-redux";
+import { store } from "@/Redux/store";
+
+/*custom components*/
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 
@@ -11,9 +18,11 @@ const layout = ({ children }) => {
       }}
       className={` w-screen h-screen pt-[40px] 2xl:pt-[51px] pb-[35px] 2xl:pb-[40px] px-[6.25vw]`}
     >
-      <Header />
-      {children}
-      <Footer />
+      <Provider store={store}>
+        <Header />
+        {children}
+        <Footer />
+      </Provider>
     </main>
   );
 };

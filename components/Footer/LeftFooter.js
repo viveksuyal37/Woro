@@ -6,11 +6,11 @@ const LeftFooter = () => {
       {/* top */}
       <div className="  w-[377px] h-[47px] p-[6px] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] flex gap-[10px] justify-center items-center bg-woro-blue rounded-[10px_90px_90px_0px] text-white">
         <div>
-    
           <Image
             src="/assets/images/footer/search.png"
             width="24"
             height="24"
+            alt="footer"
           />
         </div>
         <div>Bruce, try out our new chatbot WoroGPT!</div>
@@ -28,6 +28,7 @@ const LeftFooter = () => {
             src="/assets/images/footer/search.png"
             width="16"
             height="16"
+            alt="footer"
           />
         </div>
       </div>

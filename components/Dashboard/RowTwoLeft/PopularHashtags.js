@@ -1,14 +1,21 @@
 import Image from "next/image";
 import ExpandBtn from "../ExpandBtn";
+import classNames from "classnames";
 
-const PopularHashtags = () => {
+const PopularHashtags = ({ cardId, expandedCard }) => {
   return (
     <div
       style={{
         background:
           "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
-      className="w-[21.9473vw] max-w-[500px] h-full rounded-[20px] p-[20px] bg-white"
+      className={classNames(
+        " opacity-1 p-[20px] transition-all duration-300 ease-in-out overflow-hidden rounded-[20px] bg-white",
+        {
+          "w-0 h-0 opacity-0 p-0": expandedCard && expandedCard !== cardId,
+          "h-full  w-[21.9473vw] max-w-[500px]": !expandedCard,
+        }
+      )}
     >
       <div className="flex justify-between mb-2 gap-[14px] font-bold">
         <h6 className="text-[14px]">
@@ -16,7 +23,7 @@ const PopularHashtags = () => {
           <span className="text-woro-blue">Social Media Accounts!</span>
         </h6>
 
-        <ExpandBtn />
+        <ExpandBtn cardId={cardId} />
       </div>
 
       {/* trendingHashtagsCard */}

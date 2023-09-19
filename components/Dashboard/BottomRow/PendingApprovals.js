@@ -1,20 +1,25 @@
 import Image from "next/image";
 import ExpandBtn from "../ExpandBtn";
+import classNames from "classnames";
 
-const PendingApprovals = () => {
+const PendingApprovals = ({ cardId, expandedCard }) => {
   return (
     <div
       style={{
         background:
           "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
-      className="bg-white rounded-[11px] p-[20px] w-[30.21vw] max-w-[600px] "
+      className={classNames(
+        "bg-white p-[20px] rounded-[11px] overflow-hidden transition-all duration-300 ease-in-out opacity-1",
+        { "w-0 h-0 opacity-0": expandedCard && expandedCard !== cardId },
+        { "  w-[30.21vw] max-w-[600px] ": !expandedCard }
+      )}
     >
       <div className="flex justify-between mb-4 font-bold">
         <h6 className="text-[1rem]">Pending approvals</h6>
         <div className="flex gap-[10px]">
           <p>5 mins ago</p>
-          <ExpandBtn />
+          <ExpandBtn cardId={cardId} />
         </div>
       </div>
       {/* mid row2 */}

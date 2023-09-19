@@ -1,18 +1,32 @@
+/*BuiltIn imports */
 import Image from "next/image";
 
-const TrendingNow = () => {
+/*custom components */
+import ExpandBtn from "../ExpandBtn";
+
+/*External imports */
+import classNames from "classnames";
+
+const TrendingNow = ({ cardId, expandedCard }) => {
   return (
     <div
       style={{
         background:
           "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
-      className="bg-white rounded-[11px] w-[39.68vw] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] p-[20px_0px_14px_14px]"
+      className={classNames(
+        "bg-white rounded-[11px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] opacity-1 p-[20px_0px_14px_14px] overflow-hidden transition-all duration-300 ease-in-out",
+        { "w-0 h-0 opacity-0 p-0": expandedCard && expandedCard !== cardId },
+        { "w-[39.68vw] ": !expandedCard }
+      )}
     >
-      <p className="mb-[10px] font-bold text-woro-blue">
-        Popular News <span className="font-normal text-black">and</span> Viral
-        topics
-      </p>
+      <div className="mb-[10px] flex justify-between mr-[20px]">
+        <p className="font-bold text-woro-blue">
+          Popular News <span className="font-normal text-black">and</span> Viral
+          topics
+        </p>
+        <ExpandBtn cardId={cardId} />
+      </div>
 
       <div className="flex w-full ">
         {/* news */}

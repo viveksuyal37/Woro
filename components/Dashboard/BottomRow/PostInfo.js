@@ -3,7 +3,7 @@ import classNames from "classnames";
 import Image from "next/image";
 import { useState } from "react";
 
-const PostInfo = () => {
+const PostInfo = ({ expandedCard }) => {
   const [activeItem, setActiveItem] = useState(0);
   return (
     <div
@@ -11,7 +11,11 @@ const PostInfo = () => {
         background:
           " linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
-      className="rounded-[11px] flex flex-col  p-[20px_18px] w-[22.1vw] max-w-[500px]"
+      className={classNames(
+        "rounded-[11px] flex overflow-hidden transition-all duration-300 ease-in-out  flex-col ",
+        { "  w-0 h-0 p-0 opacity-0": expandedCard },
+        { " p-[20px_18px] w-[22.1vw] opacity-1 max-w-[500px]": !expandedCard }
+      )}
     >
       <div className="flex justify-center gap-[22px] text-[18px] font-bold">
         <div className="relative">

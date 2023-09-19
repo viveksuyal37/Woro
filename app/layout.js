@@ -1,7 +1,3 @@
-/*Custom components */
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
-
 /*fonts*/
 import { Inter } from "next/font/google";
 

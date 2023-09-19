@@ -1,4 +1,5 @@
 "use client";
+import classNames from "classnames";
 import ExpandBtn from "../ExpandBtn";
 
 import {
@@ -10,7 +11,7 @@ import {
   Area,
 } from "recharts";
 
-const Analytics = () => {
+const Analytics = ({ cardId, expandedCard }) => {
   const data = [
     {
       name: "20 Sep",
@@ -62,7 +63,13 @@ const Analytics = () => {
         background:
           "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
-      className="w-[46.6842vw]  max-w-[1000px] p-[20px] h-[305px] rounded-[20px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]"
+      className={classNames(
+        " transition-all p-[20px] max-h-[305px] duration-300 overflow-hidden opacity-1 ease-in-out max-w-[1000px]  rounded-[20px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]",
+        {
+          "w-0 h-0 p-0 opacity-0": expandedCard && cardId !== expandedCard,
+          " w-[46.6842vw]  ": !expandedCard,
+        }
+      )}
     >
       {/* header */}
       <div className="flex justify-between">
@@ -85,7 +92,7 @@ const Analytics = () => {
             <option>Last & days</option>
           </select>
 
-          <ExpandBtn />
+          <ExpandBtn cardId={cardId} />
         </div>
       </div>
 
@@ -107,8 +114,8 @@ const Analytics = () => {
               y2="165.806"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#00FABA" />
-              <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+              <stop stopColor="#00FABA" />
+              <stop offset="1" stopColor="#D9D9D9" stopOpacity="0" />
             </linearGradient>
           </defs>
 

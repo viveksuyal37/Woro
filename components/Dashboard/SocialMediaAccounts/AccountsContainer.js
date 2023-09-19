@@ -1,11 +1,20 @@
 /*Custom components */
+import classNames from "classnames";
 import AddSocials from "./AddSocials";
 import SocialMediaCard from "./SocialMediaCard";
 
-const AccountsContainer = () => {
+const AccountsContainer = ({ expandedCard }) => {
   return (
-    <div className="flex gap-[21px] ">
-      {["", "", "", "", ""].map((i, indx) => {
+    <div
+      className={classNames(
+        "flex gap-[21px]  transition-all opacity-1 duration-300 ease-in-out overflow-hidden",
+        {
+          " w-0 h-0 opacity-0": expandedCard,
+          "w-full h-full": !expandedCard,
+        }
+      )}
+    >
+      {!expandedCard && ["", "", "", "", ""].map((i, indx) => {
         return <SocialMediaCard key={indx} />;
       })}
 

@@ -5,9 +5,7 @@ import { useEffect, useState } from "react";
 const MidFooter = () => {
   const [activeMenu, setActiveMenu] = useState(0);
 
-  useEffect(() => {
-    console.log(activeMenu);
-  }, [activeMenu]);
+
 
   return (
     <div
