@@ -1,4 +1,5 @@
 "use client";
+import { nanoid } from "nanoid";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -23,7 +24,7 @@ const page = () => {
     <section className="w-full h-full bg-white rounded-[10px] p-[46px]">
       {accounts?.map((account, indx) => {
         return (
-          <div className="flex items-center justify-between border-b p-[22px_18px] border-b-[#7F7789]">
+          <div key={nanoid(4)} className="flex items-center justify-between border-b p-[22px_18px] border-b-[#7F7789]">
             <div className="flex items-center gap-[22px]">
               <div>
                 <Image

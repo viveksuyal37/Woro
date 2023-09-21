@@ -29,11 +29,11 @@ export default function Home() {
   }, [state]);
 
   return (
-    <main>
+    <section className="h-max">
       {/* dashboard top (2rows)*/}
       <div
         className={classNames(
-          "flex overflow-hidden opacity-1 transition-all duration-300 ease-in-out justify-between mt-[22px] gap-[22px]",
+          "flex overflow-hidden  opacity-1 transition-all duration-300 ease-in-out justify-between mt-[22px] gap-[22px]",
           {
             "w-0 h-0 opacity-0":
               expandedCard === "trendingNews" ||
@@ -42,7 +42,11 @@ export default function Home() {
         )}
       >
         {/* left dashboard */}
-        <div className="flex flex-col  gap-[25px]">
+        <div
+          className={classNames("flex flex-col overflow-hidden gap-[25px]", {
+            "w-full": expandedCard === "analytics",
+          })}
+        >
           {/* row1 */}
           <AccountsContainer expandedCard={expandedCard} />
           {/* row2 */}
@@ -51,9 +55,9 @@ export default function Home() {
 
         <div
           className={classNames(
-            "flex flex-col gap-[25px] ",
+            "flex flex-col overflow-hidden gap-[25px] ",
             { "w-full h-full": expandedCard === "recentNotification" },
-            { "w-[16.5789vw] max-w-[400px]": !expandedCard }
+            { "w-[16.5789vw]  max-w-[400px]": !expandedCard }
           )}
         >
           {/* right dashboard */}
@@ -66,7 +70,7 @@ export default function Home() {
         </div>
       </div>
       {/*bottom dashboard */}
-      <div className="flex mt-[22px] max-h-[202px]  gap-[22px] justify-between">
+      <div className="flex mt-[22px] h-full gap-[22px] justify-between">
         <PostInfo expandedCard={expandedCard} />
         <PendingApprovals
           expandedCard={expandedCard}
@@ -75,6 +79,6 @@ export default function Home() {
 
         <TrendingNow expandedCard={expandedCard} cardId="trendingNews" />
       </div>
-    </main>
+    </section>
   );
 }

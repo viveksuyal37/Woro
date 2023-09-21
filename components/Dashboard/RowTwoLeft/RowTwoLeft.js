@@ -5,7 +5,7 @@ import PopularHashtags from "./PopularHashtags";
 
 const RowTwoLeft = ({ expandedCard }) => {
   return (
-    <div className="flex  gap-[22px]">
+    <div className="flex gap-[22px]">
       <Analytics expandedCard={expandedCard} cardId="analytics" />
 
       <div className="flex flex-col h-full gap-[22px]">

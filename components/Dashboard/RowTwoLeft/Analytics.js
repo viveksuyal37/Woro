@@ -64,10 +64,13 @@ const Analytics = ({ cardId, expandedCard }) => {
           "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
       className={classNames(
-        " transition-all p-[20px] max-h-[305px] duration-300 overflow-hidden opacity-1 ease-in-out max-w-[1000px]  rounded-[20px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]",
+        " transition-all  duration-300 overflow-hidden opacity-1 ease-in-out   rounded-[20px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]",
         {
-          "w-0 h-0 p-0 opacity-0": expandedCard && cardId !== expandedCard,
-          " w-[46.6842vw]  ": !expandedCard,
+          "w-0 h-0 p-0 opacity-0 hidden":
+            expandedCard && cardId !== expandedCard,
+          "h-[338px] w-full p-[32px_20px]": cardId === expandedCard,
+          " w-[46.6842vw]  max-h-[305px] p-[20px] max-w-[1000px]":
+            !expandedCard,
         }
       )}
     >

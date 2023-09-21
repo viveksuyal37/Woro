@@ -15,9 +15,9 @@ const TrendingNow = ({ cardId, expandedCard }) => {
           "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
       className={classNames(
-        "bg-white rounded-[11px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] opacity-1 p-[20px_0px_14px_14px] overflow-hidden transition-all duration-300 ease-in-out",
+        "bg-white rounded-[11px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] opacity-1  overflow-hidden transition-all duration-300 ease-in-out",
         { "w-0 h-0 opacity-0 p-0": expandedCard && expandedCard !== cardId },
-        { "w-[39.68vw] ": !expandedCard }
+        { "w-[39.68vw] p-[20px_0px_14px_14px] ": !expandedCard }
       )}
     >
       <div className="mb-[10px] flex justify-between mr-[20px]">
