@@ -29,7 +29,7 @@ export default function Home() {
   }, [state]);
 
   return (
-    <section className="h-max">
+    <section className=" h-max">
       {/* dashboard top (2rows)*/}
       <div
         className={classNames(
