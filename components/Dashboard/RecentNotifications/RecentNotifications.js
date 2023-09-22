@@ -36,15 +36,15 @@ const RecentNotifications = ({ cardId, expandedCard }) => {
       </div>
 
       {/* notifications */}
-      <div className="mt-4 ">
-        {["", "", ""].map((i, indx) => {
+      <div className="mt-4 h-[260px] scrollContainer ">
+        {["", "", "", "", "", ""].map((i, indx) => {
           if (cardId !== expandedCard) {
             return (
               <div
                 key={nanoid(4)}
                 className={classNames(
                   " border-[#7F7789] text-[14px] p-[12px_2px] flex gap-[12px] items-center leading-tight",
-                  { "border-b-[1px]": indx !== 2 }
+                  { "border-b-[1px]": indx !== 5 }
                 )}
               >
                 <Image
@@ -97,6 +97,18 @@ const RecentNotifications = ({ cardId, expandedCard }) => {
           }
         })}
       </div>
+      <style jsx>
+        {`
+          .scrollContainer {
+            width: 100%;
+            overflow: auto;
+            height: 90%;
+          }
+          .scrollContainer::-webkit-scrollbar {
+            display: none;
+          }
+        `}
+      </style>
     </div>
   );
 };
