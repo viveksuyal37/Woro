@@ -2,7 +2,7 @@
 
 /*BuiltIn imports */
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 /*redux */
 import { useDispatch } from "react-redux";
@@ -17,7 +17,8 @@ const ExpandBtn = ({ cardId }) => {
     <div
       onClick={() => {
         cardId
-          ? (dispatch(toggleCard({ cardId })), setIsCardItemExpanded(!isCurrentItemExpanded))
+          ? (dispatch(toggleCard({ cardId })),
+            setIsCardItemExpanded(!isCurrentItemExpanded))
           : console.log("no cardId found!!");
       }}
       className={classNames(

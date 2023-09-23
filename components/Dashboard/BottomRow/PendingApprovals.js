@@ -95,6 +95,7 @@ const PendingApprovals = ({ cardId, expandedCard }) => {
         </div>
       )}
 
+      {/* approvals */}
       {expandedCard === cardId && (
         <div className="flex justify-between py-[22px] border-b border-b-[#7F7789]">
           <div className="flex gap-[32px] items-center">
@@ -153,20 +154,32 @@ const PendingApprovals = ({ cardId, expandedCard }) => {
               />
             </svg>
             <div className="flex items-center gap-2 text-white p-[12px_37px] rounded-[3px] bg-woro-blue">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11.0026 16L18.0737 8.92893L16.6595 7.51472L11.0026 13.1716L8.17421 10.3431L6.75999 11.7574L11.0026 16Z"
+                  fill="white"
+                />
+              </svg>
+              Approve
+            </div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
+              width="68"
+              height="68"
+              viewBox="0 0 68 68"
               fill="none"
             >
               <path
-                d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11.0026 16L18.0737 8.92893L16.6595 7.51472L11.0026 13.1716L8.17421 10.3431L6.75999 11.7574L11.0026 16Z"
-                fill="white"
+                d="M34.0586 30.2641L45.0895 19.2333L48.7664 22.9102L37.7355 33.9411L48.7664 44.9719L45.0895 48.6489L34.0586 37.618L23.0277 48.6489L19.3508 44.9719L30.3816 33.9411L19.3508 22.9102L23.0277 19.2333L34.0586 30.2641Z"
+                fill="#C1C1C1"
               />
             </svg>
-            Approve
-          </div>
           </div>
         </div>
       )}

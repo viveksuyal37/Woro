@@ -278,7 +278,7 @@ const Header = ({ activeItem, setActiveItem }) => {
         onClick={() => {
           setActiveItem(0);
         }}
-        className={classNames("flex text-[18px]  gap-2 relative", {
+        className={classNames("flex text-[18px] cursor-pointer gap-2 relative", {
           "text-woro-blue": activeItem === 0,
         })}
       >
@@ -306,7 +306,7 @@ const Header = ({ activeItem, setActiveItem }) => {
         onClick={() => {
           setActiveItem(1);
         }}
-        className={classNames("flex text-[18px]  gap-2 relative", {
+        className={classNames("flex text-[18px] cursor-pointer gap-2 relative", {
           "text-woro-blue": activeItem === 1,
         })}
       >
@@ -340,7 +340,7 @@ const Header = ({ activeItem, setActiveItem }) => {
         onClick={() => {
           setActiveItem(2);
         }}
-        className={classNames("flex text-[18px]  gap-2 relative", {
+        className={classNames("flex text-[18px] cursor-pointer gap-2 relative", {
           "text-woro-blue": activeItem === 2,
         })}
       >

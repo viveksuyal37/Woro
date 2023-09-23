@@ -12,6 +12,7 @@ import {
 } from "recharts";
 
 const Analytics = ({ cardId, expandedCard }) => {
+
   const data = [
     {
       name: "20 Sep",

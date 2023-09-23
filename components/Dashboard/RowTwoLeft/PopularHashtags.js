@@ -25,7 +25,7 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
       className={classNames(
         " opacity-1  transition-all duration-300 ease-in-out overflow-hidden rounded-[20px] bg-white",
         {
-          "w-0 h-0 opacity-0 p-0 ": expandedCard && expandedCard !== cardId,
+          "hidden ": expandedCard && expandedCard !== cardId,
           "w-[88vw]  h-[66vh] ": expandedCard === cardId,
           "h-full  w-[21.9473vw] p-[20px] max-w-[500px]": !expandedCard,
         }
@@ -43,8 +43,6 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
       )}
 
       {/* trendingHashtagsCard */}
-      {/* //! make it a component */}
-
       {!expandedCard && (
         <div className="bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] p-[12px_10px] max-w-[245px] rounded-[10px]">
           <div className="flex justify-between mb-[5px] gap-[23px] font-bold">
@@ -87,7 +85,10 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
         <div className="flex justify-between w-full h-full">
           {/* left */}
           <div className=" p-[46px] w-2/3">
-            <h3 className="text-[24px] font-bold">Select social media</h3>
+            <div className="flex items-center justify-between">
+              <h3 className="text-[24px] font-bold">Select social media</h3>
+              <ExpandBtn cardId={cardId} />
+            </div>
             <div className="flex mt-[22px] mb-[50px] gap-[20px]">
               {data?.map((item, indx) => {
                 return (

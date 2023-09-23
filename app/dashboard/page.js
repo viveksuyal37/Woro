@@ -70,7 +70,7 @@ export default function Home() {
         </div>
       </div>
       {/*bottom dashboard */}
-      <div className="flex mt-[22px] h-full gap-[22px] justify-between">
+      <div className="flex mt-[22px]  h-full gap-[22px] justify-between">
         <PostInfo expandedCard={expandedCard} />
         <PendingApprovals
           expandedCard={expandedCard}

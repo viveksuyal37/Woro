@@ -10,10 +10,15 @@ const cardsSlice = createSlice({
       const { cardId } = action.payload;
       state[cardId] = !state[cardId];
     },
+    collapseAll: (state) => {
+      Object.keys(state).forEach((cardId) => {
+        state[cardId] = false;
+      });
+    },
   },
 });
 
-export const { toggleCard } = cardsSlice.actions;
+export const { toggleCard, collapseAll } = cardsSlice.actions;
 export const getCardsState = (state) => state.cardState;
 export const getCardStateById = (state) => state.cardState[cardId];
 

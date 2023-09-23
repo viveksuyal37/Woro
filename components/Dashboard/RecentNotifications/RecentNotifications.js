@@ -17,8 +17,8 @@ const RecentNotifications = ({ cardId, expandedCard }) => {
       }}
       className={classNames(
         " rounded-[20px]  overflow-hidden shadow-[ 0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] transition-all opacity-1 duration-300 ease-in-out",
-        { "h-0 w-0 p-0 opacity-0": expandedCard && expandedCard !== cardId },
-        { "h-[66vh] p-[46px]": expandedCard && expandedCard === cardId },
+        { "hidden opacity-0": expandedCard && expandedCard !== cardId },
+        { "h-[66vh] p-[46px]": expandedCard === cardId },
         { "h-[305px]  p-[14px_11px] ": !expandedCard }
       )}
     >

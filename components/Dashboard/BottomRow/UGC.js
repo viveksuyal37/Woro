@@ -15,7 +15,7 @@ const UGC = ({ expandedCard }) => {
       className={classNames(
         "bg-white rounded-[11px]  transition-all overflow-hidden duration-300 ease-in-out opacity-1  flex justify-end items-center ",
         {
-          "w-0 h-0 p-0 opacity-0": expandedCard,
+          hidden: expandedCard,
           "h-full w-full p-[20px]": !expandedCard,
         }
       )}

@@ -1,11 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { collapseAll } from "@/Redux/slices/CardSlice";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 const MidFooter = () => {
   const [activeMenu, setActiveMenu] = useState(0);
-
-
+  const dispatch = useDispatch();
+  const pathname = usePathname();
 
   return (
     <div
@@ -15,8 +19,11 @@ const MidFooter = () => {
       }}
       className=" flex justify-between p-[14px_21px_14px_15px] 2xl:max-w-[867px] h-[85px] 2xl:h-[118px]  gap-[14px]  rounded-[20px] backdrop-blur-[5px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]"
     >
-      <div
+      <Link
+        href="/dashboard"
         onClick={() => {
+          if (pathname !== "/dashboard") dispatch(collapseAll());
+
           setActiveMenu(0);
         }}
         className={
@@ -40,9 +47,10 @@ const MidFooter = () => {
           />
         </svg>{" "}
         <p>Home</p>
-      </div>
+      </Link>
 
-      <div
+      <Link
+        href="/dashboard/calender"
         onClick={() => {
           setActiveMenu(1);
         }}
@@ -67,7 +75,7 @@ const MidFooter = () => {
           />
         </svg>
         <p>Calender</p>
-      </div>
+      </Link>
 
       <div
         style={{

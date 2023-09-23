@@ -1,7 +1,10 @@
 "use client";
-import classNames from "classnames";
+/*BuiltIn Imports */
 import Image from "next/image";
 import { useState } from "react";
+
+/*External Imports */
+import classNames from "classnames";
 
 const PostInfo = ({ expandedCard }) => {
   const [activeItem, setActiveItem] = useState(0);
@@ -12,7 +15,7 @@ const PostInfo = ({ expandedCard }) => {
           " linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
       className={classNames(
-        "rounded-[11px] flex overflow-hidden transition-all duration-300 ease-in-out  flex-col ",
+        "rounded-[11px] flex max-h-[214px] overflow-hidden transition-all duration-300 ease-in-out  flex-col ",
         { "  w-0 h-0 p-0 opacity-0": expandedCard },
         { " p-[20px_18px] w-[22.1vw] opacity-1 max-w-[500px]": !expandedCard }
       )}
@@ -64,15 +67,15 @@ const PostInfo = ({ expandedCard }) => {
         </div>
       </div>
 
-      <div className="mt-4 text-[18px]">
-        {["", ""].map((i, indx) => {
+      <div className="w-full scrollableContainer overflow-auto mt-4 text-[18px]">
+        {["", "", ""].map((i, indx) => {
           //! add nanoid
           return (
             <div
               key={indx}
               className={classNames(
                 " border-[#7F7789] p-[12px_2px] flex gap-[12px] items-center justify-between leading-tight",
-                { "border-b-[1px]": indx !== 1 }
+                { "border-b-[1px]": indx !== 2 }
               )}
             >
               <Image
@@ -90,6 +93,13 @@ const PostInfo = ({ expandedCard }) => {
           );
         })}
       </div>
+      <style jsx>
+        {`
+          .scrollableContainer::-webkit-scrollbar {
+            display: none;
+          }
+        `}
+      </style>
     </div>
   );
 };
