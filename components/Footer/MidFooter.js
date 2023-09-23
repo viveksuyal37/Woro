@@ -17,7 +17,7 @@ const MidFooter = () => {
         background:
           "linear-gradient(139deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.70) 51.35%, rgba(255, 255, 255, 0.50) 100%)",
       }}
-      className=" flex justify-between p-[14px_21px_14px_15px] 2xl:max-w-[867px] h-[85px] 2xl:h-[118px]  gap-[14px]  rounded-[20px] backdrop-blur-[5px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]"
+      className="  flex justify-between p-[14px_21px_14px_15px] 2xl:max-w-[867px] h-[85px] 2xl:h-[118px]  gap-[14px]  rounded-[20px] backdrop-blur-[5px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]"
     >
       <Link
         href="/dashboard"
