@@ -12,7 +12,6 @@ import {
 } from "recharts";
 
 const Analytics = ({ cardId, expandedCard }) => {
-
   const data = [
     {
       name: "20 Sep",
@@ -59,83 +58,232 @@ const Analytics = ({ cardId, expandedCard }) => {
   ];
 
   return (
-    <div
-      style={{
-        background:
-          "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
-      }}
-      className={classNames(
-        " transition-all  duration-300 overflow-hidden opacity-1 ease-in-out   rounded-[20px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]",
-        {
-          "w-0 h-0 p-0 opacity-0 hidden":
-            expandedCard && cardId !== expandedCard,
-          "h-[338px] w-full p-[32px_20px]": cardId === expandedCard,
-          " w-[46.6842vw]  max-h-[305px] p-[20px] max-w-[1000px]":
-            !expandedCard,
-        }
-      )}
-    >
-      {/* header */}
-      <div className="flex justify-between">
-        <select className="w-[142px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
-          <option>Reach overview</option>
-          <option value="">Volvo</option>
-          <option value="">Saab</option>
-          <option value="">Mercedes</option>
-          <option value="">Audi</option>
-        </select>
+    <section className="flex flex-col h-full gap-[22px] w-full">
+      <div
+        style={{
+          background:
+            "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
+        }}
+        className={classNames(
+          " transition-all  duration-300 overflow-hidden opacity-1 ease-in-out   rounded-[20px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]",
+          {
+            "w-0 h-0 p-0 opacity-0 hidden":
+              expandedCard && cardId !== expandedCard,
+            "h-[338px] w-full p-[32px_20px_40px_20px]": cardId === expandedCard,
+            " w-[46.6842vw]  max-h-[305px] p-[20px] max-w-[1000px]":
+              !expandedCard,
+          }
+        )}
+      >
+        {/* header */}
+        <div className="flex items-center justify-between">
+          {!expandedCard && (
+            <select className="w-[142px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
+              <option>Reach overview</option>
+              <option value="">Volvo</option>
+              <option value="">Saab</option>
+              <option value="">Mercedes</option>
+              <option value="">Audi</option>
+            </select>
+          )}
 
-        <div className="flex items-center  gap-[10px]">
-          <select className="w-[111px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
-            <option>Post</option>
-          </select>
-          <select className="w-[67px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
-            <option>Fb</option>
-          </select>
-          <select className="w-[137px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
-            <option>Last & days</option>
-          </select>
+          {expandedCard === cardId && (
+            <div className="flex flex-col text-[14px] ml-16 font-bold ">
+              <h3 className="text-[28px] text-woro-blue ">Reach Overview</h3>
+              <span>Users-Date graph</span>
+            </div>
+          )}
 
-          <ExpandBtn cardId={cardId} />
+          <div className="flex  items-center  gap-[10px]">
+            <select className="w-[111px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
+              <option>Post</option>
+            </select>
+            <select className="w-[67px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
+              <option>Fb</option>
+            </select>
+            <select className="w-[137px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
+              <option>Last & days</option>
+            </select>
+
+            <ExpandBtn cardId={cardId} />
+          </div>
         </div>
+
+        {/* graph */}
+
+        <ResponsiveContainer width="100%" h="100%">
+          <AreaChart
+            width={500}
+            height={400}
+            data={data}
+            margin={{ top: 26, right: 15, left: 0, bottom: 25 }}
+          >
+            <defs>
+              <linearGradient
+                id="colorUv"
+                x1="404.5"
+                y1="-126.752"
+                x2="404.5"
+                y2="165.806"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stopColor="#00FABA" />
+                <stop offset="1" stopColor="#D9D9D9" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Area
+              type="monotone"
+              dataKey="uv"
+              stroke="#00FABA"
+              fillOpacity={1}
+              fill="url(#colorUv)"
+            />
+          </AreaChart>
+        </ResponsiveContainer>
       </div>
 
-      {/* graph */}
+      {/* last row  */}
+      {cardId === expandedCard && (
+        <div className="flex gap-[22px]">
+          {/* left graph */}
+          <div
+            style={{
+              background:
+                "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
+            }}
+            className="  w-full h-[292px]  rounded-[20px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] p-[31px_20px]"
+          >
+            {/* header */}
+            <div className="flex items-center justify-between">
+              <div className="flex flex-col text-[14px] ml-16 font-bold ">
+                <h3 className="text-[28px] text-woro-blue ">
+                  Impressions Overview
+                </h3>
+                <span>Users-Date graph</span>
+              </div>
 
-      <ResponsiveContainer width="100%" h="100%">
-        <AreaChart
-          width={500}
-          height={400}
-          data={data}
-          margin={{ top: 26, right: 15, left: 15, bottom: 25 }}
-        >
-          <defs>
-            <linearGradient
-              id="colorUv"
-              x1="404.5"
-              y1="-126.752"
-              x2="404.5"
-              y2="165.806"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#00FABA" />
-              <stop offset="1" stopColor="#D9D9D9" stopOpacity="0" />
-            </linearGradient>
-          </defs>
+              <div className="flex  items-center  gap-[10px]">
+                <select className="w-[111px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
+                  <option>Post</option>
+                </select>
+                <select className="w-[67px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
+                  <option>Fb</option>
+                </select>
+                <select className="w-[137px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
+                  <option>Last & days</option>
+                </select>
+              </div>
+            </div>
 
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Area
-            type="monotone"
-            dataKey="uv"
-            stroke="#00FABA"
-            fillOpacity={1}
-            fill="url(#colorUv)"
-          />
-        </AreaChart>
-      </ResponsiveContainer>
-    </div>
+            {/* graph */}
+
+            <ResponsiveContainer width="100%" h="100%">
+              <AreaChart
+                width={500}
+                height={150}
+                data={data}
+                margin={{ top: 26, right: 15, left: 0, bottom: 35 }}
+              >
+                <defs>
+                  <linearGradient
+                    id="colorUv2"
+                    x1="353.5"
+                    y1="-117.96"
+                    x2="353.5"
+                    y2="154.305"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#7F1DFE" />
+                    <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Area
+                  type="monotone"
+                  dataKey="uv"
+                  stroke="#7F1DFE"
+                  fillOpacity={1}
+                  fill="url(#colorUv2)"
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
+          {/* right graph */}
+          <div
+            style={{
+              background:
+                "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
+            }}
+            className="  w-full h-[292px] p-[31px_20px] rounded-[20px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]"
+          >
+            {/* header */}
+            <div className="flex items-center justify-between">
+              <div className="flex flex-col text-[14px] ml-16 font-bold ">
+                <h3 className="text-[28px] text-woro-blue ">
+                  Engagement Overview
+                </h3>
+                <span>Users-Date graph</span>
+              </div>
+
+              <div className="flex  items-center  gap-[10px]">
+                <select className="w-[111px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
+                  <option>Post</option>
+                </select>
+                <select className="w-[67px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
+                  <option>Fb</option>
+                </select>
+                <select className="w-[137px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
+                  <option>Last & days</option>
+                </select>
+              </div>
+            </div>
+
+            {/* graph */}
+
+            <ResponsiveContainer width="100%" h="100%">
+              <AreaChart
+                width={400}
+                height={150}
+                data={data}
+                margin={{ top: 26, right: 55, left: 0, bottom: 35 }}
+              >
+                <defs>
+                  <linearGradient
+                    id="colorUv3"
+                    x1="356"
+                    y1="-117.228"
+                    x2="356"
+                    y2="153.347"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stopColor="#FEC963" />
+                    <stop offset="1" stopColor="#D9D9D9" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Area
+                  type="monotone"
+                  dataKey="uv"
+                  stroke="#FEC963"
+                  fillOpacity={1}
+                  fill="url(#colorUv3)"
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+      )}
+    </section>
   );
 };
 

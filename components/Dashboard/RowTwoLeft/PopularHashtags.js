@@ -23,10 +23,10 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
           "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
       className={classNames(
-        " opacity-1  transition-all duration-300 ease-in-out overflow-hidden rounded-[20px] bg-white",
+        " opacity-1  transition-all duration-300 ease-in-out overflow-hidden  rounded-[20px] bg-white",
         {
           "hidden ": expandedCard && expandedCard !== cardId,
-          "w-[88vw]  h-[66vh] ": expandedCard === cardId,
+          "w-[88.5vw]  h-[66vh] ": expandedCard === cardId,
           "h-full  w-[21.9473vw] p-[20px] max-w-[500px]": !expandedCard,
         }
       )}
@@ -84,7 +84,7 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
       {expandedCard === cardId && (
         <div className="flex justify-between w-full h-full">
           {/* left */}
-          <div className=" p-[46px] w-2/3">
+          <div className=" p-[46px] max-w-[1057px]">
             <div className="flex items-center justify-between">
               <h3 className="text-[24px] font-bold">Select social media</h3>
               <ExpandBtn cardId={cardId} />
@@ -193,15 +193,7 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
             </div>
           </div>
           {/* right */}
-          <div className="w-1/3 h-full">
-            {" "}
-            <Image
-              width="572"
-              height="747"
-              alt="popularHashtags"
-              src="/assets/images/dashboard/popularHashtags.png"
-            />
-          </div>
+          <div className="w-full h-full bg-center bg-cover bg-[url('/assets/images/dashboard/popularHashtags.png')]"></div>
         </div>
       )}
     </div>
