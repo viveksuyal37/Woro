@@ -1,10 +1,10 @@
 "use client";
 
 import classNames from "classnames";
-import Image from "next/image";
 import { useState } from "react";
 import InfluencerCard from "./InfluencerCard";
 import UgcCard from "./UgcCard";
+import { nanoid } from "nanoid";
 
 const page = () => {
   const [activeItem, setActiveItem] = useState(0);
@@ -47,7 +47,7 @@ const page = () => {
             <div className="flex scrollableContainer  flex-wrap gap-[45px]">
               {["", "", "", "", ""]?.map(() => (
                 // influencerCard
-                <InfluencerCard />
+                <InfluencerCard key={nanoid(4)} />
               ))}
             </div>
             <style jsx>{`
@@ -96,7 +96,7 @@ const page = () => {
             <div className="flex scrollableContainer  flex-wrap gap-[45px]">
               {["", "", "", "", ""]?.map(() => (
                 // ugcCard
-                <UgcCard />
+                <UgcCard key={nanoid(4)} />
               ))}
             </div>
             <style jsx>{`

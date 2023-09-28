@@ -67,8 +67,7 @@ const Analytics = ({ cardId, expandedCard }) => {
         className={classNames(
           " transition-all  duration-300 overflow-hidden opacity-1 ease-in-out   rounded-[20px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]",
           {
-            "w-0 h-0 p-0 opacity-0 hidden":
-              expandedCard && cardId !== expandedCard,
+            " hidden": expandedCard && cardId !== expandedCard,
             "h-[338px] w-full p-[32px_20px_40px_20px]": cardId === expandedCard,
             " w-[46.6842vw]  max-h-[305px] p-[20px] max-w-[1000px]":
               !expandedCard,
@@ -197,8 +196,8 @@ const Analytics = ({ cardId, expandedCard }) => {
                     y2="154.305"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#7F1DFE" />
-                    <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+                    <stop stopColor="#7F1DFE" />
+                    <stop offset="1" stopColor="#D9D9D9" stopOpacity="0" />
                   </linearGradient>
                 </defs>
 

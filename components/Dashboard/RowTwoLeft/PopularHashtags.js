@@ -4,16 +4,37 @@ import Image from "next/image";
 import ExpandBtn from "../ExpandBtn";
 import classNames from "classnames";
 import { useState } from "react";
+import { nanoid } from "nanoid";
 
 const PopularHashtags = ({ cardId, expandedCard }) => {
   const [activeSocial, setActiveSocial] = useState(0);
 
   const data = [
-    { name: "LinkedIn", iconUrl: "/assets/images/dashboard/fb.png" },
-    { name: "Facebook", iconUrl: "/assets/images/dashboard/instagram.png" },
-    { name: "YouTube", iconUrl: "" },
-    { name: "Instagram", iconUrl: "" },
-    { name: "Twitter", iconUrl: "" },
+    {
+      name: "LinkedIn",
+      iconUrl: "/assets/images/dashboard/linkedIn.png",
+      whiteIconUrl: "/assets/images/dashboard/w-linkedIn.png",
+    },
+    {
+      name: "Facebook",
+      iconUrl: "/assets/images/dashboard/fb.png",
+      whiteIconUrl: "/assets/images/dashboard/w-fb.png",
+    },
+    {
+      name: "YouTube",
+      iconUrl: "/assets/images/dashboard/youtube.png",
+      whiteIconUrl: "/assets/images/dashboard/w-youtube.png",
+    },
+    {
+      name: "Instagram",
+      iconUrl: "/assets/images/dashboard/instagram.png",
+      whiteIconUrl: "/assets/images/dashboard/w-insta.png",
+    },
+    {
+      name: "Twitter",
+      iconUrl: "/assets/images/dashboard/twitter.png",
+      whiteIconUrl: "/assets/images/dashboard/w-twitter.png",
+    },
   ];
 
   return (
@@ -50,7 +71,7 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
               <Image
                 src="/assets/images/dashboard/fb.png"
                 width="20"
-                alt=""
+                alt="socials"
                 height="20"
               ></Image>
               <h6 className="text-[14px] font-bold"> FaceBook</h6>
@@ -93,6 +114,7 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
               {data?.map((item, indx) => {
                 return (
                   <div
+                    key={nanoid(4)}
                     onClick={() => {
                       setActiveSocial(indx);
                     }}
@@ -101,7 +123,16 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
                       { "bg-woro-blue text-white": activeSocial === indx }
                     )}
                   >
-                    <Image src={item?.iconUrl} width="32" height="32" />
+                    <Image
+                      alt="social icon"
+                      src={
+                        activeSocial === indx
+                          ? item?.whiteIconUrl
+                          : item?.iconUrl
+                      }
+                      width="32"
+                      height="32"
+                    />
                     <span>{item?.name}</span>
                   </div>
                 );
