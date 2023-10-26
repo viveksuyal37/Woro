@@ -1,4 +1,5 @@
 /*Custom components */
+import ChatWithUs from "./ChatWithUs";
 import LeftFooter from "./LeftFooter";
 import MidFooter from "./MidFooter";
 
@@ -12,7 +13,8 @@ const Footer = () => {
       <MidFooter />
 
       {/* right */}
-      <div className="min-w-[340px]"></div>
+      <ChatWithUs/>
+      
     </footer>
   );
 };

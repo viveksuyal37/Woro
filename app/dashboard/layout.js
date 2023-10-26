@@ -1,10 +1,5 @@
-"use client";
-
-/*redux*/
-import { Provider } from "react-redux";
-import { store } from "@/Redux/store";
-
 /*custom components*/
+import CircularMenu from "@/components/CircularMenu/CircularMenu";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 
@@ -18,11 +13,10 @@ const layout = ({ children }) => {
       }}
       className={` overflow-hidden  w-screen h-screen pt-[40px] 2xl:pt-[51px] pb-[35px] 2xl:pb-[40px] px-[6.25vw]`}
     >
-      <Provider store={store}>
-        <Header />
-        {children}
-        <Footer />
-      </Provider>
+      <CircularMenu />
+      <Header />
+      {children}
+      <Footer />
     </main>
   );
 };

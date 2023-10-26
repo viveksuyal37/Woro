@@ -93,13 +93,7 @@ const PostInfo = ({ expandedCard }) => {
           );
         })}
       </div>
-      <style jsx>
-        {`
-          .scrollableContainer::-webkit-scrollbar {
-            display: none;
-          }
-        `}
-      </style>
+     
     </div>
   );
 };

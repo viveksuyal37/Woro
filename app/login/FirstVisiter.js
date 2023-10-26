@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const FirstVisiter = () => {
   return (
@@ -16,6 +17,7 @@ const FirstVisiter = () => {
         </div>
         {/* cards */}
         <div className="flex w-full gap-[46px] justify-center">
+     
           <div className="border flex flex-col gap-[15px] rounded-[10px] max-w-[267px] border-[#7F7789] p-[58px_36px_49px_37px]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -74,11 +76,12 @@ const FirstVisiter = () => {
               Lorem ipsum dolor sit amet consectetur. nec integer quam
             </p>
           </div>
+
         </div>
 
-        <div className="bg-woro-blue text-white text-center py-[20px] min-w-[893px]">
+        <Link href='/dashboard' className="bg-woro-blue text-white text-center py-[20px] cursor-pointer min-w-[893px]">
           Next{" "}
-        </div>
+        </Link>
       </section>
     </main>
   );

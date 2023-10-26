@@ -105,9 +105,7 @@ const page = () => {
                 max-height: 35vh;
                 overflow: auto;
               }
-              .scrollableContainer::-webkit-scrollbar {
-                display: none;
-              }
+            
             `}</style>
           </div>
         )}
