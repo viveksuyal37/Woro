@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   isVisible: false,
   itemSelected: false,
+  selectedPlatforms: false,
 };
 
 const circularMenuSlice = createSlice({
@@ -18,11 +19,22 @@ const circularMenuSlice = createSlice({
     clearSelection: (state, action) => {
       state.itemSelected = false;
     },
+    setSelectedPlatforms: (state, action) => {
+      state.selectedPlatforms = action.payload?.platforms || false;
+    },
+    clearSelectedPlatforms: (state, action) => {
+      state.selectedPlatforms = false;
+    },
   },
 });
 
-export const { toggleCircularMenu, setSelectedItem, clearSelection } =
-  circularMenuSlice.actions;
+export const {
+  toggleCircularMenu,
+  setSelectedItem,
+  clearSelection,
+  setSelectedPlatforms,
+  clearSelectedPlatforms
+} = circularMenuSlice.actions;
 
 export const getCircularMenuState = (state) => state.circularMenu;
 

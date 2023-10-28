@@ -7,17 +7,21 @@ import { useState } from "react";
 //*External imports */
 import classNames from "classnames";
 
+//*Custom components */
+import ChoosePlatforms from "./ChoosePlatform";
+
 //*redux */
 import {
-  clearSelection,
   getCircularMenuState,
   setSelectedItem,
   toggleCircularMenu,
 } from "@/Redux/slices/CircularMenuSlice";
 import { useDispatch, useSelector } from "react-redux";
+import ChooseFile from "./ChooseFile";
 
 const CircularMenu = () => {
-  const { isVisible, itemSelected } = useSelector(getCircularMenuState);
+  const { isVisible, itemSelected, selectedPlatforms } =
+    useSelector(getCircularMenuState);
   const [innerMenuDataIndex, setInnerMenuDataIndex] = useState(null);
   const dispatch = useDispatch();
 
@@ -56,7 +60,7 @@ const CircularMenu = () => {
         isVisible ? "h-screen inset-0 w-screen " : "hidden"
       }`}
     >
-      {/* outer circle */}
+      {/*  circle */}
       {!itemSelected && (
         <div
           style={{
@@ -208,7 +212,7 @@ const CircularMenu = () => {
 
           <div
             onClick={() => {
-              dispatch(setSelectedItem({ selectedItem: "live" }));
+              dispatch(setSelectedItem({ selectedItem: "live-event" }));
             }}
             onMouseEnter={() => {
               setInnerMenuDataIndex(3);
@@ -338,88 +342,13 @@ const CircularMenu = () => {
         </div>
       )}
 
-      {itemSelected && (
-        <div
-          style={{
-            background:
-              "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
-          }}
-          className="relative flex flex-wrap gap-[22px] w-[951px] min-h-[660px] p-[50px] rounded-[20px] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]"
-        >
-          <div className="w-[269px] cursor-pointer flex items-center justify-center h-[269px] border-dashed border-[1px] rounded-lg hover:border-woro-blue hover:border-solid border-black">
-            <div className="flex flex-col items-center font-bold text-[18px] gap-2">
-              <Image
-                src="/assets/images/dashboard/fb.png"
-                alt="fb"
-                width="43"
-                height="43"
-              />
-              <h6>Facebook</h6>
-            </div>
-          </div>
+      {/* windows */}
 
-          <div className="w-[269px] cursor-pointer flex items-center justify-center h-[269px] border-dashed border-[1px] hover:border-woro-blue hover:border-solid  rounded-lg border-black">
-            <div className="flex flex-col items-center font-bold text-[18px] gap-2">
-              <Image
-                src="/assets/images/dashboard/youtube.png"
-                alt="fb"
-                width="43"
-                height="43"
-              />
-              <h6>Youtube</h6>
-            </div>
-          </div>
+      {itemSelected && !selectedPlatforms && <ChoosePlatforms />}
 
-          <div className="w-[269px] cursor-pointer flex items-center justify-center h-[269px] border-dashed border-[1px] hover:border-woro-blue hover:border-solid  rounded-lg border-black">
-            <div className="flex flex-col items-center font-bold text-[18px] gap-2">
-              <Image
-                src="/assets/images/dashboard/instagram.png"
-                alt="fb"
-                width="43"
-                height="43"
-              />
-              <h6>Instagram</h6>
-            </div>
-          </div>
+      {selectedPlatforms && <ChooseFile ContentType={itemSelected} />}
 
-          <div className="w-[269px] cursor-pointer flex items-center justify-center h-[269px] border-dashed border-[1px]  hover:border-woro-blue hover:border-solid rounded-lg border-black">
-            <div className="flex flex-col items-center font-bold text-[18px] gap-2">
-              <Image
-                src="/assets/images/dashboard/linkedIn.png"
-                alt="LinkedIn"
-                width="43"
-                height="43"
-              />
-              <h6>LinkedIn</h6>
-            </div>
-          </div>
-
-          {/* back btn */}
-          <button
-            title="Back to menu"
-            onClick={() => {
-              dispatch(clearSelection());
-            }}
-            className="absolute cursor-pointer top-2 left-6"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-8 h-8 "
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18"
-              />
-            </svg>
-          </button>
-        </div>
-      )}
-
+      {/* circle menu styles */}
       <style jsx>{`
         @keyframes grow {
           from {
