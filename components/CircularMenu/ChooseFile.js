@@ -12,9 +12,12 @@ const ChooseFile = ({ ContentType }) => {
   const [paths, setPaths] = useState([]);
   const dispatch = useDispatch();
 
-  const onDrop = useCallback((acceptedFiles) => {
-    setPaths(acceptedFiles.map((file) => URL.createObjectURL(file)));
-  }, []);
+  const onDrop = useCallback(
+    (acceptedFiles) => {
+      setPaths(acceptedFiles.map((file) => URL.createObjectURL(file)));
+    },
+    [setPaths]
+  );
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
