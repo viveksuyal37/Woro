@@ -12,11 +12,6 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Woro",
-  description: "Manages your accounts at one place",
-};
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
