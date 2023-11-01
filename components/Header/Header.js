@@ -7,21 +7,26 @@ const Header = () => {
       <div className="flex items-center justify-between">
         {/* left */}
 
-        <div className="flex items-end space-x-[40px] 2xl:space-x-[55px]">
-          <div>
-            <Image src="/assets/images/logo.png" alt='woro logo' width="177" height="42" />
+        <div className="flex items-end space-x-[55px] 2xl:space-x-[78px]">
+          <div className="w-[124px] h-[29.5px] 2xl:w-[177px] 2xl:h-[42px]">
+            <Image
+              src="/assets/images/logo.png"
+              alt="woro logo"
+              width="177"
+              height="42"
+            />
           </div>
-          <div className="min-w-[346px] text-woro-blue text-4xl font-bold">
+          <div className="text-2xl font-bold text-woro-blue 2xl:text-4xl">
             Welcome back, Vivek
           </div>
         </div>
         {/* right */}
-        <div className="flex gap-[22px] ">
+        <div className="flex items-center gap-[22px] ">
           {/* get support */}
-          <button className="rounded-full text-[18px]  font-bold text-[#7F1DFE] border-2 border-[#7F1DFE] p-[13px_24px] h-[49px] leading-[0px] ">
+          <button className="rounded-full text-[13px] 2xl:text-[18px]  font-bold text-[#7F1DFE] border 2xl:border-2 border-[#7F1DFE] p-[9px_16px] 2xl:p-[13px_24px] h-[35px] 2xl:h-[49px] leading-[0px] ">
             Get Support Now
           </button>
-          <button className="rounded-full text-[18px] text-[#7F1DFE] font-bold border-2 border-[#7F1DFE] w-[49px] h-[49px] py-[13px] ">
+          <button className="rounded-full text-[12px] 2xl:text-[18px] text-[#7F1DFE] font-bold border-2 border-[#7F1DFE] w-[35px]  h-[35px] 2xl:w-[49px]  2xl:h-[49px] ">
             ?
           </button>
 
@@ -32,22 +37,24 @@ const Header = () => {
                 background:
                   "linear-gradient(139deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.70) 51.35%, rgba(255, 255, 255, 0.50) 100%)",
               }}
-              className="flex cursor-pointer space-x-4 items-center p-[6px_19px_6px_14px] rounded-[20px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]"
+              className="flex cursor-pointer space-x-2 2xl:space-x-4 items-center p-[6px_19px_6px_14px] rounded-[20px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]"
             >
               {/* profile */}
-              <div className="w-[50px]  h-[50px]">
+              <div className="w-[35px] 2xl:w-[50px]  h-[35px] 2xl:h-[50px]">
                 <Image
                   src="/assets/images/profile.png"
                   width="50"
                   height="50"
-                  alt='profile'
+                  alt="profile"
                 />
               </div>
 
               {/* username and role */}
-              <div className="flex-col space-y-[5px]">
-                <div className=" flex space-x-[6px]">
-                  <h6 className="text-[18px] flex font-bold">Vivek Suyal</h6>
+              <div className="flex-col 2xl:space-y-[5px]">
+                <div className=" flex space-x-[4px] 2xl:space-x-[6px]">
+                  <h6 className="text-[13px] 2xl:text-[18px] flex font-bold">
+                    Vivek Suyal
+                  </h6>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -61,7 +68,9 @@ const Header = () => {
                     />
                   </svg>
                 </div>
-                <p className="text-[14px] text-woro-blue">Admin</p>
+                <p className="text-[9px] 2xl:text-[14px] text-woro-blue">
+                  Admin
+                </p>
               </div>
 
               {/* plan icon */}
@@ -70,9 +79,14 @@ const Header = () => {
                   background:
                     "linear-gradient(225deg, #B500C3 21.66%, #9D51FF 76.10%)",
                 }}
-                className="flex items-center justify-center w-[32px] h-[32px] rounded-full"
+                className="flex items-center justify-center w-[28px]  2xl:w-[32px] h-[28px]  2xl:h-[32px] rounded-full"
               >
-                <Image src="/assets/images/plan1.png" alt='plan badge' width="25" height="25" />
+                <Image
+                  src="/assets/images/plan1.png"
+                  alt="plan badge"
+                  width="25"
+                  height="25"
+                />
               </div>
 
               {/*dropdown icon */}
@@ -83,7 +97,7 @@ const Header = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-6 h-6"
+                  className="w-4 h-4 2xl:w-6 2xl:h-6"
                 >
                   <path
                     strokeLinecap="round"

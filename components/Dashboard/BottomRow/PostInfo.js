@@ -15,12 +15,12 @@ const PostInfo = ({ expandedCard }) => {
           " linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
       className={classNames(
-        "rounded-[11px] flex max-h-[214px] overflow-hidden transition-all duration-300 ease-in-out  flex-col ",
+        "rounded-[11px] flex h-full overflow-hidden transition-all duration-300 ease-in-out  flex-col ",
         { "  w-0 h-0 p-0 opacity-0": expandedCard },
         { " p-[20px_18px] w-[22.1vw] opacity-1 max-w-[500px]": !expandedCard }
       )}
     >
-      <div className="flex justify-center gap-[22px] text-[18px] font-bold">
+      <div className="flex justify-center gap-[22px] text-[12px] 2xl:text-[18px] font-bold">
         <div className="relative">
           <h6
             onClick={() => setActiveItem(0)}
@@ -36,7 +36,7 @@ const PostInfo = ({ expandedCard }) => {
           </h6>
           <div
             className={classNames(
-              "bg-woro-blue h-[3px] w-full absolute bottom-[-9px] transition-opacity duration-300",
+              "bg-woro-blue h-[2px] 2xl:h-[3px] w-full absolute bottom-[-5px] 2xl:bottom-[-9px] transition-opacity duration-300",
               {
                 "opacity-0": activeItem === 1,
               }
@@ -58,7 +58,7 @@ const PostInfo = ({ expandedCard }) => {
           </h6>
           <div
             className={classNames(
-              "bg-woro-blue h-[3px] w-full absolute bottom-[-9px] transition-opacity duration-300",
+              "bg-woro-blue h-[2px] 2xl:h-[3px] w-full absolute bottom-[-5px] 2xl:bottom-[-9px] transition-opacity duration-300",
               {
                 "opacity-0": activeItem === 0,
               }
@@ -67,7 +67,7 @@ const PostInfo = ({ expandedCard }) => {
         </div>
       </div>
 
-      <div className="w-full scrollableContainer overflow-auto mt-4 text-[18px]">
+      <div className="w-full scrollableContainer overflow-auto mt-2 2xl:mt-4 text-[12px] 2xl:text-[18px]">
         {["", "", ""].map((i, indx) => {
           //! add nanoid
           return (
@@ -83,6 +83,7 @@ const PostInfo = ({ expandedCard }) => {
                 src="/assets/images/dashboard/fb.png"
                 width="41"
                 height="41"
+                className="max-w-[27px] 2xl:max-w-[41px]"
               />
               <p>
                 <strong>Facebook</strong>
@@ -93,7 +94,6 @@ const PostInfo = ({ expandedCard }) => {
           );
         })}
       </div>
-     
     </div>
   );
 };

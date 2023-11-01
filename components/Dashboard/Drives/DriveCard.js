@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const DriveCard = () => {
   return (
-    <div className="flex w-[85px] flex-col items-center justify-center rounded-[10px] gap-[3px] bg-white p-[3px_24px] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]">
+    <div className="flex w-[60px] 2xl:w-[85px] flex-col items-center justify-center rounded-[10px] gap-[3px] bg-white p-[3px_24px] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]">
       <Image
         alt=""
         src="/assets/images/dashboard/onedrive.png"
@@ -10,11 +10,10 @@ const DriveCard = () => {
         height="36"
       />
 
-      <div className="bg-woro-blue w-[25px] h-[25px] flex items-center justify-center rounded-full">
+      <div className="bg-woro-blue w-[17.5px] 2xl:w-[25px] h-[17.5px] 2xl:h-[25px] flex items-center justify-center rounded-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="14"
-          height="14"
+          className="w-[8px] h-[8px] 2xl:w-[14px] 2xl:h-[14px]"
           viewBox="0 0 24 24"
           fill="none"
         >

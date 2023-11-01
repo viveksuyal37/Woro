@@ -1,12 +1,15 @@
 "use client";
 
 /**BuiltIn Imports */
-
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import UgcCard from "../dashboard/UGC/UgcCard";
+
+/**External Imports */
 import { nanoid } from "nanoid";
+
+/**Custom components */
+import UgcCard from "../dashboard/UGC/UgcCard";
 
 const page = () => {
   const [randomNo, setRandomNo] = useState(Math.floor(Math.random() * 10));
@@ -233,7 +236,6 @@ const page = () => {
               These are the product tags through which your clients can find you
             </p>
           </div>
-          
         </div>
       )}
 

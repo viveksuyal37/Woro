@@ -13,15 +13,17 @@ const UGC = ({ expandedCard }) => {
           "linear-gradient(91deg, rgba(135, 33, 244, 0.30) 8.9%, rgba(194, 63, 168, 0.30) 59.14%, rgba(242, 86, 107, 0.30) 95.33%) ",
       }}
       className={classNames(
-        "bg-white rounded-[11px]  transition-all overflow-hidden duration-300 ease-in-out opacity-1  flex justify-end items-center ",
+        "bg-white rounded-[11px]  transition-all overflow-hidden duration-300 ease-in-out opacity-1  flex justify-end ",
         {
-          hidden: expandedCard,
-          "h-full w-full p-[20px]": !expandedCard,
+          "hidden ": expandedCard,
+          "h-full  w-full p-[7px] 2xl:p-[20px]": !expandedCard,
         }
       )}
     >
-      <div className="flex text-[14px] flex-col">
-        <h6 className="text-[18px] font-bold">Introducing UGC</h6>
+      <div className="flex leading-tight text-[10px] 2xl:text-[14px] flex-col">
+        <h6 className="text-[12.5px] 2xl:text-[18px] font-bold">
+          Introducing UGC
+        </h6>
         <p>User generated Content</p>
       </div>
     </Link>

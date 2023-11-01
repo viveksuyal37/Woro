@@ -11,7 +11,7 @@ const SocialMediaCard = () => {
     >
       {/* top */}
       <div className="flex items-center gap-[7px]">
-        <div className="w-[29px]">
+        <div className="w-[21px] 2xl:w-[29px]">
           <Image
             alt={""}
             width="29"
@@ -19,7 +19,7 @@ const SocialMediaCard = () => {
             src="/assets/images/dashboard/instagram.png"
           />
         </div>
-        <div className="flex flex-col text-[14px]">
+        <div className="flex flex-col text-[10px] 2xl:text-[14px]">
           <h5>Instagram</h5>
           <p className="font-bold">@username</p>
         </div>

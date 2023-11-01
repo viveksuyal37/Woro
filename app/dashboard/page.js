@@ -33,7 +33,7 @@ export default function Home() {
       {/* dashboard top (2rows)*/}
       <div
         className={classNames(
-          "flex overflow-hidden  opacity-1 transition-all duration-300 ease-in-out justify-between mt-[22px] gap-[22px]",
+          "flex overflow-hidden opacity-1 transition-all duration-300 ease-in-out justify-between mt-[13.8px] 2xl:mt-[19.8px] gap-[21px] 2xl:gap-[30px]",
           {
             "w-0 h-0 opacity-0":
               expandedCard === "trendingNews" ||
@@ -43,9 +43,12 @@ export default function Home() {
       >
         {/* left dashboard */}
         <div
-          className={classNames("flex flex-col overflow-hidden gap-[25px]", {
-            "w-full": expandedCard === "analytics",
-          })}
+          className={classNames(
+            "flex flex-col overflow-hidden gap-[12.3px] 2xl:gap-[20px]",
+            {
+              "w-full": expandedCard === "analytics",
+            }
+          )}
         >
           {/* row1 */}
           <AccountsContainer expandedCard={expandedCard} />
@@ -55,9 +58,9 @@ export default function Home() {
 
         <div
           className={classNames(
-            "flex flex-col overflow-hidden gap-[25px] ",
+            "flex flex-col overflow-hidden gap-[10px] 2xl:gap-[14.3px] ",
             { "w-full h-full": expandedCard === "recentNotification" },
-            { "w-[16.5789vw]  max-w-[400px]": !expandedCard }
+            { "w-[15.88vw] 2xl:w-[16.2vw]  max-w-[400px]": !expandedCard }
           )}
         >
           {/* right dashboard */}
@@ -70,7 +73,7 @@ export default function Home() {
         </div>
       </div>
       {/*bottom dashboard */}
-      <div className="flex mt-[22px]  h-full gap-[22px] justify-between">
+      <div className="flex mt-[13.25px] 2xl:mt-[19px]  h-[21.29vh] gap-[20.3px] 2xl:gap-[29px] justify-between">
         <PostInfo expandedCard={expandedCard} />
         <PendingApprovals
           expandedCard={expandedCard}

@@ -48,13 +48,14 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
         {
           "hidden ": expandedCard && expandedCard !== cardId,
           "w-[88.5vw]  h-[66vh] ": expandedCard === cardId,
-          "h-full  w-[21.9473vw] p-[20px] max-w-[500px]": !expandedCard,
+          "h-full min-w-[21.376vw] 2xl:w-[21.9473vw] p-[10px] 2xl:p-[20px] max-w-[500px]":
+            !expandedCard,
         }
       )}
     >
       {!expandedCard && (
         <div className="flex justify-between mb-2 gap-[14px] font-bold">
-          <h6 className="text-[14px]">
+          <h6 className="text-[10px] 2xl:text-[14px]">
             Popular hastags For your{" "}
             <span className="text-woro-blue">Social Media Accounts!</span>
           </h6>
@@ -67,29 +68,38 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
       {!expandedCard && (
         <div className="bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] p-[12px_10px] max-w-[245px] rounded-[10px]">
           <div className="flex justify-between mb-[5px] gap-[23px] font-bold">
-            <div className="flex space-x-[5px]">
+            <div className="flex w-[14.7px] h-[14.7px] 2xl:h-[20px] 2xl:w-[20px] space-x-[5px]">
               <Image
                 src="/assets/images/dashboard/fb.png"
                 width="20"
                 alt="socials"
                 height="20"
               ></Image>
-              <h6 className="text-[14px] font-bold"> FaceBook</h6>
+              <h6 className="text-[10px] 2xl:text-[14px] font-bold">
+                {" "}
+                FaceBook
+              </h6>
             </div>
 
             <div className="flex space-x-[5px] items-center">
               <input type="checkbox" id="checkbox1"></input>
-              <label className="text-[10px] " htmlFor="checkbox1">
+              <label
+                className="text-[8px] 2xl:text-[10px] "
+                htmlFor="checkbox1"
+              >
                 Latest
               </label>
               <input type="checkbox" id="checkbox2"></input>
-              <label className="text-[10px] " htmlFor="checkbox2">
+              <label
+                className="text-[8px] 2xl:text-[10px] "
+                htmlFor="checkbox2"
+              >
                 Month
               </label>
             </div>
           </div>
 
-          <div className="flex flex-wrap text-[10px] font-bold text-woro-blue space-x-2">
+          <div className="flex flex-wrap text-[8px] 2xl:text-[10px] font-bold text-woro-blue space-x-2">
             <div>#Business</div>
             <div>#Art</div>
             <div>#Passion </div>

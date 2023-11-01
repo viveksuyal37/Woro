@@ -19,13 +19,16 @@ const RecentNotifications = ({ cardId, expandedCard }) => {
         " rounded-[20px]  overflow-hidden shadow-[ 0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] transition-all opacity-1 duration-300 ease-in-out",
         { "hidden opacity-0": expandedCard && expandedCard !== cardId },
         { "h-[66vh] p-[46px]": expandedCard === cardId },
-        { "h-[305px]  p-[14px_11px] ": !expandedCard }
+        {
+          "min-h-[213px] h-[34.35vh] p-[14px_7px] 2xl:p-[14px_11px]":
+            !expandedCard,
+        }
       )}
     >
       {/* header*/}
       <div className="flex pl-[17px] pr-[9px] justify-between">
         <h6
-          className={classNames("font-bold  text-[1rem]", {
+          className={classNames("font-bold text-[11px] 2xl:text-[1rem]", {
             "text-[24px]": cardId === expandedCard,
           })}
         >
@@ -36,14 +39,14 @@ const RecentNotifications = ({ cardId, expandedCard }) => {
       </div>
 
       {/* notifications */}
-      <div className="mt-4 h-[260px] scrollContainer ">
+      <div className="mt-2 2xl:mt-4 h-[260px] scrollContainer ">
         {["", "", "", "", "", ""].map((i, indx) => {
           if (cardId !== expandedCard) {
             return (
               <div
                 key={nanoid(4)}
                 className={classNames(
-                  " border-[#7F7789] text-[14px] p-[12px_2px] flex gap-[12px] items-center leading-tight",
+                  " border-[#7F7789] text-[10px] 2xl:text-[14px] p-[12px_2px] flex gap-[12px] items-center leading-tight",
                   { "border-b-[1px]": indx !== 5 }
                 )}
               >

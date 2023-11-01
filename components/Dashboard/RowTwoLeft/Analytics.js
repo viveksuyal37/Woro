@@ -58,7 +58,8 @@ const Analytics = ({ cardId, expandedCard }) => {
   ];
 
   return (
-    <section className="flex flex-col h-full gap-[22px] w-full">
+    <section className="flex flex-col h-full gap-[22px] ">
+
       <div
         style={{
           background:
@@ -69,7 +70,7 @@ const Analytics = ({ cardId, expandedCard }) => {
           {
             " hidden": expandedCard && cardId !== expandedCard,
             "h-[338px] w-full p-[32px_20px_40px_20px]": cardId === expandedCard,
-            " w-[46.6842vw]  max-h-[305px] p-[20px] max-w-[1000px]":
+            "w-[42.67vw] 2xl:w-[43.58vw] h-[34.35vh] min-h-[213px] 2xl:min-h-[305px] p-[12px] 2xl:p-[20px] max-w-[1000px]":
               !expandedCard,
           }
         )}
@@ -77,7 +78,7 @@ const Analytics = ({ cardId, expandedCard }) => {
         {/* header */}
         <div className="flex items-center justify-between">
           {!expandedCard && (
-            <select className="w-[142px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
+            <select className="w-[108px] 2xl:w-[142px] outline-none h-[25px] 2xl:h-[46px] text-[10px] 2xl:text-[14px] text-[#7F7789] 2xl:p-[9px]  border border-[#C8C7C9] rounded-[6px]">
               <option>Reach overview</option>
               <option value="">Volvo</option>
               <option value="">Saab</option>
@@ -93,14 +94,14 @@ const Analytics = ({ cardId, expandedCard }) => {
             </div>
           )}
 
-          <div className="flex  items-center  gap-[10px]">
-            <select className="w-[111px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
+          <div className="flex  items-center  gap-[10px]  text-[10px] 2xl:text-[14px] text-[#7F7789] child:2xl:p-[9px]">
+            <select className=" w-[77px] 2xl:w-[111px] outline-none h-[25px]  2xl:h-[46px]   border border-[#C8C7C9] rounded-[6px]">
               <option>Post</option>
             </select>
-            <select className="w-[67px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
+            <select className="w-[25px] 2xl:w-[67px] outline-none h-[25px]  2xl:h-[46px]   border border-[#C8C7C9] rounded-[6px]">
               <option>Fb</option>
             </select>
-            <select className="w-[137px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
+            <select className="w-[137px] outline-none h-[25px]  2xl:h-[46px]    border border-[#C8C7C9] rounded-[6px]">
               <option>Last & days</option>
             </select>
 

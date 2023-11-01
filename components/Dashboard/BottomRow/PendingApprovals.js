@@ -10,30 +10,32 @@ const PendingApprovals = ({ cardId, expandedCard }) => {
           "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
       className={classNames(
-        "bg-white  rounded-[11px] overflow-hidden transition-all duration-300 ease-in-out opacity-1",
+        "bg-white h-full rounded-[11px] overflow-hidden transition-all duration-300 ease-in-out opacity-1",
         { "w-0 h-0 opacity-0": expandedCard && expandedCard !== cardId },
         { "w-full h-[66vh] p-[46px]": expandedCard && expandedCard === cardId },
-        { "  w-[30.21vw] max-w-[600px] p-[20px] ": !expandedCard }
+        { "  w-[30.21vw] max-w-[600px] p-[13px] 2xl:p-[20px] ": !expandedCard }
       )}
     >
-      <div className="flex justify-between mb-4 font-bold">
+      {/* top */}
+      <div className="flex justify-between mb-2 font-bold 2xl:mb-4">
         <h6
-          className={classNames("text-[1rem]", {
+          className={classNames("text-[10.5px] 2xl:text-[1rem]", {
             "text-[24px]": cardId === expandedCard,
           })}
         >
           Pending approvals
         </h6>
-        <div className="flex gap-[10px]">
+        <div className="flex text-[11.5px] 2xl:text-[1rem] gap-[10px]">
           {!expandedCard && <p>5 mins ago</p>}
           <ExpandBtn cardId={cardId} />
         </div>
       </div>
+
       {/* mid row2 */}
       {!expandedCard && (
         <div className="flex justify-between">
-          <div className="flex gap-[18px]">
-            <div className="w-[66px] h-[66px] rounded-full">
+          <div className="flex gap-[12px] 2xl:gap-[18px]">
+            <div className="w-[43px] 2xl:w-[66px] h-[43px] 2xl:h-[66px] rounded-full">
               <Image
                 src="/assets/images/profile.png"
                 alt="approval profile"
@@ -42,12 +44,14 @@ const PendingApprovals = ({ cardId, expandedCard }) => {
               />
             </div>
             <div className="flex flex-col self-center">
-              <h6 className="text-[18px] font-bold ">Mike</h6>
-              <p className="text-woro-blue text-[14px]">Employee</p>
+              <h6 className="text-[11.5px] 2xl:text-[18px] font-bold ">Mike</h6>
+              <p className="text-woro-blue text-[9px] 2xl:text-[14px]">
+                Employee
+              </p>
             </div>
           </div>
 
-          <div className="flex flex-col gap-[6px] text-[14px]">
+          <div className="flex flex-col gap-[4px] 2xl:gap-[6px] text-[9px] 2xl:text-[14px]">
             <p>wants to schedule a post on</p>
             <p className="font-bold">21st August 2023, 10:00AM</p>
           </div>
@@ -56,8 +60,8 @@ const PendingApprovals = ({ cardId, expandedCard }) => {
 
       {/* bottom */}
       {!expandedCard && (
-        <div className="flex items-center justify-between mt-4">
-          <div className="flex gap-1">
+        <div className="flex items-center justify-between mt-2 2xl:mt-4">
+          <div className="flex gap-1 child:w-[27px] child:2xl:w-[38px]">
             <Image
               src="/assets/images/dashboard/fb.png"
               width="38"
@@ -77,11 +81,12 @@ const PendingApprovals = ({ cardId, expandedCard }) => {
               height="38"
             ></Image>
           </div>
-          <div className="flex gap-1 items-center text-white p-[12px_37px] rounded-[3px] bg-woro-blue">
+          <div className="flex gap-1 items-center text-[10px] 2xl:text-[1rem] text-white  p-[8px_24px] 2xl:p-[12px_37px] rounded-[3px] bg-woro-blue">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
+              className="w-[15.5px] h-[15.5px] 2xl:h-[24px] 2xl:w-[24px]"
               viewBox="0 0 24 24"
               fill="none"
             >
