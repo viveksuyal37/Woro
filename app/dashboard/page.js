@@ -60,7 +60,7 @@ export default function Home() {
           className={classNames(
             "flex flex-col overflow-hidden gap-[10px] 2xl:gap-[14.3px] ",
             { "w-full h-full": expandedCard === "recentNotification" },
-            { "w-[15.88vw] 2xl:w-[16.2vw]  max-w-[400px]": !expandedCard }
+            { "w-[15.88vw] 2xl:w-[16.2vw]  max-w-[500px]": !expandedCard }
           )}
         >
           {/* right dashboard */}

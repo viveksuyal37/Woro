@@ -20,7 +20,7 @@ const RecentNotifications = ({ cardId, expandedCard }) => {
         { "hidden opacity-0": expandedCard && expandedCard !== cardId },
         { "h-[66vh] p-[46px]": expandedCard === cardId },
         {
-          "min-h-[213px] h-[34.35vh] p-[14px_7px] 2xl:p-[14px_11px]":
+          "min-h-[213px] 2xl:min-h-[305px] h-[34.35vh] p-[14px_7px] 2xl:p-[14px_11px]":
             !expandedCard,
         }
       )}

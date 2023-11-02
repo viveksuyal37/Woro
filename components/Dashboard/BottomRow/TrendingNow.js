@@ -19,11 +19,14 @@ const TrendingNow = ({ cardId, expandedCard }) => {
         "bg-white  relative rounded-[11px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] opacity-1  overflow-hidden transition-all duration-300 ease-in-out",
         { "w-0 h-0 opacity-0 p-0": expandedCard && expandedCard !== cardId },
         { "w-full h-[66vh] p-[41px_46px]": expandedCard === cardId },
-        { "w-[39.68vw] p-[20px_0px_14px_14px] ": !expandedCard }
+        {
+          "w-[39.68vw] p-[11px_14px] 2xl:p-[20px_0px_14px_14px] ":
+            !expandedCard,
+        }
       )}
     >
       {!expandedCard && (
-        <div className="mb-[10px] flex justify-between mr-[20px]">
+        <div className="mb-[5px] 2xl:mb-[10px] text-[11.5px] 2xl:text-[1rem] flex justify-between mr-[20px]">
           <p className="font-bold text-woro-blue">
             Popular News <span className="font-normal text-black">and</span>{" "}
             Viral topics
@@ -35,8 +38,8 @@ const TrendingNow = ({ cardId, expandedCard }) => {
       {!expandedCard && (
         <div className="flex w-full ">
           {/* news */}
-          <div className="flex gap-4 p-[10px_15px_10px_10px] max-w-[334px] bg-white leading-tight shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.35)]">
-            <div className="w-[95px] flex-shrink-0 ">
+          <div className="flex gap-[10px] 2xl:gap-4 p-[6.44px] 2xl:p-[10px_15px_10px_10px] max-w-[334px] bg-white leading-tight shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.35)]">
+            <div className="w-[61px] 2xl:w-[95px] flex-shrink-0 ">
               <Image
                 className="rounded-[5px]"
                 src="/assets/images/news.png"
@@ -46,19 +49,21 @@ const TrendingNow = ({ cardId, expandedCard }) => {
               ></Image>
             </div>
             <div className="flex flex-col gap-[6px] max-w-[198px]">
-              <h6 className="text-[14px] max-h-[35px] truncate font-bold">
+              <h6 className="text-[9px] 2xl:text-[14px] max-h-[35px] truncate font-bold">
                 "Scientists Make Breakthrough in Renewable Energy Storage”
               </h6>
-              <p className="text-[10px] font-bold">
+              <p className="text-[6.5px] 2xl:text-[10px] font-bold">
                 <span className="text-[#7F7789] font-normal">By</span> Jackie
                 Chen
               </p>
-              <p className="text-[14px] text-[#7F7789] ">
+              <p className="text-[9px] 2xl:text-[14px] text-[#7F7789] ">
                 <span className="max-w-[170px] ">
                   In a groundbreaking development th{" "}
                 </span>
               </p>
-              <p className="mt-[2px] text-[8px]">November 17, 2023</p>
+              <p className="mt-[2px] text-[5px] 2xl:text-[8px]">
+                November 17, 2023
+              </p>
             </div>
           </div>
         </div>
