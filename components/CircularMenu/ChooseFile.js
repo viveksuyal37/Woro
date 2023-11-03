@@ -31,7 +31,7 @@ const ChooseFile = ({ ContentType }) => {
         background:
           "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
-      className="relative rounded-[20px] p-[34px_65px_65px_65px] w-[846px] h-[704px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] "
+      className="relative rounded-[20px] p-[34px_65px_65px_65px] w-[700px] 2xl:w-[846px] h-[500px] 2xl:h-[704px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] "
     >
       {/* back btn */}
       <button
@@ -43,8 +43,7 @@ const ChooseFile = ({ ContentType }) => {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="44"
-          height="44"
+          className="w-8 h-8 2xl:w-11 2xl:h-11"
           viewBox="0 0 44 44"
           fill="none"
         >
@@ -55,7 +54,7 @@ const ChooseFile = ({ ContentType }) => {
         </svg>
       </button>
 
-      <h1 className="text-[36px] font-bold text-center">
+      <h1 className="text-2xl 2xl:text-[36px] font-bold text-center">
         Create new {ContentType}
       </h1>
       {/* file uploader */}
@@ -63,7 +62,7 @@ const ChooseFile = ({ ContentType }) => {
         <div
           {...getRootProps({
             className:
-              "rounded-[20px] mt-[34px] cursor-pointer overflow-clip border-dashed bg-white border-[1px] border-black w-[716px] h-[528px] flex items-center justify-center flex-col gap-[14px]",
+              "rounded-[20px] mt-[34px] cursor-pointer overflow-clip border-dashed bg-white border-[1px] border-black 2xl:w-[716px] h-[370px] 2xl:h-[528px] flex items-center justify-center flex-col gap-[14px]",
           })}
           title="Click to upload"
         >

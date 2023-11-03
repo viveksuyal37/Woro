@@ -11,7 +11,7 @@ const DriveContainer = ({ expandedCard }) => {
       className={classNames(
         "flex gap-[10.5px] 2xl:gap-[15px] items-center justify-center rounded-[20px]  shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] overflow-hidden w-full transition-all duration-300 ease-in-out opacity-1",
         { "w-0 h-0 p-0 opacity-0 hidden": expandedCard },
-        { "p-[10px] 2xl:p-[14px_15px]": !expandedCard }
+        { "min-h-[61px] p-[10px] 2xl:p-[14px_15px]": !expandedCard }
       )}
     >
       {!expandedCard &&

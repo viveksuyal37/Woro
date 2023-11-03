@@ -68,18 +68,18 @@ const CircularMenu = () => {
               " linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
             animation: "grow 300ms linear",
           }}
-          className=" border-[1px] border-white relative  flex items-center justify-center w-[744px] h-[744px] rounded-full bg-white"
+          className=" border-[1px] border-white relative  flex items-center justify-center   w-[520px] h-[520px] 2xl:w-[744px] 2xl:h-[744px] rounded-full bg-white"
         >
           {/* inner circle */}
           <div
             className={classNames(
-              "flex justify-center items-center z-10 w-[334px] h-[334px] rounded-full bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]",
+              "flex justify-center items-center z-10 w-[233px] 2xl:w-[334px] h-[233px] 2xl:h-[334px] rounded-full bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]",
               { "border-woro-blue border-[2px]": innerMenuDataIndex !== null }
             )}
           >
-            <div className="flex min-h-[220px] leading-tight flex-col text-[14px] max-w-[200px] items-center justify-between">
+            <div className="flex min-h-[150px]  2xl:min-h-[220px] leading-tight flex-col text-[9px] 2xl:text-[14px] max-w-[200px] items-center justify-between">
               <div className="flex flex-col items-center gap-3 text-center">
-                <h2 className="font-bold text-[18px] text-woro-blue">
+                <h2 className="font-bold text-[12px] 2xl:text-[18px] text-woro-blue">
                   {innerMenuDataIndex !== null
                     ? InnerMenuData[innerMenuDataIndex].title
                     : "What would you like to make?"}
@@ -91,10 +91,10 @@ const CircularMenu = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col w-full gap-3 font-bold text-center">
+              <div className="flex flex-col w-full gap-1 font-bold text-center 2xl:gap-3">
                 <h3>Supported Platforms</h3>
                 {/* Supported platforms icons */}
-                <div className="flex justify-center w-full gap-[10px]">
+                <div className="flex child:w-[14px]  child:2xl:w-[21px]  justify-center w-full gap-[10px]">
                   <Image
                     width="21"
                     height="21"
@@ -141,8 +141,7 @@ const CircularMenu = () => {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="64"
-              height="64"
+              className="w-10 h-10 2xl:w-16 2xl:h-16"
               viewBox="0 0 64 64"
               fill="none"
             >
@@ -151,7 +150,7 @@ const CircularMenu = () => {
                 className="fill-black group-hover:fill-woro-blue"
               />
             </svg>
-            <p className="font-bold text-[18px]">Poll</p>
+            <p className="font-bold text-[12px] 2xl:text-[18px]">Poll</p>
           </div>
 
           <div
@@ -165,12 +164,11 @@ const CircularMenu = () => {
               setInnerMenuDataIndex(null);
             }}
             //   style={{ clipPath: "polygon(0 51%, 100% 2%, 100% 100%, 0 100%)" }}
-            className=" group cursor-pointer hover:text-woro-blue hover:scale-125 transition-all duration-300 ease-linear   absolute top-[175px] right-[78px]  flex flex-col items-center gap-[6px] "
+            className=" group cursor-pointer hover:text-woro-blue hover:scale-125 transition-all duration-300 ease-linear   absolute top-[163px] 2xl:top-[175px] right-[38px] 2xl:right-[78px]  flex flex-col items-center gap-[6px] "
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="64"
-              height="64"
+              className="w-10 h-10 2xl:w-16 2xl:h-16"
               viewBox="0 0 64 64"
               fill="none"
             >
@@ -179,7 +177,9 @@ const CircularMenu = () => {
                 className="fill-black group-hover:fill-woro-blue"
               />
             </svg>
-            <p className="font-bold text-[18px]">Video content</p>
+            <p className="font-bold text-[12px] 2xl:text-[18px]">
+              Video content
+            </p>
           </div>
 
           <div
@@ -193,12 +193,11 @@ const CircularMenu = () => {
               setInnerMenuDataIndex(null);
             }}
             //   style={{ clipPath: "polygon(0 51%, 100% 2%, 100% 100%, 0 100%)" }}
-            className="group cursor-pointer hover:text-woro-blue  hover:scale-125 transition-all duration-300 ease-linear  absolute top-[459px] right-[101px] flex flex-col items-center gap-[6px] "
+            className="group cursor-pointer hover:text-woro-blue  hover:scale-125 transition-all duration-300 ease-linear  absolute top-[338px] 2xl:top-[459px] right-[94px] 2xl:right-[101px] flex flex-col items-center gap-[6px] "
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="64"
-              height="64"
+              className="w-10 h-10 2xl:w-16 2xl:h-16"
               viewBox="0 0 64 64"
               fill="none"
             >
@@ -207,7 +206,7 @@ const CircularMenu = () => {
                 className="fill-black group-hover:fill-woro-blue"
               />
             </svg>
-            <p className="font-bold text-[18px]">Post</p>
+            <p className="font-bold text-[12px] 2xl:text-[18px]">Post</p>
           </div>
 
           <div
@@ -221,12 +220,11 @@ const CircularMenu = () => {
               setInnerMenuDataIndex(null);
             }}
             //   style={{ clipPath: "polygon(0 51%, 100% 2%, 100% 100%, 0 100%)" }}
-            className="group cursor-pointer hover:text-woro-blue  hover:scale-125 transition-all duration-300 ease-linear  absolute bottom-[46px] right-[327px] flex flex-col items-center gap-[6px] "
+            className="group cursor-pointer hover:text-woro-blue  hover:scale-125 transition-all duration-300 ease-linear  absolute bottom-[46px] right-[230px] 2xl:right-[327px] flex flex-col items-center gap-[6px] "
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="64"
-              height="64"
+              className="w-10 h-10 2xl:w-16 2xl:h-16"
               viewBox="0 0 64 64"
               fill="none"
             >
@@ -242,7 +240,7 @@ const CircularMenu = () => {
                 </clipPath>
               </defs>
             </svg>
-            <p className="font-bold text-[18px]">Live/event</p>
+            <p className="font-bold text-[12px] 2xl:text-[18px]">Live/event</p>
           </div>
 
           <div
@@ -256,12 +254,11 @@ const CircularMenu = () => {
               setInnerMenuDataIndex(null);
             }}
             //   style={{ clipPath: "polygon(0 51%, 100% 2%, 100% 100%, 0 100%)" }}
-            className="group cursor-pointer hover:text-woro-blue  hover:scale-125 transition-all duration-300 ease-linear absolute top-[459px] left-[101px] flex flex-col items-center gap-[6px] "
+            className="group cursor-pointer hover:text-woro-blue  hover:scale-125 transition-all duration-300 ease-linear absolute top-[338px] 2xl:top-[459px] left-[76px] 2xl:left-[101px] flex flex-col items-center gap-[6px] "
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="64"
-              height="64"
+              className="w-10 h-10 2xl:w-16 2xl:h-16"
               viewBox="0 0 64 64"
               fill="none"
             >
@@ -270,7 +267,7 @@ const CircularMenu = () => {
                 className="fill-black group-hover:fill-woro-blue"
               />
             </svg>
-            <p className="font-bold text-[18px]">Carousel</p>
+            <p className="font-bold text-[12px] 2xl:text-[18px]">Carousel</p>
           </div>
 
           <div
@@ -284,12 +281,11 @@ const CircularMenu = () => {
               setInnerMenuDataIndex(null);
             }}
             //   style={{ clipPath: "polygon(0 51%, 100% 2%, 100% 100%, 0 100%)" }}
-            className="group cursor-pointer hover:text-woro-blue  hover:scale-125 transition-all duration-300 ease-linear  absolute top-[185px] left-[78px] flex flex-col items-center gap-[6px] "
+            className="group cursor-pointer hover:text-woro-blue  hover:scale-125 transition-all duration-300 ease-linear  absolute top-[178px] left-[37px] 2xl:left-[78px] flex flex-col items-center gap-[6px] "
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="51"
-              height="51"
+              className="w-10 h-10 2xl:w-[51px] 2xl:h-[51px]"
               viewBox="0 0 51 51"
               fill="none"
             >
@@ -310,7 +306,9 @@ const CircularMenu = () => {
                 </clipPath>
               </defs>
             </svg>
-            <p className="font-bold text-[18px]">Reels/Shorts</p>
+            <p className="font-bold text-[12px] 2xl:text-[18px]">
+              Reels/Shorts
+            </p>
           </div>
 
           {/* close btn */}
@@ -322,7 +320,8 @@ const CircularMenu = () => {
               background:
                 " linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
             }}
-            className="cursor-pointer flex items-center justify-center absolute top-0 right-0 w-[87px] h-[87px] rounded-full"
+            title="Close"
+            className="cursor-pointer flex items-center justify-center absolute top-0 right-0 w-[57px] 2xl:w-[87px] h-[57px] 2xl:h-[87px] rounded-full"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -330,7 +329,7 @@ const CircularMenu = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6"
+              className="w-4 h-4 2xl:w-6 2xl:h-6"
             >
               <path
                 strokeLinecap="round"

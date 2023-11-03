@@ -39,26 +39,27 @@ const ChoosePlatforms = () => {
         background:
           "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
-      className="relative flex flex-wrap gap-[22px] w-[951px] min-h-[660px] p-[50px] rounded-[20px] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]"
+      className="relative flex flex-wrap gap-[22px] w-[700px] 2xl:w-[951px] min-h-[460px] 2xl:min-h-[660px] p-[50px] rounded-[20px] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]"
     >
       <div
         onClick={() => {
           updatePlatforms("facebook");
         }}
         className={classNames(
-          "w-[269px] cursor-pointer flex items-center justify-center h-[269px]  border-[1px] rounded-lg hover:border-woro-blue hover:border-solid border-black",
+          "w-[180px] 2xl:w-[269px] cursor-pointer flex items-center justify-center h-[180px] 2xl:h-[269px]  border-[1px] rounded-lg hover:border-woro-blue hover:border-solid border-black",
           {
             "border-woro-blue border-solid": platforms?.includes("facebook"),
             "border-dashed": !platforms?.includes("facebook"),
           }
         )}
       >
-        <div className="flex flex-col items-center font-bold text-[18px] gap-2">
+        <div className="flex flex-col items-center font-bold text-[14px] 2xl:text-[18px] gap-2">
           <Image
             src="/assets/images/dashboard/fb.png"
             alt="fb"
             width="43"
             height="43"
+            className="w-8 2xl:w-[43px] "
           />
           <h6>Facebook</h6>
         </div>
@@ -69,19 +70,20 @@ const ChoosePlatforms = () => {
           updatePlatforms("youtube");
         }}
         className={classNames(
-          "w-[269px] cursor-pointer flex items-center justify-center h-[269px]  border-[1px] rounded-lg hover:border-woro-blue hover:border-solid border-black",
+          "w-[180px] 2xl:w-[269px] cursor-pointer flex items-center justify-center h-[180px] 2xl:h-[269px]  border-[1px] rounded-lg hover:border-woro-blue hover:border-solid border-black",
           {
             "border-woro-blue border-solid": platforms?.includes("youtube"),
             "border-dashed": !platforms?.includes("youtube"),
           }
         )}
       >
-        <div className="flex flex-col items-center font-bold text-[18px] gap-2">
+        <div className="flex flex-col items-center font-bold text-[14px] 2xl:text-[18px] gap-2">
           <Image
             src="/assets/images/dashboard/youtube.png"
             alt="fb"
             width="43"
             height="43"
+            className="w-8 2xl:w-[43px] "
           />
           <h6>Youtube</h6>
         </div>
@@ -92,19 +94,20 @@ const ChoosePlatforms = () => {
           updatePlatforms("instagram");
         }}
         className={classNames(
-          "w-[269px] cursor-pointer flex items-center justify-center h-[269px]  border-[1px] rounded-lg hover:border-woro-blue hover:border-solid border-black",
+          "w-[180px] 2xl:w-[269px] cursor-pointer flex items-center justify-center h-[180px] 2xl:h-[269px]  border-[1px] rounded-lg hover:border-woro-blue hover:border-solid border-black",
           {
             "border-woro-blue border-solid": platforms?.includes("instagram"),
             "border-dashed": !platforms?.includes("instagram"),
           }
         )}
       >
-        <div className="flex flex-col items-center font-bold text-[18px] gap-2">
+        <div className="flex flex-col items-center font-bold text-[14px] 2xl:text-[18px] gap-2">
           <Image
             src="/assets/images/dashboard/instagram.png"
             alt="fb"
             width="43"
             height="43"
+            className="w-8 2xl:w-[43px] "
           />
           <h6>Instagram</h6>
         </div>
@@ -115,19 +118,20 @@ const ChoosePlatforms = () => {
           updatePlatforms("linkedIn");
         }}
         className={classNames(
-          "w-[269px] cursor-pointer flex items-center justify-center h-[269px]  border-[1px] rounded-lg hover:border-woro-blue hover:border-solid border-black",
+          "w-[180px] 2xl:w-[269px] cursor-pointer flex items-center justify-center h-[180px] 2xl:h-[269px]  border-[1px] rounded-lg hover:border-woro-blue hover:border-solid border-black",
           {
             "border-woro-blue border-solid": platforms?.includes("linkedIn"),
             "border-dashed": !platforms?.includes("linkedIn"),
           }
         )}
       >
-        <div className="flex flex-col items-center font-bold text-[18px] gap-2">
+        <div className="flex flex-col items-center font-bold text-[14px] 2xl:text-[18px] gap-2">
           <Image
             src="/assets/images/dashboard/linkedIn.png"
             alt="LinkedIn"
             width="43"
             height="43"
+            className="w-8 2xl:w-[43px] "
           />
           <h6>LinkedIn</h6>
         </div>
@@ -183,7 +187,6 @@ const ChoosePlatforms = () => {
           />
         </svg>
       </button>
-      
     </div>
   );
 };
