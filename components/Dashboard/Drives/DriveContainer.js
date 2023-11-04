@@ -1,11 +1,22 @@
+import classNames from "classnames";
 import DriveCard from "./DriveCard";
 
-const DriveContainer = () => {
+const DriveContainer = ({ expandedCard }) => {
   return (
-    <div className="flex gap-[15px] items-center justify-center rounded-[20px] border-2 border-[#263238] border-dashed  p-[14px_15px]">
-
-        {["","",""].map((card,indx)=>{
-            return <DriveCard key={indx}/>
+    <div
+      style={{
+        background:
+          "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
+      }}
+      className={classNames(
+        "flex gap-[10.5px] 2xl:gap-[15px] items-center justify-center rounded-[20px]  shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] overflow-hidden w-full transition-all duration-300 ease-in-out opacity-1",
+        { "w-0 h-0 p-0 opacity-0 hidden": expandedCard },
+        { "min-h-[61px] p-[10px] 2xl:p-[14px_15px]": !expandedCard }
+      )}
+    >
+      {!expandedCard &&
+        ["", "", ""].map((card, indx) => {
+          return <DriveCard key={indx} />;
         })}
     </div>
   );

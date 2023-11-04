@@ -1,9 +1,12 @@
 "use client";
-import classNames from "classnames";
+/*BuiltIn Imports */
 import Image from "next/image";
 import { useState } from "react";
 
-const PostInfo = () => {
+/*External Imports */
+import classNames from "classnames";
+
+const PostInfo = ({ expandedCard }) => {
   const [activeItem, setActiveItem] = useState(0);
   return (
     <div
@@ -11,9 +14,16 @@ const PostInfo = () => {
         background:
           " linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
-      className="rounded-[11px] flex flex-col  p-[20px_18px] w-[22.1vw] max-w-[500px]"
+      className={classNames(
+        "rounded-[11px] flex h-full overflow-hidden transition-all duration-300 ease-in-out  flex-col ",
+        { "  w-0 h-0 p-0 opacity-0": expandedCard },
+        {
+          "p-[13px] 2xl:p-[20px_18px] w-[22.1vw] opacity-1 max-w-[500px]":
+            !expandedCard,
+        }
+      )}
     >
-      <div className="flex justify-center gap-[22px] text-[18px] font-bold">
+      <div className="flex justify-center gap-[22px] text-[12px] 2xl:text-[18px] font-bold">
         <div className="relative">
           <h6
             onClick={() => setActiveItem(0)}
@@ -29,7 +39,7 @@ const PostInfo = () => {
           </h6>
           <div
             className={classNames(
-              "bg-woro-blue h-[3px] w-full absolute bottom-[-9px] transition-opacity duration-300",
+              "bg-woro-blue h-[2px] 2xl:h-[3px] w-full absolute bottom-[-5px] 2xl:bottom-[-9px] transition-opacity duration-300",
               {
                 "opacity-0": activeItem === 1,
               }
@@ -51,7 +61,7 @@ const PostInfo = () => {
           </h6>
           <div
             className={classNames(
-              "bg-woro-blue h-[3px] w-full absolute bottom-[-9px] transition-opacity duration-300",
+              "bg-woro-blue h-[2px] 2xl:h-[3px] w-full absolute bottom-[-5px] 2xl:bottom-[-9px] transition-opacity duration-300",
               {
                 "opacity-0": activeItem === 0,
               }
@@ -60,15 +70,15 @@ const PostInfo = () => {
         </div>
       </div>
 
-      <div className="mt-4 text-[18px]">
-        {["", ""].map((i, indx) => {
+      <div className="w-full scrollableContainer overflow-auto mt-2 2xl:mt-4 text-[11.7px] 2xl:text-[18px]">
+        {["", "", ""].map((i, indx) => {
           //! add nanoid
           return (
             <div
               key={indx}
               className={classNames(
                 " border-[#7F7789] p-[12px_2px] flex gap-[12px] items-center justify-between leading-tight",
-                { "border-b-[1px]": indx !== 1 }
+                { "border-b-[1px]": indx !== 2 }
               )}
             >
               <Image
@@ -76,6 +86,7 @@ const PostInfo = () => {
                 src="/assets/images/dashboard/fb.png"
                 width="41"
                 height="41"
+                className="max-w-[27px] 2xl:max-w-[41px]"
               />
               <p>
                 <strong>Facebook</strong>

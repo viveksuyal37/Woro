@@ -1,13 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { collapseAll } from "@/Redux/slices/CardSlice";
+import { toggleCircularMenu } from "@/Redux/slices/CircularMenuSlice";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 const MidFooter = () => {
   const [activeMenu, setActiveMenu] = useState(0);
-
-  useEffect(() => {
-    console.log(activeMenu);
-  }, [activeMenu]);
+  const dispatch = useDispatch();
+  const pathname = usePathname();
 
   return (
     <div
@@ -15,16 +18,19 @@ const MidFooter = () => {
         background:
           "linear-gradient(139deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.70) 51.35%, rgba(255, 255, 255, 0.50) 100%)",
       }}
-      className=" flex justify-between p-[14px_21px_14px_15px] 2xl:max-w-[867px] h-[85px] 2xl:h-[118px]  gap-[14px]  rounded-[20px] backdrop-blur-[5px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]"
+      className="  flex justify-between p-[9.5px_10px] 2xl:p-[14px_21px_14px_15px]  h-full  gap-[14px]  rounded-[20px] backdrop-blur-[5px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] child:text-[11px] child:2xl:text-[1rem]"
     >
-      <div
+      <Link
+        href="/dashboard"
         onClick={() => {
+          if (pathname !== "/dashboard") dispatch(collapseAll());
+
           setActiveMenu(0);
         }}
         className={
           activeMenu === 0
-            ? "flex bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] cursor-pointer gap-[10px] p-[33px_35px] rounded-[10px]  h-full text-woro-blue"
-            : " flex cursor-pointer gap-[10px] p-[33px_35px] rounded-[10px]  h-full text-black"
+            ? "flex bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] cursor-pointer gap-[6px] 2xl:gap-[10px] p-[22px_23px] 2xl:p-[33px_35px] rounded-[10px]  h-full text-woro-blue"
+            : " flex cursor-pointer gap-[6px] 2xl:gap-[10px] p-[22px_23px] 2xl:p-[33px_35px] rounded-[10px]  h-full text-black"
         }
       >
         <svg
@@ -33,7 +39,7 @@ const MidFooter = () => {
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-4 h-4 2xl:w-6 2xl:h-6"
         >
           <path
             strokeLinecap="round"
@@ -42,16 +48,17 @@ const MidFooter = () => {
           />
         </svg>{" "}
         <p>Home</p>
-      </div>
+      </Link>
 
-      <div
+      <Link
+        href="/dashboard/calender"
         onClick={() => {
           setActiveMenu(1);
         }}
         className={
           activeMenu === 1
-            ? "flex bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] cursor-pointer gap-[10px] p-[33px_35px] rounded-[10px]  h-full text-woro-blue"
-            : " flex cursor-pointer gap-[10px] p-[33px_35px] rounded-[10px]  h-full text-black"
+            ? "flex bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] cursor-pointer gap-[6px] 2xl:gap-[10px] p-[22px_23px] 2xl:p-[33px_35px] rounded-[10px]  h-full text-woro-blue"
+            : " flex cursor-pointer gap-[6px] 2xl:gap-[10px] p-[22px_23px] 2xl:p-[33px_35px] rounded-[10px]  h-full text-black"
         }
       >
         <svg
@@ -60,7 +67,7 @@ const MidFooter = () => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-4 h-4 2xl:w-6 2xl:h-6"
         >
           <path
             strokeLinecap="round"
@@ -69,13 +76,17 @@ const MidFooter = () => {
           />
         </svg>
         <p>Calender</p>
-      </div>
+      </Link>
 
+      {/* circular menu btn */}
       <div
         style={{
           background: "linear-gradient(135deg, #7F1DFE 0%, #464BD3 100%)",
         }}
-        className=" flex text-white items-center justify-center w-[96px] h-[96px]  rounded-full "
+        onClick={() => {
+          dispatch(toggleCircularMenu());
+        }}
+        className=" flex cursor-pointer text-white items-center justify-center w-[65px] 2xl:w-[96px] h-[65px] 2xl:h-[96px]  rounded-full "
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -99,25 +110,26 @@ const MidFooter = () => {
         }}
         className={
           activeMenu === 2
-            ? "flex bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] cursor-pointer gap-[10px] p-[33px_35px] rounded-[10px]  h-full text-woro-blue"
-            : " flex cursor-pointer gap-[10px] p-[33px_35px] rounded-[10px]  h-full text-black"
+            ? "flex bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] cursor-pointer gap-[6px] 2xl:gap-[10px] p-[22px_23px] 2xl:p-[33px_35px] rounded-[10px]  h-full text-woro-blue"
+            : " flex cursor-pointer gap-[6px] 2xl:gap-[10px] p-[22px_23px] 2xl:p-[33px_35px] rounded-[10px]  h-full text-black"
         }
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          strokeWidth="1.5"
+          strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-4 h-4 2xl:w-6 2xl:h-6"
         >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+            d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
           />
         </svg>
-        <p>Support</p>
+
+        <p>Messages</p>
       </div>
 
       <div
@@ -126,8 +138,8 @@ const MidFooter = () => {
         }}
         className={
           activeMenu === 3
-            ? "flex bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] cursor-pointer gap-[10px] p-[33px_35px] rounded-[10px]  h-full text-woro-blue"
-            : " flex cursor-pointer gap-[10px] p-[33px_35px] rounded-[10px]  h-full text-black"
+            ? "flex bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] cursor-pointer gap-[6px] 2xl:gap-[10px]  p-[22px_23px] 2xl:p-[33px_25px_35px_35px] rounded-[10px]  h-full text-woro-blue"
+            : " flex cursor-pointer gap-[6px] 2xl:gap-[10px] p-[22px_23px] 2xl:p-[33px_25px_35px_35px]  rounded-[10px]  h-full text-black"
         }
       >
         <svg
@@ -136,7 +148,7 @@ const MidFooter = () => {
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-4 h-4 2xl:w-6 2xl:h-6"
         >
           <path
             strokeLinecap="round"
@@ -148,8 +160,8 @@ const MidFooter = () => {
             strokeLinejoin="round"
             d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
           />
-        </svg>{" "}
-        <p>Settings</p>
+        </svg>
+        <p>What's new</p>
       </div>
     </div>
   );

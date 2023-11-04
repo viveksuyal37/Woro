@@ -1,14 +1,32 @@
-const UGC = () => {
+/*BuiltIn Imports */
+import Link from "next/link";
+
+/*External Imports */
+import classNames from "classnames";
+
+const UGC = ({ expandedCard }) => {
   return (
-    <div
+    <Link
+      href="/dashboard/UGC"
       style={{
         background:
-          "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
+          "linear-gradient(91deg, rgba(135, 33, 244, 0.30) 8.9%, rgba(194, 63, 168, 0.30) 59.14%, rgba(242, 86, 107, 0.30) 95.33%) ",
       }}
-      className="bg-white rounded-[11px] h-full w-full"
+      className={classNames(
+        "bg-white rounded-[11px]  transition-all overflow-hidden duration-300 ease-in-out opacity-1  flex justify-end ",
+        {
+          "hidden ": expandedCard,
+          "h-full  w-full p-[7px] 2xl:p-[20px]": !expandedCard,
+        }
+      )}
     >
-      UGC
-    </div>
+      <div className="flex leading-tight text-[10px] 2xl:text-[14px] flex-col">
+        <h6 className="text-[12.5px] 2xl:text-[18px] font-bold">
+          Introducing UGC
+        </h6>
+        <p>User generated Content</p>
+      </div>
+    </Link>
   );
 };
 
