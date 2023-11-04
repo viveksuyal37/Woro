@@ -12,6 +12,7 @@ import {
 } from "recharts";
 
 const Analytics = ({ cardId, expandedCard }) => {
+
   const data = [
     {
       name: "20 Sep",
@@ -66,10 +67,10 @@ const Analytics = ({ cardId, expandedCard }) => {
             "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
         }}
         className={classNames(
-          " transition-all  duration-300 overflow-hidden opacity-1 ease-in-out   rounded-[20px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]",
+          " transition-all  duration-300 overflow-hidden opacity-1 ease-in-out  rounded-[20px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]",
           {
             " hidden": expandedCard && cardId !== expandedCard,
-            "h-[338px] w-full p-[32px_20px_40px_20px]": cardId === expandedCard,
+            "h-[34vh] 2xl:h-[338px] w-[84vw] 2xl:w-full p-[32px_20px_40px_20px]": cardId === expandedCard,
             "w-[42.67vw] 2xl:w-[43.58vw] h-[34.35vh] min-h-[213px] 2xl:min-h-[305px] p-[12px] 2xl:p-[20px] max-w-[1000px]":
               !expandedCard,
           }
@@ -88,8 +89,8 @@ const Analytics = ({ cardId, expandedCard }) => {
           )}
 
           {expandedCard === cardId && (
-            <div className="flex flex-col text-[14px] ml-16 font-bold ">
-              <h3 className="text-[28px] text-woro-blue ">Reach Overview</h3>
+            <div className="flex flex-col text-[10px] 2xl:text-[14px] ml-16 font-bold ">
+              <h3 className="text-xl 2xl:text-[28px] text-woro-blue ">Reach Overview</h3>
               <span>Users-Date graph</span>
             </div>
           )}
@@ -148,32 +149,32 @@ const Analytics = ({ cardId, expandedCard }) => {
 
       {/* last row  */}
       {cardId === expandedCard && (
-        <div className="flex gap-[22px]">
+        <div className="flex h-[32vh] 2xl:h-[292px] gap-[22px]">
           {/* left graph */}
           <div
             style={{
               background:
                 "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
             }}
-            className="  w-full h-[292px]  rounded-[20px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] p-[31px_20px]"
+            className=" w-[47vw] 2xl:w-full  rounded-[20px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] p-[20px_10px] 2xl:p-[31px_20px]"
           >
             {/* header */}
             <div className="flex items-center justify-between">
-              <div className="flex flex-col text-[14px] ml-16 font-bold ">
-                <h3 className="text-[28px] text-woro-blue ">
+              <div className="flex flex-col text-[10px] 2xl:text-[14px] ml-16 font-bold ">
+                <h3 className="text-xl 2xl:text-[28px] text-woro-blue ">
                   Impressions Overview
                 </h3>
                 <span>Users-Date graph</span>
               </div>
 
               <div className="flex  items-center  gap-[10px]">
-                <select className="w-[111px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
+                <select className="w-[111px] outline-none h-[25px] 2xl:h-[46px] text-[10px] 2xl:text-[14px] text-[#7F7789] p-1 2xl:p-[9px]  border border-[#C8C7C9] rounded-[6px]">
                   <option>Post</option>
                 </select>
-                <select className="w-[67px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
+                <select className="w-[67px] outline-none h-[25px] 2xl:h-[46px] text-[10px] 2xl:text-[14px] text-[#7F7789] p-1 2xl:p-[9px]  border border-[#C8C7C9] rounded-[6px]">
                   <option>Fb</option>
                 </select>
-                <select className="w-[137px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
+                <select className="w-[137px] outline-none h-[25px] 2xl:h-[46px] text-[10px] 2xl:text-[14px] text-[#7F7789] p-1 2xl:p-[9px]  border border-[#C8C7C9] rounded-[6px]">
                   <option>Last & days</option>
                 </select>
               </div>
@@ -221,25 +222,25 @@ const Analytics = ({ cardId, expandedCard }) => {
               background:
                 "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
             }}
-            className="  w-full h-[292px] p-[31px_20px] rounded-[20px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]"
+            className=" w-[35vw] 2xl:w-full h-full p-[20px_10px] 2xl:p-[31px_20px] rounded-[20px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] "
           >
             {/* header */}
             <div className="flex items-center justify-between">
-              <div className="flex flex-col text-[14px] ml-16 font-bold ">
-                <h3 className="text-[28px] text-woro-blue ">
+              <div className="flex flex-col text-[10px] 2xl:text-[14px] ml-16 font-bold ">
+                <h3 className="text-xl 2xl:text-[28px] text-woro-blue ">
                   Engagement Overview
                 </h3>
                 <span>Users-Date graph</span>
               </div>
 
               <div className="flex  items-center  gap-[10px]">
-                <select className="w-[111px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
+                <select className="2xl:w-[111px] outline-none h-[25px] 2xl:h-[46px] text-[10px] 2xl:text-[14px] text-[#7F7789] p-1 2xl:p-[9px]  border border-[#C8C7C9] rounded-[6px]">
                   <option>Post</option>
                 </select>
-                <select className="w-[67px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
+                <select className="w-[67px] outline-none h-[25px] 2xl:h-[46px] text-[10px] 2xl:text-[14px] text-[#7F7789] p-1 2xl:p-[9px]  border border-[#C8C7C9] rounded-[6px]">
                   <option>Fb</option>
                 </select>
-                <select className="w-[137px] outline-none h-[46px] text-[14px] text-[#7F7789] p-[9px]  border border-[#C8C7C9] rounded-[6px]">
+                <select className="2xl:w-[137px] outline-none h-[25px] 2xl:h-[46px] text-[10px] 2xl:text-[14px] text-[#7F7789] p-1 2xl:p-[9px]  border border-[#C8C7C9] rounded-[6px]">
                   <option>Last & days</option>
                 </select>
               </div>

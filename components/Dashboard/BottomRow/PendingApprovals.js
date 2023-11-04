@@ -12,7 +12,7 @@ const PendingApprovals = ({ cardId, expandedCard }) => {
       className={classNames(
         "bg-white h-full rounded-[11px] overflow-hidden transition-all duration-300 ease-in-out opacity-1",
         { "w-0 h-0 opacity-0": expandedCard && expandedCard !== cardId },
-        { "w-full h-[66vh] p-[46px]": expandedCard && expandedCard === cardId },
+        { "w-full min-h-[66vh] h-[66vh] p-6 2xl:p-[46px]":  expandedCard === cardId },
         { "  w-[30.21vw] max-w-[600px] p-[13px] 2xl:p-[20px] ": !expandedCard }
       )}
     >
@@ -20,7 +20,7 @@ const PendingApprovals = ({ cardId, expandedCard }) => {
       <div className="flex justify-between mb-2 font-bold 2xl:mb-4">
         <h6
           className={classNames("text-[10.5px] 2xl:text-[1rem]", {
-            "text-[24px]": cardId === expandedCard,
+            "text-xl 2xl:text-[24px]": cardId === expandedCard,
           })}
         >
           Pending approvals
@@ -102,9 +102,9 @@ const PendingApprovals = ({ cardId, expandedCard }) => {
 
       {/* approvals */}
       {expandedCard === cardId && (
-        <div className="flex justify-between py-[22px] border-b border-b-[#7F7789]">
-          <div className="flex gap-[32px] items-center">
-            <div className="w-[58px] h-[58px] rounded-full">
+        <div className="flex justify-between py-4 2xl:py-[22px] border-b border-b-[#7F7789]">
+          <div className="flex items-center gap-6 2xl:gap-8">
+            <div className="w-10 2xl:w-[58px] rounded-full">
               <Image
                 src="/assets/images/profile.png"
                 alt="approval profile"
@@ -113,16 +113,16 @@ const PendingApprovals = ({ cardId, expandedCard }) => {
               />
             </div>
             <div className="flex flex-col self-center">
-              <h6 className="text-[18px] font-bold ">Mike</h6>
-              <p className="text-woro-blue text-[14px]">Employee</p>
+              <h6 className="text-sm 2xl:text-[18px] font-bold ">Mike</h6>
+              <p className="text-woro-blue text-[9px] 2xl:text-[14px]">Employee</p>
             </div>
-            <div className="font-[14px] leading-tight">
+            <div className="text-[12px] 2xl:text-[14px] leading-tight">
               <p>wants to schedule a post on</p>
               <p>
                 <strong>21st August 2023, 10:00AM</strong>
               </p>
             </div>
-            <div className="flex gap-[10px] items-center">
+            <div className="flex gap-[10px] child:2xl:w-[38px] child:w-[28px] items-center">
               <Image
                 src="/assets/images/dashboard/fb.png"
                 width="38"
@@ -144,12 +144,11 @@ const PendingApprovals = ({ cardId, expandedCard }) => {
               <p>+2</p>
             </div>
           </div>
-          <div className="flex text-[24px] text-[#455A64]  gap-[22px] items-center">
+          <div className="flex text-lg 2xl:text-[24px] text-[#455A64]  gap-[22px] items-center">
             <p>5 mins ago</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="45"
-              height="45"
+             className="w-8 h-8 2xl:w-11 2xl:h-11"
               viewBox="0 0 45 45"
               fill="none"
             >
@@ -158,11 +157,10 @@ const PendingApprovals = ({ cardId, expandedCard }) => {
                 fill="#7F1DFE"
               />
             </svg>
-            <div className="flex items-center gap-2 text-white p-[12px_37px] rounded-[3px] bg-woro-blue">
+            <div className="flex items-center gap-2  text-sm 2xl:text-[1rem] text-white p-[8px_20px] 2xl:p-[12px_37px] rounded-[3px] bg-woro-blue">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+               className="w-4 h-4 2xl:w-6 2xl:h-6"
                 viewBox="0 0 24 24"
                 fill="none"
               >
@@ -175,8 +173,7 @@ const PendingApprovals = ({ cardId, expandedCard }) => {
             </div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="68"
-              height="68"
+             className="w-10 h-10 2xl:w-16 2xl:h-16"
               viewBox="0 0 68 68"
               fill="none"
             >
