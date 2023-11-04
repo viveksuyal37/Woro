@@ -18,7 +18,7 @@ const TrendingNow = ({ cardId, expandedCard }) => {
       className={classNames(
         "bg-white  relative rounded-[11px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] opacity-1  overflow-hidden transition-all duration-300 ease-in-out",
         { "w-0 h-0 opacity-0 p-0": expandedCard && expandedCard !== cardId },
-        { "w-full h-[66vh] p-[41px_46px]": expandedCard === cardId },
+        { "w-full h-[66vh] p-8 2xl:p-[41px_46px]": expandedCard === cardId },
         {
           "w-[39.68vw] p-[11px_14px] 2xl:p-[20px_0px_14px_14px] ":
             !expandedCard,
@@ -72,23 +72,23 @@ const TrendingNow = ({ cardId, expandedCard }) => {
       {expandedCard === cardId && (
         <section className="h-full overflow-y-scroll scrollContainer">
           {/* top Popular */}
-          <h1 className="text-[36px] font-bold text-woro-blue w-max">
+          <h1 className="text-2xl 2xl:text-[36px] mb-2 font-bold text-woro-blue w-max">
             Popular
           </h1>
-          <div className="flex w-full gap-8 overflow-x-hidden">
+          <div className="flex w-full gap-5 overflow-x-hidden 2xl:gap-8">
             {/* /news cards */}
 
             {["", "", "", ""]?.map(() => {
               return (
                 <div
                   key={nanoid(4)}
-                  className="flex flex-col flex-shrink-0 w-[502px] gap-[22px]"
+                  className="flex flex-col flex-shrink-0 w-[360px] 2xl:w-[502px] gap-[22px]"
                 >
                   <div className="bg-[url('/assets/images/newsExpanded.png')] w-full h-[188px] rounded-[10px] bg-cover bg-center"></div>
-                  <h2 className="text-[26px] leading-[29px] font-bold">
+                  <h2 className="text-xl 2xl:text-[26px] leading-tight 2xl:leading-[29px] font-bold">
                     "Scientists make breakthrough in renewable energy storage”
                   </h2>
-                  <div className="flex justify-between">
+                  <div className="flex text-sm 2xl:text-[16px] justify-between">
                     <div className="space-x-2">
                       <span>Guwahati, Assam</span>
                       <span>5h ago</span>
@@ -104,23 +104,23 @@ const TrendingNow = ({ cardId, expandedCard }) => {
           </div>
           {/* bottom latest News */}
 
-          <h1 className="text-[36px] mt-8 font-bold text-woro-blue w-max">
+          <h1 className="text-2xl 2xl:text-[36px] mb-2 mt-6 2xl:mt-8 font-bold text-woro-blue w-max">
             Latest News
           </h1>
-          <div className="flex w-full gap-8 overflow-x-hidden">
+          <div className="flex w-full gap-5 overflow-x-hidden 2xl:gap-8">
             {/* /news cards */}
 
             {["", "", "", ""]?.map(() => {
               return (
                 <div
                   key={nanoid(4)}
-                  className="flex flex-col flex-shrink-0 w-[502px] gap-[22px]"
+                  className="flex flex-col flex-shrink-0 w-[360px] 2xl:w-[502px] gap-[22px]"
                 >
                   <div className="bg-[url('/assets/images/newsExpanded.png')] w-full h-[188px] rounded-[10px] bg-cover bg-center"></div>
-                  <h2 className="text-[26px] leading-[29px] font-bold">
+                  <h2 className="text-xl 2xl:text-[26px] leading-tight 2xl:leading-[29px] font-bold">
                     "Scientists make breakthrough in renewable energy storage”
                   </h2>
-                  <div className="flex justify-between">
+                  <div className="flex text-sm 2xl:text-[16px] justify-between">
                     <div className="space-x-2">
                       <span>Guwahati, Assam</span>
                       <span>5h ago</span>

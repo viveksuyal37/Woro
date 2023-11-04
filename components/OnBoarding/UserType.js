@@ -1,17 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const UserType = () => {
+const UserType = ({ setOnBoardingStep }) => {
   return (
     <main className="w-screen h-screen pt-[40px] 2xl:pt-[51px] pb-[35px] 2xl:pb-[40px] px-[6.25vw]">
-      <section className="w-full h-full flex items-center justify-center gap-[46px] flex-col">
-        <Image src="/assets/images/logo.png" width="217" height="52"></Image>
+      <section className="w-full h-full flex items-center justify-center gap-8 2xl:gap-[46px] flex-col">
+        <Image
+          src="/assets/images/logo.png"
+          className="w-[160px] 2xl:w-[217px] "
+          width="217"
+          height="52"
+          alt=""
+        ></Image>
 
         <div className="flex flex-col gap-[22px] items-center">
-          <h1 className="text-[48px] font-bold">
+          <h1 className="text-3xl 2xl:text-[48px] font-bold">
             How do you plan to use woro?
           </h1>
-          <h5 className="text-[#7F7789] text-[24px]">
+          <h5 className="text-[#7F7789] text-lg 2xl:text-[24px]">
             For starters, tell us a bit about yourself
           </h5>
         </div>
@@ -77,12 +83,14 @@ const UserType = () => {
           </div>
         </div>
 
-        <Link
-          href="/dashboard"
-          className="bg-woro-blue text-white text-center py-[20px] cursor-pointer min-w-[893px]"
+        <div
+          onClick={() => {
+            setOnBoardingStep(3);
+          }}
+          className="bg-woro-blue text-white text-center py-4 2xl:py-[20px] cursor-pointer min-w-[893px]"
         >
-          Next{" "}
-        </Link>
+          Next
+        </div>
       </section>
     </main>
   );

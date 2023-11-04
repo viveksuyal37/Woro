@@ -58,7 +58,7 @@ const Analytics = ({ cardId, expandedCard }) => {
   ];
 
   return (
-    <section className="flex flex-col h-full gap-[22px] ">
+    <section className="flex flex-col 2xl:w-full h-full gap-[22px] ">
 
       <div
         style={{

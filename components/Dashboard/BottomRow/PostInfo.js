@@ -17,7 +17,10 @@ const PostInfo = ({ expandedCard }) => {
       className={classNames(
         "rounded-[11px] flex h-full overflow-hidden transition-all duration-300 ease-in-out  flex-col ",
         { "  w-0 h-0 p-0 opacity-0": expandedCard },
-        { "p-[13px] 2xl:p-[20px_18px] w-[22.1vw] opacity-1 max-w-[500px]": !expandedCard }
+        {
+          "p-[13px] 2xl:p-[20px_18px] w-[22.1vw] opacity-1 max-w-[500px]":
+            !expandedCard,
+        }
       )}
     >
       <div className="flex justify-center gap-[22px] text-[12px] 2xl:text-[18px] font-bold">

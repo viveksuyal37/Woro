@@ -73,7 +73,12 @@ export default function Home() {
         </div>
       </div>
       {/*bottom dashboard */}
-      <div className="flex mt-[13.25px] 2xl:mt-[19px]  h-[21.29vh] gap-[20.3px] 2xl:gap-[29px] justify-between">
+      <div
+        className={classNames(
+          "flex mt-[13.25px] 2xl:mt-[19px] gap-[20.3px] 2xl:gap-[29px] justify-between",
+          { "h-[21.29vh]": !expandedCard }
+        )}
+      >
         <PostInfo expandedCard={expandedCard} />
         <PendingApprovals
           expandedCard={expandedCard}

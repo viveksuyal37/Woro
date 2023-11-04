@@ -14,7 +14,7 @@ const page = () => {
     case 2:
       return <UserType setOnBoardingStep={setOnBoardingStep} />;
     case 3:
-      return <OnBoardingQuestions setOnBoardingStep={setOnBoardingStep} />;
+      return <OnBoardingQuestions />;
   }
 };
 

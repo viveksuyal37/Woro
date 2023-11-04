@@ -115,12 +115,14 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
       {expandedCard === cardId && (
         <div className="flex justify-between w-full h-full">
           {/* left */}
-          <div className=" p-[46px] max-w-[1057px]">
+          <div className=" p-6 2xl:p-[46px] max-w-[740px] 2xl:max-w-[1057px]">
             <div className="flex items-center justify-between">
-              <h3 className="text-[24px] font-bold">Select social media</h3>
+              <h3 className="text-xl 2xl:text-[24px] font-bold">
+                Select social media
+              </h3>
               <ExpandBtn cardId={cardId} />
             </div>
-            <div className="flex mt-[22px] mb-[50px] gap-[20px]">
+            <div className="flex mt-5 2xl:mt-[22px] mb-4 2xl:mb-[40px] gap-[20px]">
               {data?.map((item, indx) => {
                 return (
                   <div
@@ -129,7 +131,7 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
                       setActiveSocial(indx);
                     }}
                     className={classNames(
-                      "flex gap-[10px] font-bold text-[14px] items-center justify-center shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] w-[174px] h-[94px] rounded-[20px]",
+                      "flex gap-2 2xl:gap-[10px] font-bold text-[11px] 2xl:text-[14px] items-center justify-center shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] w-[174px] h-[70px] 2xl:h-[94px] rounded-[20px]",
                       { "bg-woro-blue text-white": activeSocial === indx }
                     )}
                   >
@@ -142,15 +144,16 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
                       }
                       width="32"
                       height="32"
+                      className="w-6 2xl:w-8"
                     />
                     <span>{item?.name}</span>
                   </div>
                 );
               })}
             </div>
-            <div className="flex flex-col font-bold gap-[23px]">
-              <h3 className="text-[24px]">Popular Tags</h3>
-              <div className="flex gap-4">
+            <div className="flex flex-col font-bold gap-3 2xl:gap-[23px]">
+              <h3 className="text-xl 2xl:text-[24px]">Popular Tags</h3>
+              <div className="flex text-sm 2xl:text-[1rem] gap-4">
                 <div className="flex gap-2">
                   <input type="checkbox"></input>
                   <label>Latest |</label>
@@ -165,7 +168,7 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
                 </div>
               </div>
 
-              <div className="flex font-normal  text-woro-blue text-[18px] flex-wrap space-x-2">
+              <div className="flex font-normal  text-woro-blue text-[14px] 2xl:text-[18px] flex-wrap space-x-2">
                 <p>#Lorem </p>
                 <p>#Ipsum </p>
                 <p>#Business</p>
@@ -191,15 +194,14 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
                 <p>#Business</p>
                 <p>#Art </p>
               </div>
-              <p className="underline font-normal  text-woro-blue text-[18px]">
+              <p className="underline font-normal  text-woro-blue text-[14px] 2xl:text-[18px]">
                 show more
               </p>
 
-              <div className="flex gap-1 items-center justify-center h-[48px] text-white bg-woro-blue">
+              <div className="text-sm 2xl:text-[1rem] flex gap-1 items-center justify-center h-8 2xl:h-[48px] text-white bg-woro-blue">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="25"
-                  height="24"
+                  className="w-4 h-4 2xl:h-6 2xl:w-6"
                   viewBox="0 0 25 24"
                   fill="none"
                 >
@@ -215,12 +217,11 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
                   background:
                     "linear-gradient(95deg, #7F1DFE 0%, #FD5C5C 100%)",
                 }}
-                className="flex gap-1 items-center justify-center h-[48px] text-white bg-woro-blue"
+                className="text-sm 2xl:text-[1rem] flex gap-1 items-center justify-center h-8 2xl:h-[48px] text-white bg-woro-blue"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
+                  className="w-4 h-4 2xl:h-6 2xl:w-6"
                   viewBox="0 0 24 24"
                   fill="none"
                 >

@@ -18,7 +18,7 @@ const RecentNotifications = ({ cardId, expandedCard }) => {
       className={classNames(
         " rounded-[20px]  overflow-hidden shadow-[ 0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] transition-all opacity-1 duration-300 ease-in-out",
         { "hidden opacity-0": expandedCard && expandedCard !== cardId },
-        { "h-[66vh] p-[46px]": expandedCard === cardId },
+        { "h-[66vh] p-6 2xl:p-[46px]": expandedCard === cardId },
         {
           "min-h-[213px] 2xl:min-h-[305px] h-[34.35vh] p-[14px_7px] 2xl:p-[14px_11px]":
             !expandedCard,
@@ -28,8 +28,9 @@ const RecentNotifications = ({ cardId, expandedCard }) => {
       {/* header*/}
       <div className="flex pl-[17px] pr-[9px] justify-between">
         <h6
-          className={classNames("font-bold text-[11px] 2xl:text-[1rem]", {
-            "text-[24px]": cardId === expandedCard,
+          className={classNames("font-bold ", {
+            "text-xl 2xl:text-[24px]": cardId === expandedCard,
+            "text-[11px] 2xl:text-[1rem]": !expandedCard,
           })}
         >
           Recent Notification
@@ -68,8 +69,8 @@ const RecentNotifications = ({ cardId, expandedCard }) => {
               <div
                 key={nanoid(4)}
                 className={classNames(
-                  " border-[#7F7789] text-[24px] justify-between p-[22px_30px] flex gap-[12px] items-center leading-tight",
-                  { "border-b-[1px]": indx !== 2 }
+                  " border-[#7F7789] text-[1rem] 2xl:text-[24px] justify-between p-[16px_24px] 2xl:p-[22px_30px] flex gap-[12px] items-center leading-tight",
+                  { "border-b-[1px]": indx !== 5 }
                 )}
               >
                 <div className="flex gap-[22px] items-center">
@@ -79,6 +80,7 @@ const RecentNotifications = ({ cardId, expandedCard }) => {
                     src="/assets/images/profile.png"
                     width="58"
                     height="58"
+                    className="w-[40px] 2xl:w-[58px]"
                   />
                   <div className="pr-2">
                     your <strong>Post</strong> received{" "}
@@ -93,6 +95,7 @@ const RecentNotifications = ({ cardId, expandedCard }) => {
                     src="/assets/images/dashboard/fb.png"
                     width="58"
                     height="58"
+                    className="w-[40px] 2xl:w-[58px]"
                   />
                 </div>
               </div>
