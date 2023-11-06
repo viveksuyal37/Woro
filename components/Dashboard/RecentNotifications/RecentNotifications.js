@@ -40,14 +40,14 @@ const RecentNotifications = ({ cardId, expandedCard }) => {
       </div>
 
       {/* notifications */}
-      <div className="mt-2 2xl:mt-4 h-[260px] scrollContainer ">
+      <div className="2xl:mt-4 h-[260px] scrollContainer ">
         {["", "", "", "", "", ""].map((i, indx) => {
           if (cardId !== expandedCard) {
             return (
               <div
                 key={nanoid(4)}
                 className={classNames(
-                  " border-[#7F7789] text-[10px] 2xl:text-[14px] p-[12px_2px] flex gap-[12px] items-center leading-tight",
+                  " border-[#7F7789] text-[10px] 2xl:text-[14px] p-[6px_2px] 2xl:p-[12px_2px] flex gap-2 2xl:gap-[12px] items-center leading-tight",
                   { "border-b-[1px]": indx !== 5 }
                 )}
               >
@@ -56,6 +56,7 @@ const RecentNotifications = ({ cardId, expandedCard }) => {
                   src="/assets/images/dashboard/fb.png"
                   width="32"
                   height="32"
+                  className="w-5 2xl:w-8"
                 />
                 <div className="pr-2">
                   your <strong>Post</strong> received{" "}
