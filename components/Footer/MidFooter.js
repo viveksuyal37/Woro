@@ -18,7 +18,7 @@ const MidFooter = () => {
         background:
           "linear-gradient(139deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.70) 51.35%, rgba(255, 255, 255, 0.50) 100%)",
       }}
-      className="  flex justify-between p-[9.5px_10px] 2xl:p-[14px_21px_14px_15px]  h-full  gap-[14px]  rounded-[20px] backdrop-blur-[5px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] child:text-[11px] child:2xl:text-[1rem]"
+      className="  flex justify-between items-center p-[9.5px_10px] 2xl:p-[14px_21px_14px_15px]  h-full  gap-[14px]  rounded-[20px] backdrop-blur-[5px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] child:text-[11px] child:2xl:text-[14px] child:3xl:text-[1rem]"
     >
       <Link
         href="/dashboard"
@@ -29,8 +29,8 @@ const MidFooter = () => {
         }}
         className={
           activeMenu === 0
-            ? "flex bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] cursor-pointer gap-[6px] 2xl:gap-[10px] p-[22px_23px] 2xl:p-[33px_35px] rounded-[10px]  h-full text-woro-blue"
-            : " flex cursor-pointer gap-[6px] 2xl:gap-[10px] p-[22px_23px] 2xl:p-[33px_35px] rounded-[10px]  h-full text-black"
+            ? "flex bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] cursor-pointer gap-[6px] 2xl:gap-[10px] p-[22px_23px] items-center 3xl:p-[33px_35px] rounded-[10px]  h-full text-woro-blue"
+            : " flex cursor-pointer gap-[6px] 2xl:gap-[10px] items-center p-[22px_23px] 3xl:p-[33px_35px] rounded-[10px]  h-full text-black"
         }
       >
         <svg
@@ -57,8 +57,8 @@ const MidFooter = () => {
         }}
         className={
           activeMenu === 1
-            ? "flex bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] cursor-pointer gap-[6px] 2xl:gap-[10px] p-[22px_23px] 2xl:p-[33px_35px] rounded-[10px]  h-full text-woro-blue"
-            : " flex cursor-pointer gap-[6px] 2xl:gap-[10px] p-[22px_23px] 2xl:p-[33px_35px] rounded-[10px]  h-full text-black"
+            ? "flex bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] cursor-pointer gap-[6px] 2xl:gap-[10px] items-center p-[22px_23px] 3xl:p-[33px_35px] rounded-[10px]  h-full text-woro-blue"
+            : " flex cursor-pointer items-center gap-[6px] 2xl:gap-[10px] p-[22px_23px] 3xl:p-[33px_35px] rounded-[10px]  h-full text-black"
         }
       >
         <svg
@@ -110,8 +110,8 @@ const MidFooter = () => {
         }}
         className={
           activeMenu === 2
-            ? "flex bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] cursor-pointer gap-[6px] 2xl:gap-[10px] p-[22px_23px] 2xl:p-[33px_35px] rounded-[10px]  h-full text-woro-blue"
-            : " flex cursor-pointer gap-[6px] 2xl:gap-[10px] p-[22px_23px] 2xl:p-[33px_35px] rounded-[10px]  h-full text-black"
+            ? "flex bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] cursor-pointer gap-[6px] 2xl:gap-[10px] p-[22px_23px] items-center 3xl:p-[33px_35px] rounded-[10px]  h-full text-woro-blue"
+            : " flex cursor-pointer gap-[6px] 2xl:gap-[10px] p-[22px_23px]  items-center 3xl:p-[33px_35px] rounded-[10px]  h-full text-black"
         }
       >
         <svg
@@ -138,8 +138,8 @@ const MidFooter = () => {
         }}
         className={
           activeMenu === 3
-            ? "flex bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] cursor-pointer gap-[6px] 2xl:gap-[10px]  p-[22px_23px] 2xl:p-[33px_25px_35px_35px] rounded-[10px]  h-full text-woro-blue"
-            : " flex cursor-pointer gap-[6px] 2xl:gap-[10px] p-[22px_23px] 2xl:p-[33px_25px_35px_35px]  rounded-[10px]  h-full text-black"
+            ? "flex bg-white items-center shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] cursor-pointer gap-[6px] 2xl:gap-[10px]  p-[22px_23px] 3xl:p-[33px_25px_35px_35px] rounded-[10px]  h-full text-woro-blue"
+            : " flex cursor-pointer items-center gap-[6px] 2xl:gap-[10px] p-[22px_23px] 3xl:p-[33px_25px_35px_35px]  rounded-[10px]  h-full text-black"
         }
       >
         <svg

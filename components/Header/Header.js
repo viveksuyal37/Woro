@@ -12,7 +12,7 @@ const Header = () => {
       <div className="flex items-center justify-between">
         {/* left */}
 
-        <div className="flex items-end space-x-[55px] 2xl:space-x-[78px]">
+        <div className="flex items-end space-x-[50px] 2xl:space-x-[55px] 3xl:space-x-[78px]">
           <div className="w-[124px] h-[29.5px] 2xl:w-[177px] 2xl:h-[42px]">
             <Image
               src="/assets/images/logo.png"
@@ -21,15 +21,15 @@ const Header = () => {
               height="42"
             />
           </div>
-          <div className="text-2xl font-bold text-woro-blue 2xl:text-4xl">
+          <div className="text-2xl font-bold text-woro-blue 2xl:text-3xl 3xl:text-4xl">
             Welcome back, Vivek
           </div>
         </div>
 
         {/* mid btn start free trial*/}
-        <div className="bg-[#00FABA] text-black text-[14px] 2xl:text-[18px] font-bold rounded-xl flex flex-col items-center justify-center leading-tight p-[6px_16px] 2xl:p-[11px_40px] gap-0">
+        <div className="bg-[#00FABA] text-black text-[14px] 2xl:text-[16px] font-bold rounded-xl flex flex-col items-center justify-center leading-tight p-[6px_16px] 2xl:p-[11px_30px] 3xl:p-[11px_50px] gap-0">
           <h6>Start 14-Day Free Trial </h6>
-          <span className="text-[8px] 2xl:text-[10px] text-[#8B8B8B] font-normal">
+          <span className="text-[8px] text-[#8B8B8B] 3xl:text-[10px] font-normal">
             No commitments, no credit card, just pure awesomeness.
           </span>
         </div>

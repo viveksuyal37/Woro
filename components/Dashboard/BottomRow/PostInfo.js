@@ -70,7 +70,7 @@ const PostInfo = ({ expandedCard }) => {
         </div>
       </div>
 
-      <div className="w-full scrollableContainer overflow-auto mt-2 2xl:mt-4 text-[11.7px] 2xl:text-[18px]">
+      <div className="w-full scrollableContainer overflow-auto mt-2 2xl:mt-4 text-[11.7px] 2xl:text-[16px] 3xl:text-[18px]">
         {["", "", ""].map((i, indx) => {
           //! add nanoid
           return (

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const LeftFooter = () => {
   return (
-    <div className="flex w-[254px] text-[10px] 2xl:text-[1rem] 2xl:w-[365px] flex-col gap-[15px] 2xl:gap-[22px]">
+    <div className="flex w-[254px] text-[10px] 2xl:text-[12px] 3xl:text-[1rem] 2xl:w-[300px] 3xl:w-[365px] flex-col gap-[15px] 3xl:gap-[22px]">
       {/* top */}
 
       <div className=" w-full  h-[32.5px] 2xl:h-[47px] p-[6px] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] flex gap-1 2xl:gap-[10px] justify-center items-center bg-woro-blue rounded-[10px_90px_90px_0px] text-white">
@@ -15,7 +15,7 @@ const LeftFooter = () => {
             alt="footer"
           />
         </div>
-        <div>Bruce, try out our new chatbot WoroGPT!</div>
+        <span>Bruce, try out our new chatbot WoroGPT!</span>
       </div>
 
       {/* bottom */}

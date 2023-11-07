@@ -13,11 +13,11 @@ const PendingApprovals = ({ cardId, expandedCard }) => {
         "bg-white h-full rounded-[11px] overflow-hidden transition-all duration-300 ease-in-out opacity-1",
         { "w-0 h-0 opacity-0": expandedCard && expandedCard !== cardId },
         { "w-full min-h-[66vh] h-[66vh] p-6 2xl:p-[46px]":  expandedCard === cardId },
-        { "  w-[30.21vw] max-w-[600px] p-[13px] 2xl:p-[20px] ": !expandedCard }
+        { "flex flex-col justify-between  w-[30.21vw] max-w-[600px] p-[13px] 2xl:p-[20px] ": !expandedCard }
       )}
     >
       {/* top */}
-      <div className="flex justify-between mb-2 font-bold 2xl:mb-4">
+      <div className="flex justify-between mb-2 font-bold 3xl:mb-4">
         <h6
           className={classNames("text-[10.5px] 2xl:text-[1rem]", {
             "text-xl 2xl:text-[24px]": cardId === expandedCard,
@@ -35,7 +35,7 @@ const PendingApprovals = ({ cardId, expandedCard }) => {
       {!expandedCard && (
         <div className="flex justify-between">
           <div className="flex gap-[12px] 2xl:gap-[18px]">
-            <div className="w-[43px] 2xl:w-[66px] h-[43px] 2xl:h-[66px] rounded-full">
+            <div className="w-[43px] 2xl:w-[55px] 3xl:w-[66px] rounded-full">
               <Image
                 src="/assets/images/profile.png"
                 alt="approval profile"
@@ -51,7 +51,7 @@ const PendingApprovals = ({ cardId, expandedCard }) => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-[4px] 2xl:gap-[6px] text-[9px] 2xl:text-[14px]">
+          <div className="flex self-center flex-col gap-0 3xl:gap-[6px] text-[9px] 2xl:text-[14px]">
             <p>wants to schedule a post on</p>
             <p className="font-bold">21st August 2023, 10:00AM</p>
           </div>

@@ -37,9 +37,9 @@ const TrendingNow = ({ cardId, expandedCard }) => {
 
       {!expandedCard && (
         <div className="flex w-full ">
-          {/* news */}
+          {/* news card*/}
           <div className="flex gap-[10px] 2xl:gap-4 p-[6.44px] 2xl:p-[10px_15px_10px_10px] max-w-[334px] bg-white leading-tight shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.35)]">
-            <div className="w-[61px] 2xl:w-[95px] flex-shrink-0 ">
+            <div className="w-[61px] 2xl:w-[80px] 3xl:w-[90px] flex-shrink-0 ">
               <Image
                 className="rounded-[5px]"
                 src="/assets/images/news.png"
