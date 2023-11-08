@@ -104,7 +104,8 @@ const MidFooter = () => {
         </svg>
       </div>
 
-      <div
+      <Link
+        href="/account/messages"
         onClick={() => {
           setActiveMenu(2);
         }}
@@ -130,7 +131,7 @@ const MidFooter = () => {
         </svg>
 
         <p>Messages</p>
-      </div>
+      </Link>
 
       <div
         onClick={() => {

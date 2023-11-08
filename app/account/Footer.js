@@ -7,12 +7,9 @@ const Footer = () => {
         background:
           "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
-      className="flex gap-[10px] p-[14px] justify-center items-center absolute bottom-[46px] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] rounded-[20px]"
+      className="flex gap-[10px] p-[10px] 2xl:p-[14px] justify-center items-center absolute bottom-[2.58427vh] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] rounded-[20px] child:p-[18px_25px] child:2xl:p-[22px_25px] child:3xl:p-[33px_35px] child:rounded-[10x] child:font-bold"
     >
-      <Link
-        href="/dashboard"
-        className="flex cursor-pointer gap-2 p-[33px_35px] rounded-[10x] font-bold"
-      >
+      <Link href="/dashboard" className="flex gap-2 cursor-pointer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="18"
@@ -28,7 +25,7 @@ const Footer = () => {
         <h6>Home</h6>
       </Link>
 
-      <div className="flex gap-2 p-[33px_35px] rounded-[10x] font-bold text-[#E93838]">
+      <div className="flex gap-2  text-[#E93838]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="25"

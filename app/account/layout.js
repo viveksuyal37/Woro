@@ -1,10 +1,13 @@
 "use client";
 
+/**Internal imports */
+import { usePathname } from "next/navigation";
+
 /**Custom components */
 import Header from "@/components/Header/Header";
 import Aside from "./Aside";
 import Footer from "./Footer";
-import { usePathname } from "next/navigation";
+import MessageAside from "./messages/MessageAside";
 
 const layout = ({ children }) => {
   const path = usePathname();
@@ -13,6 +16,8 @@ const layout = ({ children }) => {
     "/account/create-portfolio",
     "/account/create-portfolio/add-posts",
   ];
+
+  const messageAsidePath = "/account/messages";
 
   return (
     <div
@@ -32,9 +37,14 @@ const layout = ({ children }) => {
           }}
           className="flex mt-[22px] w-full h-[75vh] rounded-[20px]"
         >
-          {pathsWithoutAside.includes(path) ? null : <Aside />}
+          {pathsWithoutAside.includes(path) ? null : path ===
+            messageAsidePath ? (
+            <MessageAside />
+          ) : (
+            <Aside />
+          )}
 
-          <section className="m-[46px] w-full ">{children}</section>
+          <section className="m-[32px] 2xl:m-[46px] w-full ">{children}</section>
         </div>
 
         <Footer />

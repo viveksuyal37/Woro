@@ -16,11 +16,11 @@ const page = () => {
   return (
     <div
       style={{ background: "0px_4px_20px_0px_rgba(190,_148,_243,_0.20)" }}
-      className="bg-white rounded-[10px] w-full h-full overflow-auto p-[68px]"
+      className="bg-white rounded-[10px] w-full h-full overflow-auto p-10 2xl:p-[68px]"
     >
       {/* top */}
-      <div className="flex gap-[35px]">
-        <div className="w-[131px] h-[131px] rounded-full">
+      <div className="flex gap-7 2xl:gap-[35px]">
+        <div className="w-[85px] 2xl:w-[131px]  rounded-full">
           <Image
             src="/assets/images/profile.png"
             width="131"
@@ -28,16 +28,15 @@ const page = () => {
             alt="profile"
           />
         </div>
-        <div className="flex flex-col gap-[25px] ">
+        <div className="flex flex-col gap-3 2xl:gap-[25px] ">
           <div>
-            <h1 className="text-[24px] font-bold">Vivek Suyal</h1>
-            <p className="text-[18px] text-woro-blue">Admin</p>
+            <h1 className="text-xl 2xl:text-[24px] font-bold">Vivek Suyal</h1>
+            <p className="text-sm 2xl:text-[18px] text-woro-blue">Admin</p>
           </div>
-          <button className="flex bg-woro-blue items-center gap-1 text-white p-[12px_25px] rounded-[3px]">
+          <button className="flex bg-woro-blue items-center gap-1 text-sm 2xl:text-[1rem] text-white p-[7px_16px] 2xl:p-[12px_25px] rounded-[3px]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              className="w-4 h-4 2xl:w-6 2xl:h-6"
               viewBox="0 0 24 24"
               fill="none"
             >
@@ -52,56 +51,61 @@ const page = () => {
       </div>
 
       {/* mid */}
-      <div className="grid grid-cols-3 gap-[46px] justify-between w-full my-[46px]">
+      <div className="grid grid-cols-2 2xl:grid-cols-3 gap-8 2xl:gap-[46px] justify-between w-full my-[46px]">
         <div className="min-w-[328px]">
-          <label className="block mb-[20px] text-[1rem] font-bold">Name</label>
+          <label className="block mb-3 2xl:mb-[20px] text-[1rem] font-bold">
+            Name
+          </label>
           <input
             placeholder="vivek"
             type="text"
-            className="w-full p-[13px_14px] h-[46px] border border-[#B6B6B6]"
+            className="w-full p-[13px_14px] h-10 2xl:h-[46px] border border-[#B6B6B6]"
           ></input>
         </div>
 
         <div className="min-w-[328px]">
-          <label className="block mb-[20px] text-[1rem] font-bold">
+          <label className="block mb-3 2xl:mb-[20px] text-[1rem] font-bold">
             Last name
           </label>
           <input
             placeholder="suyal"
             type="text"
-            className="w-full p-[13px_14px] h-[46px] border border-[#B6B6B6]"
+            className="w-full p-[13px_14px] h-10 2xl:h-[46px] border border-[#B6B6B6]"
           ></input>
         </div>
 
         <div className="min-w-[328px]">
-          <label className="block mb-[20px] text-[1rem] font-bold">Email</label>
+          <label className="block mb-3 2xl:mb-[20px] text-[1rem] font-bold">
+            Email
+          </label>
           <input
             placeholder="example@gmail.com"
             type="text"
-            className="w-full p-[13px_14px] h-[46px] border border-[#B6B6B6]"
+            className="w-full p-[13px_14px] h-10 2xl:h-[46px] border border-[#B6B6B6]"
           ></input>
         </div>
 
         <div className="min-w-[328px]">
-          <label className="block mb-[20px] text-[1rem] font-bold">
+          <label className="block mb-3 2xl:mb-[20px] text-[1rem] font-bold">
             Mobile no
           </label>
           <input
             placeholder="123456789"
             type="text"
-            className="w-full p-[13px_14px] h-[46px] border border-[#B6B6B6]"
+            className="w-full p-[13px_14px] h-10 2xl:h-[46px] border border-[#B6B6B6]"
           ></input>
         </div>
       </div>
 
       {/* portfolio */}
-      <h2 className="text-2xl font-bold">Your Portfolio</h2>
+      <h2 className="text-xl font-bold xl:text-2xl">Your Portfolio</h2>
       {/* if empty/non-empty */}
       {randomNo % 2 === 0 ? (
         <div className="flex flex-col items-center justify-center gap-[22px]">
           <div className="flex items-center  text-[#C1C1C1] font-bold flex-col gap-[6px]">
             <Image
               src="/assets/images/portfolio/empty-folder.png"
+              className="w-[100px] 2xl:w-[138px]"
               width="138"
               height="138"
               alt="empty"
@@ -110,12 +114,11 @@ const page = () => {
           </div>
           <Link
             href="/account/create-portfolio"
-            className="flex bg-woro-blue items-center gap-1 text-white p-[12px_25px] rounded-[3px]"
+            className="flex bg-woro-blue text-sm 2xl:text-[1rem] items-center gap-1 text-white p-[7px_16px] 2xl:p-[12px_25px] rounded-[3px]"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              className="w-4 h-4 2xl:w-6 2xl:h-6"
               viewBox="0 0 24 24"
               fill="none"
             >
@@ -131,12 +134,11 @@ const page = () => {
         <div>
           <Link
             href="/account/create-portfolio"
-            className=" w-max flex mt-[22px] bg-woro-blue items-center gap-1 text-white p-[12px_25px] rounded-[3px]"
+            className=" w-max text-sm 2xl:text-[1rem] flex mt-[22px] bg-woro-blue items-center gap-1 text-white p-[7px_1rem] 2xl:p-[12px_25px] rounded-[3px]"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              className="w-4 h-4 2xl:w-6 2xl:h-6"
               viewBox="0 0 24 24"
               fill="none"
             >
@@ -151,24 +153,24 @@ const page = () => {
           {/* linked socials */}
           <div className="font-bold space-y-[22px] mt-[46px]">
             <h5>Linked Socials</h5>
-            <div className="flex flex-wrap child:text-[14px] font-bold gap-[22px] child:p-[17px_20px] child:rounded-[20px] child:shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] child:min-w-[175px] child:min-h-[94px]">
+            <div className="flex flex-wrap child:text-[14px] font-bold gap-[22px] child:p-[17px_20px] child:rounded-[20px] child:shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] child:max-w-[160px] child:2xl:max-w-[175px] child:max-h-[90px] child:2xl:max-h-[94px]">
               {/* linked accounts to be mapped from an state */}
               <div className=" flex items-center gap-[10px]   ">
                 <Image
                   src="/assets/images/dashboard/linkedIn.png"
                   width="36"
                   height="36"
+                  className="w-7 2xl:w-9"
                   alt="linkedIn"
                 />
                 <p>Linked</p>
               </div>
               {/* add socials */}
-              <div className="flex border-dashed border-black border text-[#7F7789] flex-col items-center gap-2 text-[14px]">
-                <div className="bg-woro-blue rounded-full flex items-center justify-center w-[40px] h-[40px]">
+              <div className="flex border-dashed border-black border text-[#7F7789] flex-col items-center gap-1 2xl:gap-2 text-[14px]">
+                <div className="bg-woro-blue rounded-full flex items-center justify-center 2xl:w-[40px] w-8 h-8 2xl:h-[40px]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    className="w-4 h-4 2xl:w-6 2xl:h-6"
                     viewBox="0 0 24 24"
                     fill="none"
                   >
@@ -195,13 +197,12 @@ const page = () => {
             {/* if empty */}
             <Link
               href="/account/create-portfolio/add-posts"
-              className="w-full h-[78px] flex  border border-dashed border-black items-center justify-center rounded-lg text-[#7F7789] gap-2"
+              className="w-full h-[60px] 2xl:h-[78px] flex  border border-dashed border-black items-center justify-center rounded-lg text-[#7F7789] gap-2"
             >
-              <div className="bg-woro-blue  rounded-full flex items-center justify-center w-[40px] h-[40px] ">
+              <div className="bg-woro-blue  rounded-full flex items-center justify-center 2xl:w-[40px] w-8 h-8 2xl:h-[40px] text-sm 2xl:text-[1rem]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
+                  className="w-4 h-4 2xl:w-6 2xl:h-6"
                   viewBox="0 0 24 24"
                   fill="none"
                 >
@@ -240,12 +241,11 @@ const page = () => {
       )}
 
       {/* account upgrade btn */}
-      <div className="grid grid-cols-2 mt-[46px] space-x-4 child:font-bold child:h-[48px]">
+      <div className="grid text-sm 2xl:text-[1rem] grid-cols-2 mt-[46px] space-x-4 child:font-bold child:h-9 child:2xl:h-12">
         <button className="flex items-center justify-center gap-2 text-white bg-woro-blue">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="24"
+            className="w-4 h-4 2xl:w-6 2xl:h-6"
             viewBox="0 0 25 24"
             fill="none"
           >

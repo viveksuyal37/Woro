@@ -8,20 +8,19 @@ const Aside = () => {
   const [activeItem, setActiveItem] = useState(0);
 
   return (
-    <aside className="w-[310px] bg-white p-[49px_29px] flex flex-col gap-[46px]">
+    <aside className="min-w-[170px] 2xl:w-[310px] bg-white p-[32px_15px] 2xl:p-[49px_29px] flex flex-col  gap-6 2xl:gap-[46px] child:text-[13px] child:2xl:text-lg child:leading-tight">
       <Link
         href="/account"
         onClick={() => {
           setActiveItem(0);
         }}
-        className={classNames("relative flex text-[18px] gap-[10px]", {
+        className={classNames("relative flex gap-[10px]", {
           "text-woro-blue": activeItem === 0,
         })}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          className="w-5 h-5 2xl:w-6 2xl:h-6"
           viewBox="0 0 24 24"
           fill="none"
         >
@@ -32,7 +31,7 @@ const Aside = () => {
         </svg>
         <h5>Profile</h5>
         {activeItem === 0 && (
-          <div className="absolute left-[-20px] top-0 w-[5px] bg-woro-blue h-full"></div>
+          <div className="absolute rounded-full -left-3 2xl:left-[-20px] top-0 w-[5px] bg-woro-blue h-full"></div>
         )}
       </Link>
 
@@ -41,14 +40,13 @@ const Aside = () => {
         onClick={() => {
           setActiveItem(1);
         }}
-        className={classNames("relative flex text-[18px] gap-[10px]", {
+        className={classNames("relative flex  gap-[10px]", {
           "text-woro-blue": activeItem === 1,
         })}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          className="w-5 h-5 2xl:w-6 2xl:h-6"
           viewBox="0 0 24 24"
           fill="none"
         >
@@ -59,7 +57,7 @@ const Aside = () => {
         </svg>
         <h5>Switch accounts</h5>
         {activeItem === 1 && (
-          <div className="absolute left-[-20px] top-0 w-[5px] bg-woro-blue h-full"></div>
+          <div className="absolute rounded-full -left-3 2xl:left-[-20px] top-0 w-[5px] bg-woro-blue h-full"></div>
         )}
       </Link>
 
@@ -68,14 +66,13 @@ const Aside = () => {
         onClick={() => {
           setActiveItem(2);
         }}
-        className={classNames("relative flex text-[18px] gap-[10px]", {
+        className={classNames("relative flex  gap-[10px]", {
           "text-woro-blue": activeItem === 2,
         })}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          className="w-5 h-5 2xl:w-6 2xl:h-6"
           viewBox="0 0 24 24"
           fill="none"
         >
@@ -86,7 +83,7 @@ const Aside = () => {
         </svg>
         <h5>Account ID</h5>
         {activeItem === 2 && (
-          <div className="absolute left-[-20px] top-0 w-[5px] bg-woro-blue h-full"></div>
+          <div className="absolute rounded-full -left-3 2xl:left-[-20px] top-0 w-[5px] bg-woro-blue h-full"></div>
         )}
       </Link>
 
@@ -95,14 +92,13 @@ const Aside = () => {
         onClick={() => {
           setActiveItem(3);
         }}
-        className={classNames("relative flex text-[18px] gap-[10px]", {
+        className={classNames("relative flex  gap-[10px]", {
           "text-woro-blue": activeItem === 3,
         })}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          className="w-5 h-5 2xl:w-6 2xl:h-6"
           viewBox="0 0 24 24"
           fill="none"
         >
@@ -113,7 +109,7 @@ const Aside = () => {
         </svg>
         <h5>Verification</h5>
         {activeItem === 3 && (
-          <div className="absolute left-[-20px] top-0 w-[5px] bg-woro-blue h-full"></div>
+          <div className="absolute rounded-full -left-3 2xl:left-[-20px] top-0 w-[5px] bg-woro-blue h-full"></div>
         )}
       </Link>
 
@@ -122,14 +118,13 @@ const Aside = () => {
         onClick={() => {
           setActiveItem(4);
         }}
-        className={classNames("relative flex text-[18px] gap-[10px]", {
+        className={classNames("relative flex  gap-[10px]", {
           "text-woro-blue": activeItem === 4,
         })}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          className="w-5 h-5 2xl:w-6 2xl:h-6"
           viewBox="0 0 24 24"
           fill="none"
         >
@@ -140,7 +135,7 @@ const Aside = () => {
         </svg>
         <h5>Support</h5>
         {activeItem === 4 && (
-          <div className="absolute left-[-20px] top-0 w-[5px] bg-woro-blue h-full"></div>
+          <div className="absolute rounded-full -left-3 2xl:left-[-20px] top-0 w-[5px] bg-woro-blue h-full"></div>
         )}
       </Link>
 
@@ -149,14 +144,13 @@ const Aside = () => {
         onClick={() => {
           setActiveItem(5);
         }}
-        className={classNames("relative flex text-[18px] gap-[10px]", {
+        className={classNames("relative flex  gap-[10px]", {
           "text-woro-blue": activeItem === 5,
         })}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          className="w-5 h-5 2xl:w-6 2xl:h-6"
           viewBox="0 0 24 24"
           fill="none"
         >
@@ -167,7 +161,7 @@ const Aside = () => {
         </svg>
         <h5>Marketplace</h5>
         {activeItem === 5 && (
-          <div className="absolute left-[-20px] top-0 w-[5px] bg-woro-blue h-full"></div>
+          <div className="absolute rounded-full -left-3 2xl:left-[-20px] top-0 w-[5px] bg-woro-blue h-full"></div>
         )}
       </Link>
 
@@ -177,14 +171,13 @@ const Aside = () => {
           setActiveItem(6);
         }}
         className={classNames(
-          "relative flex text-[18px] font-bold text-[#FEC963] gap-[10px]",
+          "relative flex  font-bold text-[#FEC963] gap-[10px]",
           { "text-woro-blue": activeItem === 6 }
         )}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          className="w-5 h-5 2xl:w-6 2xl:h-6"
           viewBox="0 0 24 24"
           fill="none"
         >
@@ -195,7 +188,7 @@ const Aside = () => {
         </svg>
         <h5>Upgrade Plan</h5>
         {activeItem === 6 && (
-          <div className="absolute left-[-20px] top-0 w-[5px] bg-woro-blue h-full"></div>
+          <div className="absolute rounded-full -left-3 2xl:left-[-20px] top-0 w-[5px] bg-woro-blue h-full"></div>
         )}
       </Link>
     </aside>
