@@ -14,25 +14,24 @@ const page = () => {
         background:
           " linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
-      className=" rounded-[20px] overflow-hidden h-[66vh] w-full shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] mt-[34px]"
+      className=" rounded-[20px] overflow-hidden h-[66vh] w-full shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] mt-7 2xl:mt-[34px]"
     >
       <Header activeItem={activeItem} setActiveItem={setActiveItem} />
-      <div className="bg-white p-[46px_46px_0_46px] rounded-[10px] m-[46px_46px_0_46px] h-[50vh] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]">
+      <div className="bg-white p-[32px_32px_0_32px] 2xl:p-[46px_46px_0_46px] rounded-[10px] m-[32px_32px_0_32px] 2xl:m-[46px_46px_0_46px] 3xl:h-full max-h-[50vh] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]  ">
         {/* influencerContent */}
         {activeItem === 0 && (
-          <div className="flex flex-col gap-[46px]">
+          <div className="flex flex-col gap-8 2xl:gap-[46px]">
             {/* top */}
             <div className="flex items-center justify-between">
               <input
                 placeholder="Type a keyword such as Location, Followers etc."
                 style={{ width: "90%" }}
-                className="text-[#7F7789] outline-none h-[50px] p-[1rem_46px] rounded-[80px] bg-[rgba(190,_148,_243,_0.20)]"
+                className="text-[#7F7789] outline-none h-11 2xl:h-[50px] p-[1rem_46px] rounded-[80px] bg-[rgba(190,_148,_243,_0.20)]"
               ></input>
-              <div className="p-2 w-[44px] h-[44px] rounded-full border border-black">
+              <div className="flex items-center justify-center w-8 h-8 border border-black rounded-full 2xl:w-11 2xl:h-11">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="28"
-                  height="28"
+                  className="w-5 h-5 2xl:w-7 2xl:h-7"
                   viewBox="0 0 28 28"
                   fill="none"
                 >
@@ -44,7 +43,7 @@ const page = () => {
               </div>
             </div>
             {/* card container */}
-            <div className="flex scrollableContainer  flex-wrap gap-[45px]">
+            <div className="flex scrollableContainer  flex-wrap gap-10 2xl:gap-[45px]">
               {["", "", "", "", ""]?.map(() => (
                 // influencerCard
                 <InfluencerCard key={nanoid(4)} />
@@ -52,7 +51,7 @@ const page = () => {
             </div>
             <style jsx>{`
               .scrollableContainer {
-                min-height: 320px;
+                min-height: 254px;
                 max-height: 35vh;
                 overflow: auto;
               }
@@ -70,18 +69,17 @@ const page = () => {
               <input
                 placeholder="Type a keyword such as Location, Followers etc."
                 style={{ width: "80%" }}
-                className="text-[#7F7789] outline-none h-[50px] p-[1rem_46px] rounded-[80px] bg-[rgba(190,_148,_243,_0.20)]"
+                className="text-[#7F7789] outline-none h-11 2xl:h-[50px] p-[12px_30px] 2xl:p-[1rem_46px] rounded-[80px] bg-[rgba(190,_148,_243,_0.20)]"
               ></input>
 
-              <button className="border-2 border-woro-blue rounded-full text-center text-woro-blue w-max h-[50px] font-bold text-[18px] flex items-center px-[20px]">
+              <button className="border-2 border-woro-blue rounded-full text-center text-woro-blue w-max h-11 2xl:h-[50px] font-bold text-sm 2xl:text-[18px] flex items-center px-[20px]">
                 UGC near you
               </button>
 
-              <div className="p-2 w-[44px] h-[44px] rounded-full border border-black">
+              <div className="flex items-center justify-center w-8 h-8 border border-black rounded-full 2xl:w-11 2xl:h-11">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="28"
-                  height="28"
+                  className="w-5 h-5 2xl:w-7 2xl:h-7"
                   viewBox="0 0 28 28"
                   fill="none"
                 >
@@ -101,11 +99,10 @@ const page = () => {
             </div>
             <style jsx>{`
               .scrollableContainer {
-                min-height: 320px;
+                min-height: 254px;
                 max-height: 35vh;
                 overflow: auto;
               }
-            
             `}</style>
           </div>
         )}
@@ -116,12 +113,11 @@ const page = () => {
 
 const Header = ({ activeItem, setActiveItem }) => {
   return (
-    <div className="h-[118px] flex items-center px-[65px] bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] w-full space-x-[46px]">
-      <div className="flex items-center justify-center w-[40px] h-[40px] bg-woro-blue rounded-full">
+    <div className="h-[85px] 2xl:h-[118px] flex items-center px-11 2xl:px-[65px] bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] w-full space-x-8 2xl:space-x-[46px]">
+      <div className="flex items-center justify-center w-8 h-8 2xl:w-[40px] 2xl:h-[40px] bg-woro-blue rounded-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="18"
-          height="18"
+          className="2xl:w-[18px] 2xl:h-[18px] w-3 h-3"
           viewBox="0 0 18 18"
           fill="none"
         >
@@ -137,7 +133,7 @@ const Header = ({ activeItem, setActiveItem }) => {
           setActiveItem(0);
         }}
         className={classNames(
-          "flex text-[18px] cursor-pointer gap-2 relative",
+          "flex text-sm 2xl:text-[18px] cursor-pointer gap-2 relative",
           {
             "text-woro-blue": activeItem === 0,
           }
@@ -145,8 +141,7 @@ const Header = ({ activeItem, setActiveItem }) => {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          className="w-5 h-5 2xl:w-6 2xl:h-6"
           viewBox="0 0 24 24"
           fill="none"
         >
@@ -168,7 +163,7 @@ const Header = ({ activeItem, setActiveItem }) => {
           setActiveItem(1);
         }}
         className={classNames(
-          "flex text-[18px] cursor-pointer gap-2 relative",
+          "flex text-sm 2xl:text-[18px] cursor-pointer gap-2 relative",
           {
             "text-woro-blue": activeItem === 1,
           }
@@ -176,8 +171,7 @@ const Header = ({ activeItem, setActiveItem }) => {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="25"
+          className="w-5 h-5 2xl:w-6 2xl:h-6"
           viewBox="0 0 24 25"
           fill="none"
         >
@@ -205,7 +199,7 @@ const Header = ({ activeItem, setActiveItem }) => {
           setActiveItem(2);
         }}
         className={classNames(
-          "flex text-[18px] cursor-pointer gap-2 relative",
+          "flex text-sm 2xl:text-[18px] cursor-pointer gap-2 relative",
           {
             "text-woro-blue": activeItem === 2,
           }
@@ -213,8 +207,7 @@ const Header = ({ activeItem, setActiveItem }) => {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="25"
+          className="w-5 h-5 2xl:w-6 2xl:h-6"
           viewBox="0 0 24 25"
           fill="none"
         >

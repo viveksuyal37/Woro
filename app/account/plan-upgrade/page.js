@@ -155,11 +155,10 @@ const page = () => {
 
         <div className="border border-[#7F7789] leading-tight rounded-[5px] w-[270px] 2xl:w-[328px] p-8 2xl:p-[46px_28px_38px_46px] h-[350px] 2xl:h-[428px] cursor-pointer group hover:text-white hover hover:bg-woro-blue relative">
           <div className="flex mb-[22px] gap-2">
-            <h2 className="text-[24px] font-bold ">Diamond</h2>
+            <h2 className="text-xl 2xl:text-[24px] font-bold ">Diamond</h2>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
+             className="w-6 h-6 2xl:w-[30px] 2xl:h-[30px]"
               viewBox="0 0 30 30"
               fill="none"
             >
@@ -182,7 +181,7 @@ const page = () => {
               </defs>
             </svg>
           </div>
-          <h3 className="text-[36px] inline font-bold ">₹ 900 </h3>{" "}
+          <h3 className="text-[30px] 2xl:text-[36px] inline font-bold ">₹ 900 </h3>{" "}
           <span>/month</span>
           <p className="text-[#7F7789]  group-hover:text-white mt-[11px] mb-[20px]">
             Lorem ipsum dolor sit amet consectetur.

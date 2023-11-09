@@ -7,13 +7,15 @@ const Footer = () => {
         background:
           "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
-      className="flex gap-[10px] p-[10px] 2xl:p-[14px] justify-center items-center absolute bottom-[2.58427vh] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] rounded-[20px] child:p-[18px_25px] child:2xl:p-[22px_25px] child:3xl:p-[33px_35px] child:rounded-[10x] child:font-bold"
+      className="flex text-sm 2xl:text-[1rem] gap-[10px] p-[10px] 2xl:p-[14px] justify-center items-center absolute bottom-[2.58427vh] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] rounded-[20px] child:p-[18px_25px] child:2xl:p-[22px_25px] child:3xl:p-[33px_35px] child:rounded-[10x] child:font-bold"
     >
-      <Link href="/dashboard" className="flex gap-2 cursor-pointer">
+      <Link
+        href="/dashboard"
+        className="flex items-center gap-2 cursor-pointer"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="18"
-          height="18"
+          className="2xl:w-[18px] w-[14px] h-[14px] 2xl:h-[18px]"
           viewBox="0 0 18 18"
           fill="none"
         >
@@ -25,11 +27,10 @@ const Footer = () => {
         <h6>Home</h6>
       </Link>
 
-      <div className="flex gap-2  text-[#E93838]">
+      <div className="flex gap-2 items-center text-[#E93838]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="25"
-          height="24"
+          className="w-5 h-5 2xl:w-6 2xl:h-6"
           viewBox="0 0 25 24"
           fill="none"
         >
