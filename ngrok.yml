@@ -1,0 +1,4 @@
+authtoken: 2XyRiOGn1cU7ayvrAdM2ENfFKvw_7pWQ1ds5F2X86VkAPmHf5
+ my-nextjs-app:
+    addr: 3000
+    proto: http
