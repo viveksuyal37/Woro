@@ -5,7 +5,7 @@ import { useLinkedIn } from "react-linkedin-login-oauth2";
 const page = () => {
   const { linkedInLogin } = useLinkedIn({
     clientId: process.env.NEXT_PUBLIC_LINKEDIN_CLIENT_ID,
-    // redirectUri: `http://localhost:3000/dashboard`,
+    redirectUri: `https://woro-dev.netlify.app/dashboard`,
 
     onSuccess: (code) => {
       console.log(code);
