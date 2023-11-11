@@ -1,6 +1,7 @@
 "use client";
 
 const page = () => {
+  
   const loginHandler = async () => {
     // fb login dialog
     window.FB.login(
