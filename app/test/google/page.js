@@ -3,7 +3,6 @@
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
 import { GoogleLogin } from "@react-oauth/google";
-import { Turret_Road } from "next/font/google";
 import { useState } from "react";
 // export const getGoogleUrl = (from) => {
 //   const rootUrl = `https://accounts.google.com/o/oauth2/v2/auth`;

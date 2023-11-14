@@ -1,11 +1,21 @@
+"use client";
+
+import ConnectSocials from "@/components/modals/ConnectSocials";
+import { useState } from "react";
+
 const AddSocials = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div
       style={{
         background:
-          "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
+          "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%) ",
       }}
-      className="flex  flex-col items-center justify-center rounded-[20px] w-[122px]  2xl:w-[174px] gap-1 2xl:gap-[10px] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]"
+      onClick={() => {
+        setShowModal(true);
+      }}
+      className="flex  flex-col items-center justify-center rounded-[20px] w-[122px]  2xl:w-[174px] gap-1 cursor-pointer shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]"
     >
       {/* add btn*/}
       <div className="bg-woro-blue w-[28px] 2xl:w-[40px] h-[28px] 2xl:h-[40px] flex items-center justify-center rounded-full">
@@ -28,6 +38,18 @@ const AddSocials = () => {
       <div className="text-[10px] 2xl:text-[14px] text-[#7F7789]">
         Add socials
       </div>
+
+      {/* add account modal */}
+
+      {showModal && (
+        <ConnectSocials
+          closeModal={(e) => {
+            e.stopPropagation();
+            setShowModal(false);
+          }}
+          overlay="[rgba(0,0,0,0.37)]"
+        />
+      )}
     </div>
   );
 };

@@ -3,10 +3,15 @@
 import { useLinkedIn } from "react-linkedin-login-oauth2";
 
 const page = () => {
+  console.log(
+    `${typeof window === "object" && window.location.origin}/dashboard`
+  );
   const { linkedInLogin } = useLinkedIn({
     clientId: process.env.NEXT_PUBLIC_LINKEDIN_CLIENT_ID,
-    redirectUri: `https://woro-dev.netlify.app/dashboard`,
-
+    redirectUri: `${
+      typeof window === "object" && window.location.origin
+    }/linkedin`,
+    scope: "email",
     onSuccess: (code) => {
       console.log(code);
     },
