@@ -15,10 +15,10 @@ const AddSocials = () => {
       onClick={() => {
         setShowModal(true);
       }}
-      className="flex  flex-col items-center justify-center rounded-[20px] w-[122px]  2xl:w-[174px] gap-1 cursor-pointer shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]"
+      className="flex  flex-col items-center justify-center rounded-[20px] w-[122px]  2xl:w-[174px] gap-1  shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]"
     >
       {/* add btn*/}
-      <div className="bg-woro-blue w-[28px] 2xl:w-[40px] h-[28px] 2xl:h-[40px] flex items-center justify-center rounded-full">
+      <div className="bg-woro-blue cursor-pointer w-[28px] 2xl:w-[40px] h-[28px] 2xl:h-[40px] flex items-center justify-center rounded-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -35,7 +35,7 @@ const AddSocials = () => {
       </div>
 
       {/* bottom text*/}
-      <div className="text-[10px] 2xl:text-[14px] text-[#7F7789]">
+      <div className="text-[10px] cursor-pointer 2xl:text-[14px] text-[#7F7789]">
         Add socials
       </div>
 

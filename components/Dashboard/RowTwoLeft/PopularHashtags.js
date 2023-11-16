@@ -44,29 +44,26 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
           "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
       className={classNames(
-        " opacity-1  transition-all duration-300 ease-in-out overflow-hidden  rounded-[20px] bg-white",
+        " opacity-1 relative transition-all duration-300 ease-in-out overflow-hidden  rounded-[20px] bg-white",
         {
           "hidden ": expandedCard && expandedCard !== cardId,
-          "w-[88.5vw]  h-[66vh] ": expandedCard === cardId,
-          "h-full min-w-[21.376vw] 2xl:w-[21.9473vw] p-[10px] 2xl:p-[20px] max-w-[500px]":
-            !expandedCard,
+          "w-full  h-[66vh] ": expandedCard === cardId,
+          "h-full w-full   p-[10px] 2xl:p-[20px] ": !expandedCard,
         }
       )}
     >
       {!expandedCard && (
-        <div className="flex justify-between 2xl:mb-2 gap-[14px] font-bold">
+        <div className="mb-1 font-bold 2xl:mb-2">
           <h6 className="text-[10px] 2xl:text-[13px]">
             Popular hastags For your{" "}
             <span className="text-woro-blue">Social Media Accounts!</span>
           </h6>
-
-          <ExpandBtn cardId={cardId} />
         </div>
       )}
 
       {/* trendingHashtagsCard */}
       {!expandedCard && (
-        <div className="bg-white shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] p-[9px_8px] 2xl:p-[12px_10px] max-w-[245px] rounded-[10px]">
+        <div className="bg-white relative shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] p-[9px_8px] 2xl:p-[12px_10px] max-w-[245px] rounded-[10px]">
           <div className="flex justify-between mb-[5px] gap-[23px] font-bold">
             <div className="flex w-[14.7px] h-[14.7px] 2xl:h-[20px] 2xl:w-[20px] space-x-[5px]">
               <Image
@@ -109,6 +106,20 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
             <div>#Ipsum</div>
             <div> #Dolor </div>
           </div>
+          {/* copy to clipboard */}
+          <div className="bg-[#7F7789] w-4 2xl:w-[21px] h-4 2xl:h-[21px] rounded-full flex justify-center items-center absolute bottom-1 right-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="2xl:w-[13px] 2xl:h-[13px] w-[9px] h-[9px]"
+              viewBox="0 0 13 13"
+              fill="none"
+            >
+              <path
+                d="M3.79156 3.25016V1.62516C3.79156 1.32601 4.03407 1.0835 4.33323 1.0835H10.8332C11.1324 1.0835 11.3749 1.32601 11.3749 1.62516V9.2085C11.3749 9.50766 11.1324 9.75016 10.8332 9.75016H9.20822V11.3747C9.20822 11.6741 8.96453 11.9168 8.66287 11.9168H2.17027C1.86907 11.9168 1.625 11.676 1.625 11.3747L1.62641 3.7923C1.62646 3.49289 1.87018 3.25016 2.17177 3.25016H3.79156ZM2.70964 4.3335L2.70844 10.8335H8.12489V4.3335H2.70964ZM4.87489 3.25016H9.20822V8.66683H10.2916V2.16683H4.87489V3.25016Z"
+                fill="white"
+              />
+            </svg>
+          </div>
         </div>
       )}
 
@@ -116,11 +127,10 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
         <div className="flex justify-between w-full h-full">
           {/* left */}
           <div className=" p-6 2xl:p-[46px] max-w-[740px] 2xl:max-w-[1057px]">
-            <div className="flex items-center justify-between">
+            <div>
               <h3 className="text-xl 2xl:text-[24px] font-bold">
                 Select social media
               </h3>
-              <ExpandBtn cardId={cardId} />
             </div>
             <div className="flex mt-5 2xl:mt-[22px] mb-4 2xl:mb-[40px] gap-[20px]">
               {data?.map((item, indx) => {
@@ -238,6 +248,11 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
           <div className="w-full h-full bg-center bg-cover bg-[url('/assets/images/dashboard/popularHashtags.png')]"></div>
         </div>
       )}
+      {/* expand btn */}
+      <div className="z-100 absolute 2xl:top-[20px] 2xl:right-[20px] top-[10px] right-[10px]">
+        {" "}
+        <ExpandBtn cardId={cardId} />
+      </div>
     </div>
   );
 };

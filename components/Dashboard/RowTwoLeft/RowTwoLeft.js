@@ -5,11 +5,11 @@ import PopularHashtags from "./PopularHashtags";
 
 const RowTwoLeft = ({ expandedCard }) => {
   return (
-    <div className="flex w-full gap-[21px] 2xl:gap-[30px]">
+    <div className="flex  w-full gap-[21px] 2xl:gap-[30px]">
       <Analytics expandedCard={expandedCard} cardId="analytics" />
 
       {expandedCard !== "analytics" && (
-        <div className="flex flex-col h-full gap-[15.4px] 2xl:gap-[22.1px]">
+        <div className="flex  w-full flex-col h-full gap-[15.4px] 2xl:gap-[22.1px]">
           <PopularHashtags
             expandedCard={expandedCard}
             cardId="popularHashtags"

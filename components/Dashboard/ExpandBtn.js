@@ -22,8 +22,8 @@ const ExpandBtn = ({ cardId }) => {
           : console.log("no cardId found!!");
       }}
       className={classNames(
-        "w-[22px] h-[22px]  cursor-pointer flex items-center justify-center rounded-full ",
-        { "bg-[#454545]": !isCurrentItemExpanded }
+        "w-4 2xl:w-[22px] h-4 2xl:h-[22px]  cursor-pointer flex items-center justify-center rounded-full ",
+        { "bg-[#7F7789]": !isCurrentItemExpanded }
       )}
     >
       {isCurrentItemExpanded && (
@@ -38,6 +38,7 @@ const ExpandBtn = ({ cardId }) => {
           alt="expand button"
           width="12"
           height="12"
+          className="w-2 h-2 2xl:w-3 2xl:h-3"
         />
       )}
     </div>

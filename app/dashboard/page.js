@@ -17,8 +17,6 @@ import RecentNotifications from "@/components/Dashboard/RecentNotifications/Rece
 import RowTwoLeft from "@/components/Dashboard/RowTwoLeft/RowTwoLeft";
 import AccountsContainer from "@/components/Dashboard/SocialMediaAccounts/AccountsContainer";
 
-
-
 export default function Home() {
   const state = useSelector(getCardsState);
   const [expandedCard, setExpandedCard] = useState();
@@ -35,7 +33,7 @@ export default function Home() {
   }, [state]);
 
   return (
-    <section className=" h-max">
+    <section className="w-full h-max">
       {/* dashboard top (2rows)*/}
       <div
         className={classNames(
@@ -50,10 +48,8 @@ export default function Home() {
         {/* left dashboard */}
         <div
           className={classNames(
-            "flex flex-col overflow-hidden gap-[12.3px] 2xl:gap-[20px]",
-            {
-              "w-full": expandedCard === "analytics",
-            }
+            "flex w-full flex-col overflow-hidden gap-[12.3px] 2xl:gap-[20px]",
+            { hidden: expandedCard === "recentNotification" }
           )}
         >
           {/* row1 */}
@@ -64,9 +60,9 @@ export default function Home() {
 
         <div
           className={classNames(
-            "flex flex-col overflow-hidden gap-[10px] 2xl:gap-[14.3px] ",
+            "flex  flex-col overflow-hidden gap-[10px] 2xl:gap-[14.3px] ",
             { "w-full h-full": expandedCard === "recentNotification" },
-            { "w-[15.88vw] 2xl:w-[16.2vw]  max-w-[500px]": !expandedCard }
+            { "w-[16.2vw]  max-w-[500px]": !expandedCard }
           )}
         >
           {/* right dashboard */}

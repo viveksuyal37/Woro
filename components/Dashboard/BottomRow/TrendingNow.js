@@ -26,12 +26,11 @@ const TrendingNow = ({ cardId, expandedCard }) => {
       )}
     >
       {!expandedCard && (
-        <div className="mb-[5px] 2xl:mb-[10px] text-[11.5px] 2xl:text-[1rem] flex justify-between mr-[20px]">
+        <div className="mb-[5px] 2xl:mb-[10px] text-[11.5px] 2xl:text-[1rem] ">
           <p className="font-bold text-woro-blue">
             Popular News <span className="font-normal text-black">and</span>{" "}
             Viral topics
           </p>
-          <ExpandBtn cardId={cardId} />
         </div>
       )}
 
@@ -135,9 +134,6 @@ const TrendingNow = ({ cardId, expandedCard }) => {
             })}
           </div>
 
-          <div className="absolute top-4 right-4">
-            <ExpandBtn cardId={cardId} />
-          </div>
           <style jsx>
             {`
               .scrollContainer::-webkit-scrollbar {
@@ -147,60 +143,14 @@ const TrendingNow = ({ cardId, expandedCard }) => {
           </style>
         </section>
       )}
+
+      <div className={classNames("absolute ",{"top-[13px] 2xl:top-4 right-4":!expandedCard,"top-8 2xl:top-[41px] right-8 2xl:right-[46px]":expandedCard})}>
+        <ExpandBtn cardId={cardId} />
+      </div>
     </div>
   );
 };
 
 export default TrendingNow;
 
-<div className="flex gap-8 mt-[46px]">
-  {/* left */}
-  <div className="flex  font-bold flex-col gap-[22px]">
-    {/* title */}
-    <div className="text-[36px] text-woro-blue w-max">
-      <h1>Latest News</h1>
-      <div className="bg-woro-blue h-[7px] width-full rounded-[4px] "></div>
-    </div>
-    {/* news */}
-    <div className="flex items-center pb-[22px] border-b-[2px] border-b-[#7F7789] border-dashed gap-[41px] w-full">
-      <div className="max-w-[374px] ">
-        <div className="text-[14px] font-normal space-x-2">
-          <span>Guwahati, Assam</span>
-          <span>5h ago</span>
-        </div>
-        <h4 className="leading-[18px] mt-[5px]">
-          "Scientists make breakthrough in renewable energy storage”{" "}
-          <span className="text-woro-blue">read more</span>
-        </h4>
-      </div>
-      <p className="font-normal">
-        By <strong>Jacki Chen</strong>
-      </p>
-    </div>
-  </div>
-  {/* right */}
-  <div className="flex flex-wrap space-x-[46px] space-y-[22px]">
-    {/* news card */}
-    <div className="flex max-w-[502px] gap-[22px]">
-      <div className="flex-shrink-0 bg-[url('/assets/images/newsExpanded.png')] w-[173px] h-[141px] rounded-[10px] bg-cover bg-center"></div>
-      <div className="text-[14px] space-y-[15px]">
-        <div className="space-x-2 font-normal ">
-          <span>Guwahati, Assam</span>
-          <span>November 17, 2023</span>
-          <span>5h ago</span>
-        </div>
 
-        <div className="leading-[16px] space-y-1">
-          <p className="font-bold">
-            Lorem ipsum dolor sit amet consectetur. Volutpat sed elit nec donec.{" "}
-          </p>
-          <p>Nam libero dolor risus nec varius cras rhoncus id in. </p>
-        </div>
-
-        <p className="font-normal ">
-          By <strong>Jacki Chen</strong>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>;

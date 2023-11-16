@@ -12,7 +12,6 @@ import {
 } from "recharts";
 
 const Analytics = ({ cardId, expandedCard }) => {
-
   const data = [
     {
       name: "20 Sep",
@@ -58,9 +57,23 @@ const Analytics = ({ cardId, expandedCard }) => {
     },
   ];
 
-  return (
-    <section className="flex flex-col 2xl:w-full h-full gap-[22px] ">
+  // graph margin
+  const smallScreenMargin = { top: 26, left: -20, bottom: 12 };
+  const bigScreenMargin = { top: 26, bottom: 30 };
 
+  // Determine the screen size and set the appropriate margin and datakey sizes
+  const screenWidth = window.innerWidth;
+
+  // graph datakey sizes
+  const datakeySize = screenWidth > 1500 ? { fontSize: 14 } : { fontSize: 11 };
+  const margin = screenWidth > 1500 ? bigScreenMargin : smallScreenMargin;
+
+  return (
+    <section
+      className={classNames("flex flex-col w-full h-full gap-[22px] ", {
+        " hidden": expandedCard && cardId !== expandedCard,
+      })}
+    >
       <div
         style={{
           background:
@@ -69,9 +82,9 @@ const Analytics = ({ cardId, expandedCard }) => {
         className={classNames(
           " transition-all  duration-300 overflow-hidden opacity-1 ease-in-out  rounded-[20px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]",
           {
-            " hidden": expandedCard && cardId !== expandedCard,
-            "h-[34vh] 2xl:h-[338px] w-[84vw] 2xl:w-full p-[32px_20px_40px_20px]": cardId === expandedCard,
-            "w-[42.67vw] 2xl:w-[43.58vw] h-[34.35vh] min-h-[213px] 2xl:min-h-[305px] p-[12px] 2xl:p-[20px] max-w-[1000px]":
+            "h-[34vh] 2xl:h-[338px] w-[84vw] 2xl:w-full p-[32px_20px_40px_20px]":
+              cardId === expandedCard,
+            "w-[43.58vw] h-[34.35vh] min-h-[213px] 2xl:min-h-[305px] p-[12px] 2xl:p-[20px] max-w-[1000px]":
               !expandedCard,
           }
         )}
@@ -90,7 +103,9 @@ const Analytics = ({ cardId, expandedCard }) => {
 
           {expandedCard === cardId && (
             <div className="flex flex-col text-[10px] 2xl:text-[14px] ml-16 font-bold ">
-              <h3 className="text-xl 2xl:text-[28px] text-woro-blue ">Reach Overview</h3>
+              <h3 className="text-xl 2xl:text-[28px] text-woro-blue ">
+                Reach Overview
+              </h3>
               <span>Users-Date graph</span>
             </div>
           )}
@@ -113,12 +128,7 @@ const Analytics = ({ cardId, expandedCard }) => {
         {/* graph */}
 
         <ResponsiveContainer width="100%" h="100%">
-          <AreaChart
-            width={500}
-            height={400}
-            data={data}
-            margin={{ top: 26, right: 15, left: 0, bottom: 25 }}
-          >
+          <AreaChart width={500} height={400} data={data} margin={margin}>
             <defs>
               <linearGradient
                 id="colorUv"
@@ -133,8 +143,8 @@ const Analytics = ({ cardId, expandedCard }) => {
               </linearGradient>
             </defs>
 
-            <XAxis dataKey="name" />
-            <YAxis />
+            <XAxis dataKey="name" tick={datakeySize} />
+            <YAxis tick={datakeySize} />
             <Tooltip />
             <Area
               type="monotone"

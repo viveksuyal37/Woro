@@ -26,7 +26,7 @@ const RecentNotifications = ({ cardId, expandedCard }) => {
       )}
     >
       {/* header*/}
-      <div className="flex pl-[17px] pr-[9px] justify-between">
+      <div className="flex pl-[17px]  justify-between">
         <h6
           className={classNames("font-bold ", {
             "text-xl 2xl:text-[24px]": cardId === expandedCard,
