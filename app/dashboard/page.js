@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <section className="w-full h-max">
-      {/* dashboard top (2rows)*/}
+      {/* dashboard top (2col)*/}
       <div
         className={classNames(
           "flex overflow-hidden opacity-1 transition-all duration-300 ease-in-out justify-between mt-[13.8px] 2xl:mt-[19.8px] gap-[21px] 2xl:gap-[30px]",
@@ -45,7 +45,7 @@ export default function Home() {
           }
         )}
       >
-        {/* left dashboard */}
+        {/* left col dashboard */}
         <div
           className={classNames(
             "flex w-full flex-col overflow-hidden gap-[12.3px] 2xl:gap-[20px]",
@@ -60,18 +60,18 @@ export default function Home() {
 
         <div
           className={classNames(
-            "flex  flex-col overflow-hidden gap-[10px] 2xl:gap-[14.3px] ",
+            "flex  flex-col overflow-hidden gap-[12.3px] 2xl:gap-[20px] ",
             { "w-full h-full": expandedCard === "recentNotification" },
-            { "w-[16.2vw]  max-w-[500px]": !expandedCard }
+            { "w-[16.2vw] 2xl:w-[18.2vw] max-w-[500px]": !expandedCard }
           )}
         >
-          {/* right dashboard */}
+          {/* right col dashboard */}
           <DriveContainer expandedCard={expandedCard} />
           <RecentNotifications
             expandedCard={expandedCard}
             cardId="recentNotification"
           />
-          {/* <RecentMessages /> */}
+        
         </div>
       </div>
       {/*bottom dashboard */}

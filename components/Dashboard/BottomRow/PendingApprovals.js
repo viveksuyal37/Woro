@@ -10,10 +10,10 @@ const PendingApprovals = ({ cardId, expandedCard }) => {
           "linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
       className={classNames(
-        "bg-white h-full rounded-[11px] overflow-hidden transition-all duration-300 ease-in-out opacity-1",
+        "bg-white h-full flex-shrink-0 rounded-[11px] overflow-hidden transition-all duration-300 ease-in-out opacity-1",
         { "w-0 h-0 opacity-0": expandedCard && expandedCard !== cardId },
         { "w-full min-h-[66vh] h-[66vh] p-6 2xl:p-[46px]":  expandedCard === cardId },
-        { "flex flex-col justify-between  w-[30.21vw] max-w-[600px] p-[13px] 2xl:p-[20px] ": !expandedCard }
+        { "flex flex-col justify-between  w-[30.21vw] max-w-[700px] 5xl:max-w-[900px] p-[13px] 2xl:p-[20px] ": !expandedCard }
       )}
     >
       {/* top */}
@@ -61,7 +61,7 @@ const PendingApprovals = ({ cardId, expandedCard }) => {
       {/* bottom */}
       {!expandedCard && (
         <div className="flex items-center justify-between mt-2 2xl:mt-4">
-          <div className="flex gap-1 child:w-[27px] child:2xl:w-[38px]">
+          <div className="flex gap-1 child:w-[27px] child:2xl:w-[38px] child:4xl:w-[45px]">
             <Image
               src="/assets/images/dashboard/fb.png"
               width="38"
@@ -104,7 +104,7 @@ const PendingApprovals = ({ cardId, expandedCard }) => {
       {expandedCard === cardId && (
         <div className="flex justify-between py-4 2xl:py-[22px] border-b border-b-[#7F7789]">
           <div className="flex items-center gap-6 2xl:gap-8">
-            <div className="w-10 2xl:w-[58px] rounded-full">
+            <div className="w-10 2xl:w-[58px]  rounded-full">
               <Image
                 src="/assets/images/profile.png"
                 alt="approval profile"
@@ -124,6 +124,7 @@ const PendingApprovals = ({ cardId, expandedCard }) => {
             </div>
             <div className="flex gap-[10px] child:2xl:w-[38px] child:w-[28px] items-center">
               <Image
+              
                 src="/assets/images/dashboard/fb.png"
                 width="38"
                 alt=""

@@ -15,10 +15,10 @@ const PostInfo = ({ expandedCard }) => {
           " linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
       className={classNames(
-        "rounded-[11px] flex h-full overflow-hidden transition-all duration-300 ease-in-out  flex-col ",
+        "rounded-[11px] flex h-full flex-shrink-0 overflow-hidden transition-all duration-300 ease-in-out  flex-col ",
         { "  w-0 h-0 p-0 opacity-0": expandedCard },
         {
-          "p-[13px] 2xl:p-[20px_18px] w-[22.1vw] opacity-1 max-w-[500px]":
+          "p-[13px] 2xl:p-[20px_18px] w-[22.1vw] opacity-1 max-w-[600px] 5xl:max-w-[800px]":
             !expandedCard,
         }
       )}

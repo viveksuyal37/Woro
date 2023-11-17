@@ -1,5 +1,5 @@
 export async function GET(request) {
-  const appAccessToken = await getAppAccessToken();
+  const appAccessToken = await getAppAccessToken(request);
 
   // const scopes = await debugToken(
   //   appAccessToken,
@@ -8,12 +8,19 @@ export async function GET(request) {
   return Response.json({ appAccessToken });
 }
 
-const getAppAccessToken = async () => {
-  const res = await fetch(
-    `https://graph.facebook.com/oauth/access_token?grant_type=client_credentials&client_id=${process.env.NEXT_PUBLIC_APP_ID}&client_secret=${process.env.APP_SECRET}`
-  );
+const getAppAccessToken = async (request) => {
+  const token = request.url.split("token=")[1];
 
+  const res = await fetch(
+    `https://graph.facebook.com/v18.0/oauth/access_token?grant_type=fb_exchange_token&client_id=${process.env.NEXT_PUBLIC_APP_ID}&client_secret=${process.env.APP_SECRET}&fb_exchange_token=${token}`
+  );
+  // const res = await fetch(
+  //   `https://graph.facebook.com/oauth/access_token?grant_type=client_credentials&client_id=${process.env.NEXT_PUBLIC_APP_ID}&client_secret=${process.env.APP_SECRET}`
+  // );
+  console.log("short token", token);
+  
   const data = await res.json();
+  console.log("node res", data);
 
   if (!res.ok) {
     throw new Error("App access token failed");

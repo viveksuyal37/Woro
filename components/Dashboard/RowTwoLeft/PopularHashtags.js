@@ -5,6 +5,7 @@ import ExpandBtn from "../ExpandBtn";
 import classNames from "classnames";
 import { useState } from "react";
 import { nanoid } from "nanoid";
+import { toast } from "react-toastify";
 
 const PopularHashtags = ({ cardId, expandedCard }) => {
   const [activeSocial, setActiveSocial] = useState(0);
@@ -63,7 +64,7 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
 
       {/* trendingHashtagsCard */}
       {!expandedCard && (
-        <div className="bg-white relative shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] p-[9px_8px] 2xl:p-[12px_10px] max-w-[245px] rounded-[10px]">
+        <div className="bg-white relative h-4/5 w-1/2 4xl:w-2/3 max-w-[500px] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] p-[9px_8px] 2xl:p-[12px_10px] min-w-[245px] rounded-[10px]">
           <div className="flex justify-between mb-[5px] gap-[23px] font-bold">
             <div className="flex w-[14.7px] h-[14.7px] 2xl:h-[20px] 2xl:w-[20px] space-x-[5px]">
               <Image
@@ -107,19 +108,11 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
             <div> #Dolor </div>
           </div>
           {/* copy to clipboard */}
-          <div className="bg-[#7F7789] w-4 2xl:w-[21px] h-4 2xl:h-[21px] rounded-full flex justify-center items-center absolute bottom-1 right-1">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="2xl:w-[13px] 2xl:h-[13px] w-[9px] h-[9px]"
-              viewBox="0 0 13 13"
-              fill="none"
-            >
-              <path
-                d="M3.79156 3.25016V1.62516C3.79156 1.32601 4.03407 1.0835 4.33323 1.0835H10.8332C11.1324 1.0835 11.3749 1.32601 11.3749 1.62516V9.2085C11.3749 9.50766 11.1324 9.75016 10.8332 9.75016H9.20822V11.3747C9.20822 11.6741 8.96453 11.9168 8.66287 11.9168H2.17027C1.86907 11.9168 1.625 11.676 1.625 11.3747L1.62641 3.7923C1.62646 3.49289 1.87018 3.25016 2.17177 3.25016H3.79156ZM2.70964 4.3335L2.70844 10.8335H8.12489V4.3335H2.70964ZM4.87489 3.25016H9.20822V8.66683H10.2916V2.16683H4.87489V3.25016Z"
-                fill="white"
-              />
-            </svg>
-          </div>
+          <CopyToClipBoard
+            text={
+              "Vivek says calm down let the api ready. He'll fix this later."
+            }
+          />
         </div>
       )}
 
@@ -258,3 +251,48 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
 };
 
 export default PopularHashtags;
+
+const CopyToClipBoard = ({ text }) => {
+  const [isCopying, setIsCopying] = useState(false);
+
+  function copyToClipboard(text) {
+    setIsCopying(true);
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        toast.success("Text copied to clipboard");
+      })
+      .catch((err) => {
+        toast.error("Unable to copy text to clipboard");
+      })
+      .finally(() => {
+        // Enable the button after a cooldown period
+        setTimeout(() => {
+          setIsCopying(false);
+        }, 5000);
+      });
+  }
+
+  return (
+    <div
+      onClick={(e) => {
+        e.stopPropagation();
+        if (!isCopying) copyToClipboard(text);
+      }}
+      title="Click to copy"
+      className="bg-[#7F7789] cursor-pointer w-4 2xl:w-[21px] h-4 2xl:h-[21px] rounded-full flex justify-center items-center absolute bottom-1 right-1 4xl:bottom-2 4xl:right-2 "
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="2xl:w-[13px] 2xl:h-[13px] w-[9px] h-[9px]"
+        viewBox="0 0 13 13"
+        fill="none"
+      >
+        <path
+          d="M3.79156 3.25016V1.62516C3.79156 1.32601 4.03407 1.0835 4.33323 1.0835H10.8332C11.1324 1.0835 11.3749 1.32601 11.3749 1.62516V9.2085C11.3749 9.50766 11.1324 9.75016 10.8332 9.75016H9.20822V11.3747C9.20822 11.6741 8.96453 11.9168 8.66287 11.9168H2.17027C1.86907 11.9168 1.625 11.676 1.625 11.3747L1.62641 3.7923C1.62646 3.49289 1.87018 3.25016 2.17177 3.25016H3.79156ZM2.70964 4.3335L2.70844 10.8335H8.12489V4.3335H2.70964ZM4.87489 3.25016H9.20822V8.66683H10.2916V2.16683H4.87489V3.25016Z"
+          fill="white"
+        />
+      </svg>
+    </div>
+  );
+};

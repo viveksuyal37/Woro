@@ -7,7 +7,7 @@ const SocialMediaCard = () => {
         background:
           " linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)",
       }}
-      className="flex flex-col leading-tight gap-1 2xl:gap-2 justify-center items-center rounded-[20px] w-[161px] 2xl:w-[171px] shadow-[-10px_10px_20px_0px_rgba(211,_188,_242,_0.35)]"
+      className="flex flex-col leading-tight gap-1 2xl:gap-2 justify-center items-center rounded-[20px] w-[161px] 2xl:w-[171px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]"
     >
       {/* top */}
       <div className="flex items-center gap-[7px]">

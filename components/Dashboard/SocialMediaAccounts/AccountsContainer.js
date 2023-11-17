@@ -7,7 +7,7 @@ const AccountsContainer = ({ expandedCard }) => {
   return (
     <div
       className={classNames(
-        "flex justify-between gap-[21px] max-h-[61px] 2xl:max-h-[87.5px]  transition-all opacity-1 duration-300 ease-in-out overflow-hidden",
+        "flex justify-between gap-[21px] transition-all opacity-1 duration-300 ease-in-out overflow-hidden",
         {
           " w-0 h-0 opacity-0 hidden": expandedCard,
           "w-full h-full": !expandedCard,

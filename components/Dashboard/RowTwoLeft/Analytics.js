@@ -62,7 +62,7 @@ const Analytics = ({ cardId, expandedCard }) => {
   const bigScreenMargin = { top: 26, bottom: 30 };
 
   // Determine the screen size and set the appropriate margin and datakey sizes
-  const screenWidth = window.innerWidth;
+  const screenWidth = typeof window === "object" ? window.innerWidth : "";
 
   // graph datakey sizes
   const datakeySize = screenWidth > 1500 ? { fontSize: 14 } : { fontSize: 11 };
@@ -70,7 +70,7 @@ const Analytics = ({ cardId, expandedCard }) => {
 
   return (
     <section
-      className={classNames("flex flex-col w-full h-full gap-[22px] ", {
+      className={classNames("flex flex-col relative w-full h-full gap-[22px] ", {
         " hidden": expandedCard && cardId !== expandedCard,
       })}
     >
@@ -84,7 +84,7 @@ const Analytics = ({ cardId, expandedCard }) => {
           {
             "h-[34vh] 2xl:h-[338px] w-[84vw] 2xl:w-full p-[32px_20px_40px_20px]":
               cardId === expandedCard,
-            "w-[43.58vw] h-[34.35vh] min-h-[213px] 2xl:min-h-[305px] p-[12px] 2xl:p-[20px] max-w-[1000px]":
+            "w-[43.58vw] h-[34.35vh] 4xl:h-[40vh] min-h-[213px] 2xl:min-h-[305px] p-[12px] 2xl:p-[20px] max-w-[1000px] 4xl:max-w-[1300px] 5xl:max-w-[1500px] ":
               !expandedCard,
           }
         )}
@@ -110,7 +110,7 @@ const Analytics = ({ cardId, expandedCard }) => {
             </div>
           )}
 
-          <div className="flex  items-center  gap-[10px]  text-[10px] 2xl:text-[14px] text-[#7F7789] child:2xl:p-[9px]">
+          <div className="flex  items-center mr-7 gap-[10px]  text-[10px] 2xl:text-[14px] text-[#7F7789] child:2xl:p-[9px]">
             <select className=" w-[77px] 2xl:w-[111px] outline-none h-[25px]  2xl:h-[46px]   border border-[#C8C7C9] rounded-[6px]">
               <option>Post</option>
             </select>
@@ -121,7 +121,7 @@ const Analytics = ({ cardId, expandedCard }) => {
               <option>Last & days</option>
             </select>
 
-            <ExpandBtn cardId={cardId} />
+          
           </div>
         </div>
 
@@ -294,6 +294,11 @@ const Analytics = ({ cardId, expandedCard }) => {
           </div>
         </div>
       )}
+
+ {/* expand btn  */}
+      <div className="absolute top-3 right-3 2xl:top-[20px] 2xl:right-[20px]">
+      <ExpandBtn cardId={cardId} />
+      </div>
     </section>
   );
 };

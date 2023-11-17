@@ -20,7 +20,7 @@ const Fb = () => {
               return data.json();
             })
             .then((data) => {
-              console.log("appAccessToken", data);
+              console.log("node appAccessToken", data);
             });
         } else {
           console.log("user aborted login.");

@@ -20,7 +20,7 @@ const RecentNotifications = ({ cardId, expandedCard }) => {
         { "hidden opacity-0": expandedCard && expandedCard !== cardId },
         { "h-[66vh] p-6 2xl:p-[46px]": expandedCard === cardId },
         {
-          "min-h-[213px] 2xl:min-h-[305px] h-[34.35vh] p-[14px_7px] 2xl:p-[14px_11px]":
+          "min-h-[213px] 2xl:min-h-[305px] h-[34.35vh] 4xl:h-[40vh] p-[14px_7px] 2xl:p-[14px_11px]":
             !expandedCard,
         }
       )}
@@ -47,7 +47,7 @@ const RecentNotifications = ({ cardId, expandedCard }) => {
               <div
                 key={nanoid(4)}
                 className={classNames(
-                  " border-[#7F7789] text-[10px] 2xl:text-[14px] p-[6px_2px] 2xl:p-[12px_2px] flex gap-2 2xl:gap-[12px] items-center leading-tight",
+                  " border-[#7F7789] text-[10px] 2xl:text-[11px] 3xl:text-[14px] p-[6px_2px] 2xl:p-[12px_2px] flex gap-2 2xl:gap-[12px] items-center leading-tight",
                   { "border-b-[1px]": indx !== 5 }
                 )}
               >
