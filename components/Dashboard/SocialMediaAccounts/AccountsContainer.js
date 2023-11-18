@@ -1,22 +1,22 @@
 /*Custom components */
-import classNames from "classnames";
-import AddSocials from "./AddSocials";
-import SocialMediaCard from "./SocialMediaCard";
+import classNames from 'classnames';
+import AddSocials from './AddSocials';
+import SocialMediaCard from './SocialMediaCard';
 
 const AccountsContainer = ({ expandedCard }) => {
   return (
     <div
       className={classNames(
-        "flex justify-between gap-[21px] transition-all opacity-1 duration-300 ease-in-out overflow-hidden",
+        'flex justify-between gap-[21px] transition-all opacity-1 duration-300 ease-in-out overflow-hidden',
         {
-          " w-0 h-0 opacity-0 hidden": expandedCard,
-          "w-full h-full": !expandedCard,
-        }
+          ' w-0 h-0 opacity-0 hidden': expandedCard,
+          'w-full h-full': !expandedCard,
+        },
       )}
     >
-      <div className="gap-[14.7px] 2xl:gap-[21px] overflow-hidden flex max-w-[820px] 2xl:max-w-[1150px] shrink-0">
+      <div className='gap-[14.7px] 2xl:gap-[21px] overflow-hidden flex max-w-[820px] 2xl:max-w-[1150px] shrink-0'>
         {!expandedCard &&
-          ["", "", "", "", ""].map((i, indx) => {
+          ['', '', '', '', ''].map((i, indx) => {
             return <SocialMediaCard key={indx} />;
           })}
       </div>
