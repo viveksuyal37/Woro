@@ -2,21 +2,30 @@
 import classNames from 'classnames';
 import AddSocials from './AddSocials';
 import SocialMediaCard from './SocialMediaCard';
+import { useDraggable } from 'react-use-draggable-scroll';
+import { useRef } from 'react';
 
 const AccountsContainer = ({ expandedCard }) => {
+  const accountsContainerRef = useRef();
+  const { events } = useDraggable(accountsContainerRef);
+
   return (
     <div
       className={classNames(
-        'flex justify-between gap-[21px] transition-all opacity-1 duration-300 ease-in-out overflow-hidden',
+        'flex gap-[21px] transition-all opacity-1 duration-300 ease-in-out overflow-hidden',
         {
           ' w-0 h-0 opacity-0 hidden': expandedCard,
           'w-full h-full': !expandedCard,
         },
       )}
     >
-      <div className='gap-[14.7px] 2xl:gap-[21px] overflow-hidden flex max-w-[820px] 2xl:max-w-[1150px] shrink-0'>
+      <div
+        ref={accountsContainerRef}
+        {...events}
+        className='gap-[14.7px] child:flex-shrink-0 2xl:gap-[21px] overflow-auto scrollableContainer flex max-w-[820px] 2xl:max-w-[59.89vw] 4xl:max-w-[65vw] '
+      >
         {!expandedCard &&
-          ['', '', '', '', ''].map((i, indx) => {
+          ['', '', '', '', '', '', '', '', '', ''].map((i, indx) => {
             return <SocialMediaCard key={indx} />;
           })}
       </div>

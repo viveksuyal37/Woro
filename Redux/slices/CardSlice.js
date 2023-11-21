@@ -1,9 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {};
 
 const cardsSlice = createSlice({
-  name: "cardState",
+  name: 'cardState',
   initialState,
   reducers: {
     toggleCard: (state, action) => {
