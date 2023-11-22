@@ -82,7 +82,6 @@ const Menu = () => {
         style={{
           background:
             ' linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)',
-          animation: 'grow 300ms linear',
         }}
         className=' menu'
       >
@@ -355,7 +354,7 @@ const Menu = () => {
               ' linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)',
           }}
           title='Close'
-          className='cursor-pointer flex items-center justify-center absolute -top-4 -right-4 w-[57px] 2xl:w-[87px] h-[57px] 2xl:h-[87px] rounded-full'
+          className='cursor-pointer flex items-center justify-center absolute top-0 right-0 w-[57px] 2xl:w-[87px] h-[57px] 2xl:h-[87px] rounded-full'
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -398,6 +397,37 @@ const Menu = () => {
             width: 744px;
             height: 744px;
             border-radius: 50%;
+            animation:
+              bounce 1s ease-in,
+              grow 300ms linear;
+          }
+
+          @keyframes grow {
+            from {
+              bottom: -1000px;
+            }
+
+            to {
+              bottom: 0px;
+            }
+          }
+
+          @keyframes bounce {
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+              transform: translateY(0);
+            }
+
+            40% {
+              transform: translateY(-15px);
+            }
+
+            60% {
+              transform: translateY(-5px);
+            }
           }
 
           @media all and (max-width: 1400px) {
@@ -416,6 +446,7 @@ const Menu = () => {
             -webkit-clip-path: url(#sector);
             clip-path: url(#sector);
           }
+
           .menu li div {
             width: 100%;
             height: 100%;
@@ -455,7 +486,7 @@ const Menu = () => {
 
           .icon {
             position: absolute;
-            right: 16%;
+            right: 14%;
             top: 28%;
             font-size: 35px;
             line-height: 0;
@@ -475,16 +506,6 @@ const Menu = () => {
             top: 30%;
             left: 30%;
             z-index: 8;
-          }
-
-          @keyframes grow {
-            from {
-              bottom: -1000px;
-            }
-
-            to {
-              bottom: 0px;
-            }
           }
         `}
       </style>

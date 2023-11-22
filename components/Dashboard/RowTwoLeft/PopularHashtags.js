@@ -321,7 +321,7 @@ const CopyToClipBoard = ({ text }) => {
         if (!isCopying) copyToClipboard(text);
       }}
       title='Click to copy'
-      className='bg-[#7F7789] cursor-pointer w-4 2xl:w-[21px] h-4 2xl:h-[21px] rounded-full flex justify-center items-center absolute bottom-1 right-1 4xl:bottom-2 4xl:right-2 '
+      className='bg-[#7F7789] group hover:bg-white hover:border hover:border-[#7F7789] cursor-pointer w-4 2xl:w-[21px] h-4 2xl:h-[21px] rounded-full flex justify-center items-center absolute bottom-1 right-1 4xl:bottom-2 4xl:right-2 '
     >
       <svg
         xmlns='http://www.w3.org/2000/svg'
@@ -331,7 +331,7 @@ const CopyToClipBoard = ({ text }) => {
       >
         <path
           d='M3.79156 3.25016V1.62516C3.79156 1.32601 4.03407 1.0835 4.33323 1.0835H10.8332C11.1324 1.0835 11.3749 1.32601 11.3749 1.62516V9.2085C11.3749 9.50766 11.1324 9.75016 10.8332 9.75016H9.20822V11.3747C9.20822 11.6741 8.96453 11.9168 8.66287 11.9168H2.17027C1.86907 11.9168 1.625 11.676 1.625 11.3747L1.62641 3.7923C1.62646 3.49289 1.87018 3.25016 2.17177 3.25016H3.79156ZM2.70964 4.3335L2.70844 10.8335H8.12489V4.3335H2.70964ZM4.87489 3.25016H9.20822V8.66683H10.2916V2.16683H4.87489V3.25016Z'
-          fill='white'
+          className='fill-white group-hover:fill-[#7F7789]'
         />
       </svg>
     </div>

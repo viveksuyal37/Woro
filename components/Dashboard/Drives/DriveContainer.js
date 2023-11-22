@@ -41,7 +41,7 @@ const DriveContainer = ({ expandedCard }) => {
       </div>
       <Link
         href='/dashboard/library'
-        className='text-center w-full text-[10px] 2xl:text-[12px] 3xl:text-[1rem] border py-1 3xl:py-2 rounded-[10px] text-woro-blue border-woro-blue'
+        className='text-center hover:bg-woro-blue hover:text-white w-full text-[10px] 2xl:text-[12px] 3xl:text-[1rem] border py-1 3xl:py-2 rounded-[10px] text-woro-blue border-woro-blue'
       >
         Content Library
       </Link>

@@ -12,13 +12,18 @@ const LeftDrawer = () => {
   const dispatch = useDispatch();
 
   return (
+    // blurred overlay
+    // <div
+    //   style={{ zIndex: 10 }}
+    //   className='fixed inset-0 w-screen h-screen backdrop-blur-sm'
+    // >
     <aside
       style={{ zIndex: 10 }}
       className={classNames(
         'absolute transition-all duration-300 ease-linear flex gap-[7vw] ml-12  h-max',
         {
           'left-0': visibility === 2,
-          '-left-[29.5vw]': !visibility,
+          '-left-[31vw] 2xl:-left-[29.5vw]': !visibility,
         },
       )}
     >
@@ -43,13 +48,12 @@ const LeftDrawer = () => {
               'linear-gradient(108deg, rgba(255, 255, 255, 0.80) 0.17%, rgba(164, 209, 223, 0.76) 32.61%, rgba(188, 95, 232, 0.34) 65.41%, rgba(255, 255, 255, 0.45) 98.68%)',
             top: 'calc(50% - 43px)',
           }}
-          className='w-[86px] cursor-pointer flex items-center justify-center h-[86px] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.50)] rounded-full absolute -right-[112px]'
+          className='w-14 2xl:w-[86px] cursor-pointer flex items-center justify-center h-14 2xl:h-[86px] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.50)] rounded-full absolute -right-20 2xl:-right-[112px]'
         >
           {!visibility ? (
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='46'
-              height='46'
+              className='w-8 h-8 2xl:w-[46px] 2xl:h-[46px]'
               viewBox='0 0 46 46'
               fill='none'
             >
@@ -61,8 +65,7 @@ const LeftDrawer = () => {
           ) : (
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='66'
-              height='66'
+              className='w-8 h-8 2xl:w-[46px] 2xl:h-[46px]'
               viewBox='0 0 66 66'
               fill='none'
             >
@@ -78,6 +81,7 @@ const LeftDrawer = () => {
       {/* additional div for hovering and opening of drawer */}
       {/* <div className='w-[5vw] bg-black h-[82vh] border border-red'></div> */}
     </aside>
+    // </div>
   );
 };
 
