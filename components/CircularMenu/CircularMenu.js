@@ -2,13 +2,13 @@
 
 //*Internal imports */
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 //*External imports */
 import classNames from 'classnames';
 
 //*Custom components */
-import ChoosePlatforms from './ChoosePlatform';
+import MenuItemPostingUI from './PostingUI/MenuItemPostingUI';
 
 //*redux */
 import {
@@ -17,16 +17,14 @@ import {
   toggleCircularMenu,
 } from '@/Redux/slices/CircularMenuSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import ChooseFile from './ChooseFile';
 
 const CircularMenu = () => {
-  const { isVisible, itemSelected, selectedPlatforms } =
-    useSelector(getCircularMenuState);
+  const { isVisible, itemSelected } = useSelector(getCircularMenuState);
 
   return (
     // blurred layer
     <div
-      style={{ zIndex: 10 }}
+      style={{ zIndex: 50 }}
       className={`flex  items-center justify-center fixed transition-all duration-300   backdrop-blur-lg ${
         isVisible ? 'h-screen inset-0 w-screen ' : 'hidden'
       }`}
@@ -34,11 +32,8 @@ const CircularMenu = () => {
       {/*  circular Menu */}
       {!itemSelected && <Menu />}
 
-      {/* windows on menu selection */}
-
-      {itemSelected && !selectedPlatforms && <ChoosePlatforms />}
-
-      {selectedPlatforms && <ChooseFile ContentType={itemSelected} />}
+      {/*UI on menu item selection */}
+      {itemSelected && <MenuItemPostingUI selectedItem={itemSelected} />}
     </div>
   );
 };

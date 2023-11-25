@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   isVisible: false,
@@ -7,7 +7,7 @@ const initialState = {
 };
 
 const circularMenuSlice = createSlice({
-  name: "circularMenuState",
+  name: 'circularMenuState',
   initialState,
   reducers: {
     toggleCircularMenu: (state, action) => {
@@ -25,6 +25,11 @@ const circularMenuSlice = createSlice({
     clearSelectedPlatforms: (state, action) => {
       state.selectedPlatforms = false;
     },
+    clearMenuState: (state, action) => {
+      state.isVisible = false;
+      state.itemSelected = false;
+      state.selectedPlatforms = false;
+    },
   },
 });
 
@@ -33,7 +38,8 @@ export const {
   setSelectedItem,
   clearSelection,
   setSelectedPlatforms,
-  clearSelectedPlatforms
+  clearSelectedPlatforms,
+  clearMenuState,
 } = circularMenuSlice.actions;
 
 export const getCircularMenuState = (state) => state.circularMenu;

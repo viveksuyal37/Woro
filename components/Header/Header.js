@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Header = () => {
   const [isModalOpen, setIsModelOpen] = useState(false);
@@ -146,7 +146,7 @@ const Modal = ({ isModalOpen, setIsModelOpen }) => {
   return (
     <div
       className={classNames(
-        'absolute z-20 rounded-xl top-14 2xl:top-[72px] left-0 w-full  transition-all duration-300 ease-linear text-[#7F7789] text-[12px] 2xl:text-[14px] shadow-lg bg-white child:flex child:p-[6px_9px]  child:gap-1 child:2xl:gap-[6px] child:w-max child:items-center overflow-clip ',
+        'absolute z-10 rounded-xl top-14 2xl:top-[72px] left-0 w-full  transition-all duration-300 ease-linear text-[#7F7789] text-[12px] 2xl:text-[14px] shadow-lg bg-white child:flex child:p-[6px_9px]  child:gap-1 child:2xl:gap-[6px] child:w-max child:items-center overflow-clip ',
         {
           'h-max  p-[10px_4px]  2xl:p-[10px]': isModalOpen,
           'h-0': !isModalOpen,

@@ -5,29 +5,42 @@ import {
   moveDrawer,
 } from '@/Redux/slices/LeftDashboardDrawerSlice';
 import classNames from 'classnames';
+import { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 const LeftDrawer = () => {
   const { visibility } = useSelector(getDrawerVisibility);
+  const drawerRef = useRef(null);
   const dispatch = useDispatch();
 
+  const closeDrawerOnBlur = (e) => {
+    if (e.target !== drawerRef.current) {
+      dispatch(moveDrawer({ visibility: 0 }));
+    }
+  };
+
+  useEffect(() => {
+    if (visibility) document.addEventListener('click', closeDrawerOnBlur);
+    // cleanup
+    return () => {
+      document.removeEventListener('click', closeDrawerOnBlur);
+    };
+  }, [visibility]);
+
   return (
-    // blurred overlay
-    // <div
-    //   style={{ zIndex: 10 }}
-    //   className='fixed inset-0 w-screen h-screen backdrop-blur-sm'
-    // >
     <aside
       style={{ zIndex: 10 }}
       className={classNames(
         'absolute transition-all duration-300 ease-linear flex gap-[7vw] ml-12  h-max',
         {
           'left-0': visibility === 2,
-          '-left-[31vw] 2xl:-left-[29.5vw]': !visibility,
+          '-left-[31vw] 2xl:-left-[29.5vw]': visibility == 1,
+          '-left-[37vw] 2xl:-left-[37vw]': visibility === 0,
         },
       )}
     >
       <div
+        ref={drawerRef}
         style={{
           background:
             'linear-gradient(108deg, rgba(255, 255, 255, 0.40) 0.17%, rgba(164, 209, 223, 0.38) 32.61%, rgba(188, 95, 232, 0.17) 65.41%, rgba(255, 255, 255, 0.22) 98.68%)',
@@ -35,12 +48,12 @@ const LeftDrawer = () => {
         className='rounded-[20px]  w-[26.97vw] h-[81vh]  shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.50)] backdrop-blur-[30px]'
       >
         <p>LeftDrawer</p>
-        {/* add btn */}
+        {/* add/close btn */}
         <div
-          title={!visibility ? 'Click to open' : 'Close'}
+          title={visibility < 2 ? 'Click to open' : 'Close'}
           onClick={() => {
             visibility === 2
-              ? dispatch(moveDrawer({ visibility: false }))
+              ? dispatch(moveDrawer({ visibility: 0 }))
               : dispatch(moveDrawer({ visibility: 2 }));
           }}
           style={{
@@ -50,7 +63,7 @@ const LeftDrawer = () => {
           }}
           className='w-14 2xl:w-[86px] cursor-pointer flex items-center justify-center h-14 2xl:h-[86px] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.50)] rounded-full absolute -right-20 2xl:-right-[112px]'
         >
-          {!visibility ? (
+          {visibility < 2 ? (
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='w-8 h-8 2xl:w-[46px] 2xl:h-[46px]'
@@ -79,9 +92,15 @@ const LeftDrawer = () => {
       </div>
 
       {/* additional div for hovering and opening of drawer */}
-      {/* <div className='w-[5vw] bg-black h-[82vh] border border-red'></div> */}
+      {!visibility && (
+        <div
+          onMouseEnter={() => {
+            dispatch(moveDrawer({ visibility: 1 }));
+          }}
+          className='w-[5vw]  h-[82vh] '
+        ></div>
+      )}
     </aside>
-    // </div>
   );
 };
 

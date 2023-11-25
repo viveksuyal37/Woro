@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  visibility: false,
+  visibility: 0,
 };
 
 const dashboardDrawerSlice = createSlice({
@@ -9,10 +9,7 @@ const dashboardDrawerSlice = createSlice({
   initialState,
   reducers: {
     moveDrawer: (state, action) => {
-      return {
-        ...state,
-        visibility: action.payload.visibility,
-      };
+      state.visibility = action.payload.visibility;
     },
   },
 });
