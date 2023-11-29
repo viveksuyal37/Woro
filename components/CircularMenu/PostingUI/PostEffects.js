@@ -190,9 +190,9 @@ const PostFile = () => {
         background:
           ' linear-gradient(87deg, #FED170 0.02%, #E65351 29.18%, #C6338E 61.47%, #4F62D2 100%)',
       }}
-      className='p-[4px] rounded-[11px] shadow-[0px_5.3px_36.2px_6.7px_rgba(0,_0,_0,_0.15)]  mt-4 2xl:mt-8'
+      className='p-[2px] 2xl:p-[4px] rounded-[11px] shadow-[0px_5.3px_36.2px_6.7px_rgba(0,_0,_0,_0.15)]  mt-4 2xl:mt-8'
     >
-      <div className='w-[250px] 2xl:w-[356px] h-[280px] 2xl:h-[374px] p-[16px_17px] 2xl:p-[26px_25px] border rounded-[11px] bg-white '>
+      <div className='w-[220px] 2xl:w-[356px] h-[250px] 2xl:h-[374px] p-[16px_17px] 2xl:p-[26px_25px] border rounded-[11px] bg-white '>
         {/* file uploader */}
         <form className='w-full h-full'>
           <div
