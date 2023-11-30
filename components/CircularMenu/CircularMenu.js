@@ -17,9 +17,11 @@ import {
   toggleCircularMenu,
 } from '@/Redux/slices/CircularMenuSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import SchedulingUI from './SchedulingUI/SchedulingUI';
 
 const CircularMenu = () => {
-  const { isVisible, itemSelected } = useSelector(getCircularMenuState);
+  const { isVisible, itemSelected, schedulePosts } =
+    useSelector(getCircularMenuState);
 
   return (
     // blurred layer
@@ -32,8 +34,14 @@ const CircularMenu = () => {
       {/*  circular Menu */}
       {!itemSelected && <Menu />}
 
-      {/*UI on menu item selection */}
-      {itemSelected && <MenuItemPostingUI selectedItem={itemSelected} />}
+      {/*posting ui based on selected type of post */}
+      {itemSelected && !schedulePosts && (
+        <MenuItemPostingUI selectedItem={itemSelected} />
+      )}
+
+      {/*post scheduling UI after post saving */}
+
+      {schedulePosts && <SchedulingUI />}
     </div>
   );
 };

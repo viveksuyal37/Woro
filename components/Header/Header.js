@@ -1,6 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
+import { nanoid } from 'nanoid';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -139,6 +140,13 @@ const Header = () => {
 export default Header;
 
 const Modal = ({ isModalOpen, setIsModelOpen }) => {
+  const loggedAccounts = ['Vivek', 'Harry', 'Jimmy'];
+
+  const [accountsList, setAccountsList] = useState({
+    activeAccount: 0,
+    show: false,
+  });
+
   const handleClick = () => {
     setIsModelOpen(false);
   };
@@ -146,7 +154,7 @@ const Modal = ({ isModalOpen, setIsModelOpen }) => {
   return (
     <div
       className={classNames(
-        'absolute z-10 rounded-xl top-14 2xl:top-[72px] left-0 w-full  transition-all duration-300 ease-linear text-[#7F7789] text-[12px] 2xl:text-[14px] shadow-lg bg-white child:flex child:p-[6px_9px]  child:gap-1 child:2xl:gap-[6px] child:w-max child:items-center overflow-clip ',
+        'absolute z-10 rounded-xl top-14 2xl:top-[72px] left-0 w-full  transition-all duration-300 ease-linear text-[#7F7789] text-[12px] 2xl:text-[14px] shadow-lg bg-white child:flex child:p-[6px_9px]  child:gap-1 child:2xl:gap-[6px] child:w-max  overflow-clip ',
         {
           'h-max  p-[10px_4px]  2xl:p-[10px]': isModalOpen,
           'h-0': !isModalOpen,
@@ -191,10 +199,12 @@ const Modal = ({ isModalOpen, setIsModelOpen }) => {
         <span>Account ID</span>
       </Link>
 
-      <Link
-        onClick={handleClick}
-        href='/account/switch'
-        className='group hover:text-woro-blue '
+      <div
+        onClick={() => {
+          setAccountsList({ ...accountsList, show: !accountsList.show });
+        }}
+        // href='/account/switch'
+        className='cursor-pointer group hover:text-woro-blue'
       >
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -208,7 +218,60 @@ const Modal = ({ isModalOpen, setIsModelOpen }) => {
           />
         </svg>
         <span>Switch account</span>
-      </Link>
+      </div>
+
+      <div
+        className={classNames(
+          'flex overflow-clip !pt-0 flex-col justify-start gap-2 transition-all duration-200 ease-linear w-max ml-9 child:flex child:gap-2 child:cursor-pointer child:items-center',
+          { 'h-0 !p-0': !accountsList.show },
+        )}
+      >
+        {loggedAccounts?.map((account, indx) => {
+          return (
+            <div
+              onClick={() => {
+                setAccountsList({ ...accountsList, activeAccount: indx });
+              }}
+              key={nanoid(4)}
+            >
+              {accountsList.activeAccount == indx ? (
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  className='w-3 h-3 2xl:w-4 2xl:h-4'
+                  viewBox='0 0 38 38'
+                  fill='none'
+                >
+                  <circle
+                    cx='19'
+                    cy='19'
+                    r='13.5'
+                    stroke='#7F1DFE'
+                    strokeWidth='3'
+                  />
+                  <circle cx='19' cy='19' r='6' fill='#7F1DFE' />
+                </svg>
+              ) : (
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  className='w-3 h-3 2xl:w-4 2xl:h-4'
+                  viewBox='0 0 38 38'
+                  fill='none'
+                >
+                  <circle
+                    cx='19'
+                    cy='19'
+                    r='11'
+                    fill='white'
+                    stroke='#7F7789'
+                    strokeWidth='8'
+                  />
+                </svg>
+              )}
+              {account}
+            </div>
+          );
+        })}
+      </div>
 
       <Link
         onClick={handleClick}

@@ -27,13 +27,13 @@ const DriveContainer = ({ expandedCard }) => {
           alt='drive'
         />
         <Image
-          src='/assets/images/dashboard/onedrive.png'
+          src='/assets/images/dashboard/dropbox.png'
           width='27'
           height='27'
           alt='drive'
         />
         <Image
-          src='/assets/images/dashboard/onedrive.png'
+          src='/assets/images/dashboard/google-drive.png'
           width='27'
           height='27'
           alt='drive'

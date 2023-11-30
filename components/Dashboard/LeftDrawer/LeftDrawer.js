@@ -48,15 +48,14 @@ const LeftDrawer = () => {
           background:
             'linear-gradient(108deg, rgba(255, 255, 255, 0.40) 0.17%, rgba(164, 209, 223, 0.38) 32.61%, rgba(188, 95, 232, 0.17) 65.41%, rgba(255, 255, 255, 0.22) 98.68%)',
         }}
-        className=' text-woro-blue   font-xl font-semibold rounded-[20px]   shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.50)] backdrop-blur-[30px]     '
+        className=' text-woro-blue text-[1rem] 2xl:text-xl font-semibold rounded-[20px]   shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.50)] backdrop-blur-[30px]     '
       >
         {/* drawer items */}
-        <div className=' flex flex-col items-center gap-4  w-[18.43vw] h-[81vh] child:flex child:h-11 child:p-[10px] child:w-4/5 child:gap-[22px] child:items-center scrollableContainer overflow-y-auto py-[22px] child:rounded-[10px] child:cursor-pointer'>
+        <div className=' flex flex-col items-center gap-2 2xl:gap-4  w-[18.43vw] h-[81vh] child:flex child:h-11 child:p-[10px] child:w-4/5 child:gap-[1rem] child:2xl:gap-[22px] child:items-center scrollableContainer overflow-y-auto py-[22px] child:rounded-[10px] child:cursor-pointer'>
           <div className='shadow-[0px_4px_27px_5px_rgba(0,_0,_0,_0.15)]'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='17'
-              height='16'
+              className='w-3 h-3 2xl:w-4 2xl:h-4'
               viewBox='0 0 17 16'
               fill='none'
             >
@@ -110,8 +109,7 @@ const LeftDrawer = () => {
           <div>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='25'
-              height='24'
+              className='w-5 h-5 2xl:w-6 2xl:h-6'
               viewBox='0 0 25 24'
               fill='none'
             >
@@ -136,11 +134,10 @@ const LeftDrawer = () => {
             Switch Account
           </div>
 
-          <div>
+          <Link href='/dashboard/library'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='25'
-              height='24'
+              className='w-5 h-5 2xl:w-6 2xl:h-6'
               viewBox='0 0 25 24'
               fill='none'
             >
@@ -173,7 +170,7 @@ const LeftDrawer = () => {
               </defs>
             </svg>
             Media Library
-          </div>
+          </Link>
 
           <div
             onClick={() => {
@@ -182,8 +179,7 @@ const LeftDrawer = () => {
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='25'
-              height='24'
+              className='w-5 h-5 2xl:w-6 2xl:h-6'
               viewBox='0 0 25 24'
               fill='none'
             >
@@ -223,11 +219,10 @@ const LeftDrawer = () => {
             Analytics
           </div>
 
-          <div>
+          <Link href='/dashboard/calender'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='25'
-              height='24'
+              className='w-5 h-5 2xl:w-6 2xl:h-6'
               viewBox='0 0 25 24'
               fill='none'
             >
@@ -250,7 +245,7 @@ const LeftDrawer = () => {
               </defs>
             </svg>
             Calendar
-          </div>
+          </Link>
 
           <div
             onClick={() => {
@@ -259,8 +254,7 @@ const LeftDrawer = () => {
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='25'
-              height='24'
+              className='w-5 h-5 2xl:w-6 2xl:h-6'
               viewBox='0 0 25 24'
               fill='none'
             >
@@ -288,8 +282,7 @@ const LeftDrawer = () => {
           <div>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='25'
-              height='24'
+              className='w-5 h-5 2xl:w-6 2xl:h-6'
               viewBox='0 0 25 24'
               fill='none'
             >
@@ -317,8 +310,7 @@ const LeftDrawer = () => {
           <Link href='/account/messages'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='25'
-              height='24'
+              className='w-5 h-5 2xl:w-6 2xl:h-6'
               viewBox='0 0 25 24'
               fill='none'
             >
@@ -346,8 +338,7 @@ const LeftDrawer = () => {
           <div>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='25'
-              height='24'
+              className='w-5 h-5 2xl:w-6 2xl:h-6'
               viewBox='0 0 25 24'
               fill='none'
             >
@@ -375,8 +366,7 @@ const LeftDrawer = () => {
           <div>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='25'
-              height='24'
+              className='w-5 h-5 2xl:w-6 2xl:h-6'
               viewBox='0 0 25 24'
               fill='none'
             >
@@ -401,11 +391,10 @@ const LeftDrawer = () => {
             Work Flow
           </div>
 
-          <div>
+          <Link href='/dashboard/UGC'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='25'
-              height='24'
+              className='w-5 h-5 2xl:w-6 2xl:h-6'
               viewBox='0 0 25 24'
               fill='none'
             >
@@ -468,13 +457,12 @@ const LeftDrawer = () => {
               </defs>
             </svg>
             UGC
-          </div>
+          </Link>
 
           <div>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='25'
-              height='24'
+              className='w-5 h-5 2xl:w-6 2xl:h-6'
               viewBox='0 0 25 24'
               fill='none'
             >
@@ -517,8 +505,7 @@ const LeftDrawer = () => {
           <div>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='25'
-              height='24'
+              className='w-5 h-5 2xl:w-6 2xl:h-6'
               viewBox='0 0 25 24'
               fill='none'
             >
@@ -543,6 +530,7 @@ const LeftDrawer = () => {
             Notification
           </div>
         </div>
+
         {/* add/close btn */}
         <div
           title={visibility < 2 ? 'Click to open' : 'Close'}

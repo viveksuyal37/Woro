@@ -1,8 +1,10 @@
 'use client';
 
+import { savePostsChanges } from '@/Redux/slices/CircularMenuSlice';
 /**BuiltIn Imports */
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 //*External imports */
 const EmojiPicker = dynamic(() => import('emoji-picker-react'), { ssr: false });
@@ -10,6 +12,7 @@ const EmojiPicker = dynamic(() => import('emoji-picker-react'), { ssr: false });
 const PostDescription = () => {
   const [caption, setCaption] = useState('');
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+  const dispatch = useDispatch();
 
   const HandleEmojiClick = (emojiData) => {
     const { emoji } = emojiData;
@@ -482,6 +485,9 @@ const PostDescription = () => {
         {/* Save*/}
         <div>
           <button
+            onClick={() => {
+              dispatch(savePostsChanges());
+            }}
             style={{
               background: 'linear-gradient(95deg, #7F1DFE 0%, #464BD3 100%)',
             }}
