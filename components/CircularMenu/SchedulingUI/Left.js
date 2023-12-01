@@ -18,15 +18,16 @@ const Left = () => {
     const formattedLabel = moment(toolbar.label).format('MMMM YYYY');
 
     return (
-      <div className='flex justify-between'>
-        <h2 className='pb-5 text-2xl font-bold'>{formattedLabel}</h2>
+      <div className='flex items-center justify-between'>
+        <h2 className='pb-3 text-xl font-bold 2xl:pb-5 2xl:text-2xl'>
+          {formattedLabel}
+        </h2>
 
         <div className='flex justify-end gap-1 '>
           <button onClick={goToPrev}>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='24'
-              height='25'
+              className='w-5 h-5 2xl:w-6 2xl:h-6'
               viewBox='0 0 24 25'
               fill='none'
             >
@@ -40,8 +41,7 @@ const Left = () => {
           <button onClick={goToNext}>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='24'
-              height='25'
+              className='w-5 h-5 2xl:w-6 2xl:h-6'
               viewBox='0 0 24 25'
               fill='none'
             >
@@ -58,25 +58,61 @@ const Left = () => {
 
   const CustomMonthHeader = ({ label }) => {
     return (
-      <div className='font-bold h-[72px] flex justify-center items-center'>
+      <div className='font-bold h-[72px]  flex justify-center items-center'>
         {label?.slice(0, 2)}
       </div>
     );
   };
 
   return (
-    <Calendar
-      localizer={localizer}
-      components={{
-        toolbar: CustomToolbar,
-        month: {
-          header: CustomMonthHeader,
-        },
-      }}
-      startAccessor='start'
-      endAccessor='end'
-      style={{ height: '50vh' }}
-    />
+    <>
+      <Calendar
+        localizer={localizer}
+        components={{
+          toolbar: CustomToolbar,
+          month: {
+            header: CustomMonthHeader,
+          },
+        }}
+        startAccessor='start'
+        endAccessor='end'
+        style={{ height: '50vh' }}
+      />
+      <div className='flex items-center text-sm 2xl:text-[1rem] gap-2 mt-4'>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          className='w-3 2xl:w-[18px] h-3 2xl:h-[18px]'
+          viewBox='0 0 18 18'
+          fill='none'
+        >
+          <ellipse
+            cx='8.65385'
+            cy='8.74168'
+            rx='8.65385'
+            ry='8.65379'
+            fill='#00FF85'
+          />
+        </svg>
+        <span>Public Holidays</span>
+      </div>
+      <style global jsx>
+        {`
+          .rbc-header + .rbc-header {
+            border-left: none;
+          }
+          .rbc-month-view {
+            border: none;
+            overflow: auto;
+          }
+          .rbc-month-view::-webkit-scrollbar {
+            display: none;
+          }
+          .rbc-month-row {
+            min-height: 73px;
+          }
+        `}
+      </style>
+    </>
   );
 };
 export default Left;

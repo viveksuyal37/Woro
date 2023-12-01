@@ -4,10 +4,11 @@ import classNames from 'classnames';
 import { nanoid } from 'nanoid';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const Header = () => {
   const [isModalOpen, setIsModelOpen] = useState(false);
+  const ref = useRef(null);
   return (
     <header>
       <div className='flex items-center justify-between'>
@@ -104,6 +105,7 @@ const Header = () => {
 
             {/*dropdown icon */}
             <div
+              ref={ref}
               onClick={() => {
                 setIsModelOpen(!isModalOpen);
               }}
@@ -129,7 +131,11 @@ const Header = () => {
             </div>
 
             {/* modal */}
-            <Modal isModalOpen={isModalOpen} setIsModelOpen={setIsModelOpen} />
+            <Modal
+              isModalOpen={isModalOpen}
+              dropIconRef={ref}
+              setIsModelOpen={setIsModelOpen}
+            />
           </div>
         </div>
       </div>
@@ -139,20 +145,39 @@ const Header = () => {
 
 export default Header;
 
-const Modal = ({ isModalOpen, setIsModelOpen }) => {
-  const loggedAccounts = ['Vivek', 'Harry', 'Jimmy'];
+const Modal = ({ isModalOpen, setIsModelOpen, dropIconRef }) => {
+  const modalRef = useRef(null);
 
   const [accountsList, setAccountsList] = useState({
     activeAccount: 0,
     show: false,
   });
 
-  const handleClick = () => {
-    setIsModelOpen(false);
+  const loggedAccounts = ['Vivek', 'Harry', 'Jimmy'];
+
+  const handleClick = (e) => {
+    if (
+      modalRef.current &&
+      !modalRef.current.contains(e.target) &&
+      !dropIconRef.current.contains(e.target)
+    ) {
+      setIsModelOpen(false);
+    } else {
+    }
   };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClick);
+
+    // cleanup
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
+  }, []);
 
   return (
     <div
+      ref={modalRef}
       className={classNames(
         'absolute z-10 rounded-xl top-14 2xl:top-[72px] left-0 w-full  transition-all duration-300 ease-linear text-[#7F7789] text-[12px] 2xl:text-[14px] shadow-lg bg-white child:flex child:p-[6px_9px]  child:gap-1 child:2xl:gap-[6px] child:w-max  overflow-clip ',
         {
@@ -162,7 +187,7 @@ const Modal = ({ isModalOpen, setIsModelOpen }) => {
       )}
     >
       <Link
-        onClick={handleClick}
+        // onClick={handleClick}
         href='/account'
         className='group hover:text-woro-blue '
       >
@@ -181,7 +206,7 @@ const Modal = ({ isModalOpen, setIsModelOpen }) => {
       </Link>
 
       <Link
-        onClick={handleClick}
+        // onClick={handleClick}
         href='/account/id'
         className='group hover:text-woro-blue '
       >
@@ -200,8 +225,8 @@ const Modal = ({ isModalOpen, setIsModelOpen }) => {
       </Link>
 
       <div
-        onClick={() => {
-          setAccountsList({ ...accountsList, show: !accountsList.show });
+        onMouseOver={() => {
+          setAccountsList({ ...accountsList, show: true });
         }}
         // href='/account/switch'
         className='cursor-pointer group hover:text-woro-blue'
@@ -230,7 +255,8 @@ const Modal = ({ isModalOpen, setIsModelOpen }) => {
           return (
             <div
               onClick={() => {
-                setAccountsList({ ...accountsList, activeAccount: indx });
+                setAccountsList({ show: false, activeAccount: indx });
+                setIsModelOpen(false);
               }}
               key={nanoid(4)}
             >
@@ -274,7 +300,7 @@ const Modal = ({ isModalOpen, setIsModelOpen }) => {
       </div>
 
       <Link
-        onClick={handleClick}
+        // onClick={handleClick}
         href='/account/verification'
         className='group hover:text-woro-blue '
       >
@@ -293,7 +319,7 @@ const Modal = ({ isModalOpen, setIsModelOpen }) => {
       </Link>
 
       <Link
-        onClick={handleClick}
+        // onClick={handleClick}
         href='/account/plan-upgrade'
         className='group hover:text-woro-blue '
       >
