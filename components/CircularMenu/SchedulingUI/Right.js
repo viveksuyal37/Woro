@@ -2,9 +2,12 @@ import { Calendar, momentLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import moment from 'moment/moment';
 import customEvent from '@/components/ReactBigCalender/CustomEventComp';
+import { useDispatch } from 'react-redux';
+import { confirmPostsScheduling } from '@/Redux/slices/CircularMenuSlice';
 const localizer = momentLocalizer(moment, { firstDay: 1 });
 
 const Right = () => {
+  const dispatch = useDispatch();
   const events = [
     {
       title: 'Reel',
@@ -86,7 +89,12 @@ const Right = () => {
         endAccessor='end'
         style={{ height: '50vh' }}
       />
-      <button className='w-full py-2 mt-3 font-bold border-2 rounded-md 2xl:py-3 border-woro-blue text-woro-blue'>
+      <button
+        onClick={() => {
+          dispatch(confirmPostsScheduling());
+        }}
+        className='w-full text-[12px] 2xl:text-[1rem] py-2 mt-3 font-bold border 2xl:border-2 rounded-md 2xl:py-3 hover:bg-woro-blue hover:text-white border-woro-blue text-woro-blue'
+      >
         Confirm schedule
       </button>
       <style global jsx>

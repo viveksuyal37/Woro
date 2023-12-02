@@ -36,7 +36,7 @@ const LeftDrawer = () => {
       className={classNames(
         'absolute transition-all duration-300 ease-linear flex gap-[7vw] ml-12  h-max',
         {
-          'left-0': visibility === 2,
+          '-left-7 2xl:left-0': visibility === 2,
           '-left-[22vw] 2xl:-left-[21.5vw] 4xl:-left-[21vw] ': visibility === 1,
           '-left-[30vw] ': visibility === 0,
         },

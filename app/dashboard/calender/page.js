@@ -96,6 +96,7 @@ const page = () => {
       <style global jsx>{`
         .rbc-time-view {
           background: white;
+          border: none;
           border-radius: 20px;
           overflow: hidden;
         }
@@ -110,21 +111,34 @@ const page = () => {
           display: none;
         }
 
-        .rbc-allday-cell,
         .rbc-time-header-gutter {
-          display: none;
+          background: #7f1dfe;
+          padding: 0px;
         }
         .rbc-time-header {
           margin: 0px !important;
+          max-height: 72px;
         }
+
+        .rbc-allday-cell {
+          display: none;
+        }
+
         .rbc-timeslot-group {
           min-height: 110px;
-          border: none;
+
           justify-content: center;
         }
+
         .rbc-time-slot {
           flex: 0;
+          border: none;
         }
+
+        .rbc-day-slot .rbc-time-slot {
+          border: none;
+        }
+
         .rbc-day-slot .rbc-event,
         .rbc-day-slot .rbc-background-event {
           background: none;
@@ -144,6 +158,12 @@ const page = () => {
           }
           .rbc-timeslot-group {
             min-height: 65px;
+          }
+          .rbc-label {
+            font-size: 12px;
+          }
+          .rbc-time-header-gutter {
+            max-width: 57px;
           }
         }
       `}</style>

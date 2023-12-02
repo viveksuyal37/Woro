@@ -5,6 +5,7 @@ const initialState = {
   itemSelected: false,
   selectedPlatforms: false,
   schedulePosts: false,
+  success: false,
 };
 
 const circularMenuSlice = createSlice({
@@ -30,9 +31,14 @@ const circularMenuSlice = createSlice({
       state.isVisible = false;
       state.itemSelected = false;
       state.selectedPlatforms = false;
+      state.success = false;
+      state.schedulePosts = false;
     },
     savePostsChanges: (state, action) => {
       state.schedulePosts = true;
+    },
+    confirmPostsScheduling: (state, action) => {
+      state.success = true;
     },
   },
 });
@@ -45,6 +51,7 @@ export const {
   clearSelectedPlatforms,
   clearMenuState,
   savePostsChanges,
+  confirmPostsScheduling,
 } = circularMenuSlice.actions;
 
 export const getCircularMenuState = (state) => state.circularMenu;

@@ -162,7 +162,6 @@ const Modal = ({ isModalOpen, setIsModelOpen, dropIconRef }) => {
       !dropIconRef.current.contains(e.target)
     ) {
       setIsModelOpen(false);
-    } else {
     }
   };
 

@@ -18,9 +18,10 @@ import {
 } from '@/Redux/slices/CircularMenuSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import SchedulingUI from './SchedulingUI/SchedulingUI';
+import SuccessUI from './SuccessUI/SuccessUI';
 
 const CircularMenu = () => {
-  const { isVisible, itemSelected, schedulePosts } =
+  const { isVisible, itemSelected, schedulePosts, success } =
     useSelector(getCircularMenuState);
 
   return (
@@ -41,7 +42,10 @@ const CircularMenu = () => {
 
       {/*post scheduling UI after post saving */}
 
-      {schedulePosts && <SchedulingUI />}
+      {schedulePosts && !success && <SchedulingUI />}
+
+      {/*success UI  */}
+      {success && <SuccessUI />}
     </div>
   );
 };

@@ -4,8 +4,23 @@ import moment from 'moment/moment';
 const localizer = momentLocalizer(moment);
 
 const Left = () => {
+  const events = [
+    {
+      title: 'Reel',
+      start: new Date(moment().startOf('day')),
+      end: new Date(moment().startOf('day').add(1, 'hours')),
+      allDay: true,
+    },
+    {
+      title: 'Reel',
+      start: new Date(moment().startOf('day').add(49, 'hours')),
+      end: new Date(moment().startOf('day').add(50, 'hours')),
+      allDay: true,
+    },
+  ];
+
   // Custom components for the calendar
-  const CustomToolbar = (toolbar) => {
+  const customToolbar = (toolbar) => {
     const goToPrev = () => {
       toolbar.onNavigate('PREV');
     };
@@ -56,10 +71,20 @@ const Left = () => {
     );
   };
 
-  const CustomMonthHeader = ({ label }) => {
+  const customMonthHeader = ({ label }) => {
     return (
-      <div className='font-bold h-[72px]  flex justify-center items-center'>
+      <div className='font-bold h-[45px] 2xl:h-[72px] bg-woro-blue text-white flex justify-center items-center'>
         {label?.slice(0, 2)}
+      </div>
+    );
+  };
+
+  const customEvent = (event) => {
+    return (
+      <div className='flex justify-end child:w-2 child:h-full child:min-h-[60px]'>
+        <div className='bg-[rgba(209,_0,_0,_0.50)]'></div>
+        <div className='bg-[rgba(254,_213,_0,_0.50)]'></div>
+        <div className='bg-[rgba(0,_178,_255,_0.50)]'></div>
       </div>
     );
   };
@@ -69,16 +94,18 @@ const Left = () => {
       <Calendar
         localizer={localizer}
         components={{
-          toolbar: CustomToolbar,
+          toolbar: customToolbar,
+          event: customEvent,
           month: {
-            header: CustomMonthHeader,
+            header: customMonthHeader,
           },
         }}
+        events={events}
         startAccessor='start'
         endAccessor='end'
         style={{ height: '50vh' }}
       />
-      <div className='flex items-center text-sm 2xl:text-[1rem] gap-2 mt-4'>
+      <div className='flex items-center text-[12px] 2xl:text-[1rem] gap-2 mt-4'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           className='w-3 2xl:w-[18px] h-3 2xl:h-[18px]'
@@ -97,11 +124,8 @@ const Left = () => {
       </div>
       <style global jsx>
         {`
-          .rbc-header + .rbc-header {
-            border-left: none;
-          }
           .rbc-month-view {
-            border: none;
+            border-radius: 10px;
             overflow: auto;
           }
           .rbc-month-view::-webkit-scrollbar {
@@ -109,6 +133,25 @@ const Left = () => {
           }
           .rbc-month-row {
             min-height: 73px;
+          }
+
+          .rbc-header {
+            padding: 0;
+          }
+
+          .rbc-event {
+            background: none;
+            padding: 0;
+          }
+
+          .rbc-date-cell {
+            text-align: center;
+          }
+
+          @media screen and (max-width: 1400px) {
+            .rbc-month-row {
+              min-height: 60px;
+            }
           }
         `}
       </style>
