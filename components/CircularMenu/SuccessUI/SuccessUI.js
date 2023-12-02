@@ -6,15 +6,14 @@ const SuccessUI = () => {
   const dispatch = useDispatch();
   return (
     <div className='relative flex items-center justify-center w-full h-full bg-white'>
-      <div className='flex flex-col items-center max-w-[450px]  gap-8'>
+      <div className='flex flex-col items-center max-w-[450px] gap-6 2xl:gap-8'>
         {/* rounded green design */}
-        <div className='relative w-full flex items-center justify-center h-[260px]'>
-          <div className=' flex items-center justify-center w-[181px] h-[181px] bg-[#E3FCF5] rounded-full animate-pulse scaleShadow'>
-            <div className='absolute top-[50px] w-[153px] h-[153px] bg-[#00FABA] rounded-full flex items-center justify-center '>
+        <div className='relative w-full flex items-center justify-center h-[200px] 2xl:h-[260px]'>
+          <div className=' flex items-center justify-center w-[151px] 2xl:w-[181px] h-[151px] 2xl:h-[181px] bg-[#E3FCF5] rounded-full animate-pulse scaleShadow'>
+            <div className='absolute top-10 2xl:top-[50px] w-[120px] 2xl:w-[153px] h-[120px] 2xl:h-[153px] bg-[#00FABA] rounded-full flex items-center justify-center '>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
-                width='54'
-                height='54'
+                className='w-11 h-11 2xl:w-[54px] 2xl:h-[54px]'
                 viewBox='0 0 54 54'
                 fill='none'
               >
@@ -27,7 +26,7 @@ const SuccessUI = () => {
           </div>
         </div>
 
-        <h1 className='text-4xl font-bold text-woro-blue'>
+        <h1 className='text-2xl font-bold 2xl:text-4xl text-woro-blue'>
           Post scheduled successfully
         </h1>
 
@@ -35,7 +34,7 @@ const SuccessUI = () => {
           onClick={() => {
             dispatch(clearMenuState());
           }}
-          className='w-3/4 rounded-sm bg-woro-blue text-white h-[48px] flex items-center justify-center'
+          className='w-3/4 rounded-sm bg-woro-blue text-white h-9  text-sm 2xl:text-[1rem] 2xl:h-[48px] flex items-center justify-center'
         >
           Home
         </button>
@@ -69,7 +68,7 @@ const SuccessUI = () => {
               xmlns='http://www.w3.org/2000/svg'
               width='18'
               height='18'
-              className='drop'
+              className='drop w-3 h-3 2xl:w-[18px] 2xl:h-[18px]'
               style={{
                 top: `${topPosition}px`,
                 left: `${leftPosition}px`,
@@ -85,10 +84,8 @@ const SuccessUI = () => {
 
       {/* triangles */}
       <svg
-        className='absolute drop top-2'
+        className='absolute w-4 h-3 drop top-2 2xl:w-7 2xl:h-6'
         xmlns='http://www.w3.org/2000/svg'
-        width='27'
-        height='24'
         viewBox='0 0 27 24'
         fill='none'
       >
@@ -100,10 +97,8 @@ const SuccessUI = () => {
       </svg>
 
       <svg
-        className='absolute drop top-6 right-3'
+        className='absolute w-4 h-3 drop top-6 right-3 2xl:w-7 2xl:h-6'
         xmlns='http://www.w3.org/2000/svg'
-        width='28'
-        height='24'
         viewBox='0 0 28 24'
         fill='none'
       >
@@ -116,9 +111,7 @@ const SuccessUI = () => {
 
       <svg
         xmlns='http://www.w3.org/2000/svg'
-        width='27'
-        height='24'
-        className='absolute drop top-1/2 right-1/4'
+        className='absolute w-4 h-3 drop top-1/2 right-1/4 2xl:w-7 2xl:h-6'
         viewBox='0 0 27 24'
         fill='none'
       >
@@ -131,9 +124,7 @@ const SuccessUI = () => {
 
       <svg
         xmlns='http://www.w3.org/2000/svg'
-        width='27'
-        height='24'
-        className='absolute drop top-1/4 right-3/4'
+        className='absolute w-4 h-3 drop top-1/4 right-3/4 2xl:w-7 2xl:h-6'
         viewBox='0 0 27 24'
         fill='none'
       >
@@ -146,9 +137,7 @@ const SuccessUI = () => {
 
       <svg
         xmlns='http://www.w3.org/2000/svg'
-        width='18'
-        height='18'
-        className='absolute drop top-20 left-3/4'
+        className='absolute drop top-20 left-3/4 w-3 h-3 2xl:w-[18px] 2xl:h-[18px]'
         viewBox='0 0 18 18'
         fill='none'
       >
@@ -182,6 +171,23 @@ const SuccessUI = () => {
             100% {
               width: 181px;
               height: 181px;
+            }
+          }
+
+          @keyframes shadowSmall {
+            50% {
+              width: 210px;
+              height: 210px;
+            }
+            100% {
+              width: 151px;
+              height: 151px;
+            }
+          }
+
+          @media screen and (max-width: 1400px) {
+            .scaleShadow {
+              animation: shadowSmall 2s linear infinite;
             }
           }
         `}
