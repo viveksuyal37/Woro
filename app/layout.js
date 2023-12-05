@@ -14,8 +14,12 @@ import { Provider } from 'react-redux';
 import { store } from '@/Redux/store';
 
 /*styles*/
+
 import './globals.css';
 import 'react-toastify/dist/ReactToastify.min.css';
+
+/*constants*/
+import { APP_PASSWORD } from '@/constants/password';
 
 export default function RootLayout({ children }) {
   const [auth, setAuth] = useState(
@@ -27,7 +31,7 @@ export default function RootLayout({ children }) {
     if (process.env.NODE_ENV === 'production') {
       const password = prompt('Enter the password to proceed.');
 
-      if (process.env.NEXT_PUBLIC_APP_PASSWORD === password) {
+      if (APP_PASSWORD === password) {
         setAuth(true);
       }
     }
