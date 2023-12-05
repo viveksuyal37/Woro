@@ -1,5 +1,8 @@
 'use client';
 
+/*Internal imports*/
+import { useEffect, useState } from 'react';
+
 /*external imports*/
 import { ToastContainer } from 'react-toastify';
 
@@ -13,31 +16,22 @@ import { store } from '@/Redux/store';
 /*styles*/
 import './globals.css';
 import 'react-toastify/dist/ReactToastify.min.css';
-import { useEffect, useState } from 'react';
 
 export default function RootLayout({ children }) {
-  const [content, setContent] = useState(null);
+  const [auth, setAuth] = useState(false);
 
   useEffect(() => {
     // add password auth on production env
     if (process.env.NODE_ENV === 'production') {
       const password = prompt('Enter the password to proceed.');
 
-      if (process.env.NEXT_PUBLIC_APP_PASSWORD !== password) {
-        setContent(
-          <html lang='en'>
-            <body className='flex items-center justify-center w-screen h-screen'>
-              <h1>Haha nice try.</h1>
-            </body>
-          </html>,
-        );
+      if (process.env.NEXT_PUBLIC_APP_PASSWORD === password) {
+        setAuth(true);
       }
     }
   }, []);
 
-  return content ? (
-    content
-  ) : (
+  return auth ? (
     <html lang='en'>
       <Provider store={store}>
         <body className={`${fonts.urbanist.className}`}>
@@ -45,6 +39,14 @@ export default function RootLayout({ children }) {
           {children}
         </body>
       </Provider>
+    </html>
+  ) : (
+    <html lang='en'>
+      <body
+        className={`${fonts.urbanist.className} flex items-center justify-center`}
+      >
+        <h1>Nice try</h1>
+      </body>
     </html>
   );
 }
