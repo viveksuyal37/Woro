@@ -1,21 +1,21 @@
-"use client";
+'use client';
 
 /*Internal imports */
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 /*External imports */
-import { useSelector } from "react-redux";
-import classNames from "classnames";
+import { useSelector } from 'react-redux';
+import classNames from 'classnames';
 
 /*Custom components */
-import { getCardsState } from "@/Redux/slices/CardSlice";
-import PendingApprovals from "@/components/Dashboard/BottomRow/PendingApprovals";
-import PostInfo from "@/components/Dashboard/BottomRow/PostInfo";
-import TrendingNow from "@/components/Dashboard/BottomRow/TrendingNow";
-import DriveContainer from "@/components/Dashboard/Drives/DriveContainer";
-import RecentNotifications from "@/components/Dashboard/RecentNotifications/RecentNotifications";
-import RowTwoLeft from "@/components/Dashboard/RowTwoLeft/RowTwoLeft";
-import AccountsContainer from "@/components/Dashboard/SocialMediaAccounts/AccountsContainer";
+import { getCardsState } from '@/Redux/slices/CardSlice';
+import PendingApprovals from '@/components/Dashboard/BottomRow/PendingApprovals';
+import PostInfo from '@/components/Dashboard/BottomRow/PostInfo';
+import TrendingNow from '@/components/Dashboard/BottomRow/TrendingNow';
+import DriveContainer from '@/components/Dashboard/Drives/DriveContainer';
+import RecentNotifications from '@/components/Dashboard/RecentNotifications/RecentNotifications';
+import RowTwoLeft from '@/components/Dashboard/RowTwoLeft/RowTwoLeft';
+import AccountsContainer from '@/components/Dashboard/SocialMediaAccounts/AccountsContainer';
 
 export default function Home() {
   const state = useSelector(getCardsState);
@@ -33,23 +33,25 @@ export default function Home() {
   }, [state]);
 
   return (
-    <section className="w-full h-max">
+    <section className='w-full h-max'>
       {/* dashboard top (2col)*/}
       <div
+        id='dashboardTop(2col)'
         className={classNames(
-          "flex overflow-hidden opacity-1 transition-all duration-300 ease-in-out justify-between mt-[13.8px] 2xl:mt-[19.8px] gap-[21px] 2xl:gap-[30px]",
+          'flex overflow-hidden opacity-1 transition-all duration-300 ease-in-out justify-between mt-[13.8px] 2xl:mt-[19.8px] gap-[21px] 2xl:gap-[30px]',
           {
-            "w-0 h-0 opacity-0":
-              expandedCard === "trendingNews" ||
-              expandedCard === "pendingApprovals",
-          }
+            hidden:
+              expandedCard === 'trendingNews' ||
+              expandedCard === 'pendingApprovals',
+          },
         )}
       >
         {/* left col dashboard */}
         <div
+          id='TopLeft(col)'
           className={classNames(
-            "flex w-full flex-col overflow-hidden gap-[12.3px] 2xl:gap-[20px]",
-            { hidden: expandedCard === "recentNotification" }
+            'flex w-full flex-col overflow-hidden gap-[12.3px] 2xl:gap-[20px]',
+            { hidden: expandedCard === 'recentNotification' },
           )}
         >
           {/* row1 */}
@@ -59,35 +61,39 @@ export default function Home() {
         </div>
 
         <div
+          id='TopRight(col)'
           className={classNames(
-            "flex  flex-col overflow-hidden gap-[12.3px] 2xl:gap-[20px] ",
-            { "w-full h-full": expandedCard === "recentNotification" },
-            { "w-[16.2vw] 2xl:w-[18.2vw] max-w-[500px]": !expandedCard }
+            'flex  flex-col overflow-hidden gap-[12.3px] 2xl:gap-[20px] ',
+            {
+              'w-full h-full': expandedCard === 'recentNotification',
+              'hidden': expandedCard && expandedCard !== 'recentNotification',
+            },
+            { 'w-[16.2vw] 2xl:w-[18.2vw] max-w-[500px]': !expandedCard },
           )}
         >
           {/* right col dashboard */}
           <DriveContainer expandedCard={expandedCard} />
           <RecentNotifications
             expandedCard={expandedCard}
-            cardId="recentNotification"
+            cardId='recentNotification'
           />
-        
         </div>
       </div>
       {/*bottom dashboard */}
       <div
+        id='Bottom(row)'
         className={classNames(
-          "flex mt-[13.25px] 2xl:mt-[19px] gap-[20.3px] 2xl:gap-[29px] justify-between",
-          { "h-[21.29vh]": !expandedCard }
+          'flex mt-[13.25px] 2xl:mt-[19px] gap-[20.3px] 2xl:gap-[29px] justify-between',
+          { 'h-[21.29vh]': !expandedCard },
         )}
       >
         <PostInfo expandedCard={expandedCard} />
         <PendingApprovals
           expandedCard={expandedCard}
-          cardId="pendingApprovals"
+          cardId='pendingApprovals'
         />
 
-        <TrendingNow expandedCard={expandedCard} cardId="trendingNews" />
+        <TrendingNow expandedCard={expandedCard} cardId='trendingNews' />
       </div>
     </section>
   );

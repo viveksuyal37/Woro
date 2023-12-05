@@ -542,14 +542,14 @@ const LeftDrawer = () => {
           style={{
             background:
               'linear-gradient(108deg, rgba(255, 255, 255, 0.80) 0.17%, rgba(164, 209, 223, 0.76) 32.61%, rgba(188, 95, 232, 0.34) 65.41%, rgba(255, 255, 255, 0.45) 98.68%)',
-            top: 'calc(50% - 43px)',
+            top: 'calc(50vh - 43px)',
           }}
-          className='w-14 2xl:w-[86px] cursor-pointer flex items-center justify-center h-14 2xl:h-[86px] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.50)] rounded-full absolute -right-20 2xl:-right-[112px]'
+          className='w-12 3xl:w-[86px] cursor-pointer flex items-center justify-center h-12 3xl:h-[86px] shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.50)] rounded-full absolute -right-[70px] 3xl:-right-[112px]'
         >
           {visibility < 2 ? (
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              className='w-8 h-8 2xl:w-[46px] 2xl:h-[46px]'
+              className='w-6 h-6 3xl:w-[46px] 3xl:h-[46px]'
               viewBox='0 0 46 46'
               fill='none'
             >
@@ -561,7 +561,7 @@ const LeftDrawer = () => {
           ) : (
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              className='w-8 h-8 2xl:w-[46px] 2xl:h-[46px]'
+              className='w-8 h-8 3xl:w-[46px] 3xl:h-[46px]'
               viewBox='0 0 66 66'
               fill='none'
             >

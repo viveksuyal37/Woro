@@ -35,7 +35,7 @@ const layout = ({ children }) => {
             background:
               'linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)',
           }}
-          className='flex mt-[22px] w-full h-[75vh] rounded-[20px] overflow-hidden'
+          className='flex mt-3 2xl:mt-[22px] w-full h-[75vh] rounded-[11px] 2xl:rounded-[20px] overflow-hidden'
         >
           {pathsWithoutAside.includes(path) ? null : path ===
             messageAsidePath ? (
@@ -44,9 +44,7 @@ const layout = ({ children }) => {
             <Aside />
           )}
 
-          <section className='m-[32px] 2xl:m-[46px] w-full '>
-            {children}
-          </section>
+          <section className='m-7 2xl:m-[46px] w-full '>{children}</section>
         </div>
 
         <Footer />

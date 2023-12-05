@@ -46,7 +46,7 @@ const SuccessUI = () => {
       {Array(25)
         .fill('')
         .map((fig, indx) => {
-          const topPosition = indx * Math.random() * 50;
+          const topPosition = indx * Math.random() * 100;
           const leftPosition = indx * Math.random() * 450;
           // Array of possible colors
           const colors = [
@@ -151,7 +151,7 @@ const SuccessUI = () => {
           }
 
           .drop {
-            animation: dropAnimation 3s ease-out;
+            animation: dropAnimation 3s linear infinite;
           }
 
           @keyframes dropAnimation {
@@ -159,7 +159,7 @@ const SuccessUI = () => {
               transform: translateY(-100vh);
             }
             to {
-              transform: translateY(0);
+              transform: translateY(100vh);
             }
           }
 

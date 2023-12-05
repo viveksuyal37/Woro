@@ -33,13 +33,14 @@ const Left = () => {
     const formattedLabel = moment(toolbar.label).format('MMMM YYYY');
 
     return (
-      <div className='flex items-center justify-between'>
-        <h2 className='pb-3 text-xl font-bold 2xl:pb-5 2xl:text-2xl'>
-          {formattedLabel}
-        </h2>
+      <div className='flex items-center justify-between pb-3 2xl:pb-5'>
+        <h2 className='text-xl font-bold 2xl:text-2xl'>{formattedLabel}</h2>
 
-        <div className='flex justify-end gap-1 '>
-          <button onClick={goToPrev}>
+        <div className='flex justify-end gap-2 '>
+          <button
+            className='p-[6px] bg-white rounded-md shadow-md'
+            onClick={goToPrev}
+          >
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='w-5 h-5 2xl:w-6 2xl:h-6'
@@ -53,7 +54,10 @@ const Left = () => {
             </svg>
           </button>
 
-          <button onClick={goToNext}>
+          <button
+            className='p-[6px] bg-white rounded-md shadow-md'
+            onClick={goToNext}
+          >
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='w-5 h-5 2xl:w-6 2xl:h-6'
@@ -135,6 +139,12 @@ const Left = () => {
             min-height: 73px;
           }
 
+          .rbc-month-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+          }
+
           .rbc-header {
             padding: 0;
           }
@@ -151,6 +161,9 @@ const Left = () => {
           @media screen and (max-width: 1400px) {
             .rbc-month-row {
               min-height: 60px;
+            }
+            .rbc-label {
+              font-size: 12px;
             }
           }
         `}

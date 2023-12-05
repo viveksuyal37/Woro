@@ -22,7 +22,7 @@ const AccountsContainer = ({ expandedCard }) => {
       <div
         ref={accountsContainerRef}
         {...events}
-        className='gap-[14.7px] child:flex-shrink-0 2xl:gap-[21px] overflow-auto scrollableContainer flex max-w-[820px] 2xl:max-w-[59.89vw] 4xl:max-w-[65vw] '
+        className='gap-[14.7px] child:flex-shrink-0 2xl:gap-[21px] overflow-auto scrollableContainer flex max-w-full '
       >
         {!expandedCard &&
           ['', '', '', '', '', '', '', '', '', ''].map((i, indx) => {

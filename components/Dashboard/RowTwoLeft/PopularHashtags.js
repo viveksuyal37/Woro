@@ -49,7 +49,7 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
           'linear-gradient(91deg, rgba(255, 255, 255, 0.80) 8.9%, rgba(255, 255, 255, 0.70) 53.28%, rgba(255, 255, 255, 0.50) 95.33%)',
       }}
       className={classNames(
-        ' opacity-1 relative transition-all duration-300 ease-in-out overflow-hidden rounded-[20px] bg-white',
+        ' opacity-1 relative transition-all duration-300 ease-in-out overflow-hidden rounded-[11px] 2xl:rounded-[20px] bg-white',
         {
           'hidden ': expandedCard && expandedCard !== cardId,
           'w-full  h-[66vh] ': expandedCard === cardId,
@@ -175,7 +175,7 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
                       setActiveSocial(indx);
                     }}
                     className={classNames(
-                      'flex gap-2 2xl:gap-[10px] font-bold text-[11px] 2xl:text-[14px] items-center justify-center shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] w-[174px] h-[70px] 2xl:h-[94px] rounded-[20px]',
+                      'flex gap-2 2xl:gap-[10px] font-bold text-[11px] 2xl:text-[14px] items-center justify-center shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] w-[174px] h-[70px] 2xl:h-[94px] rounded-[11px] 2xl:rounded-[20px]',
                       { 'bg-woro-blue text-white': activeSocial === indx },
                     )}
                   >
@@ -197,7 +197,7 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
             </div>
             <div className='flex flex-col font-bold gap-3 2xl:gap-[23px]'>
               <h3 className='text-xl 2xl:text-[24px]'>Popular Tags</h3>
-              <div className='flex text-sm 2xl:text-[1rem] gap-4'>
+              <div className='flex text-[12px] 2xl:text-[1rem] gap-4'>
                 <div className='flex gap-2'>
                   <input type='checkbox'></input>
                   <label>Latest |</label>
@@ -242,7 +242,7 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
                 show more
               </p>
 
-              <div className='text-sm 2xl:text-[1rem] flex gap-1 items-center justify-center h-8 2xl:h-[48px] text-white bg-woro-blue'>
+              <div className='text-[13px] 2xl:text-[1rem] flex gap-1 items-center justify-center h-8 2xl:h-[48px] text-white bg-woro-blue'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   className='w-4 h-4 2xl:h-6 2xl:w-6'
@@ -261,7 +261,7 @@ const PopularHashtags = ({ cardId, expandedCard }) => {
                   background:
                     'linear-gradient(95deg, #7F1DFE 0%, #FD5C5C 100%)',
                 }}
-                className='text-sm 2xl:text-[1rem] flex gap-1 items-center justify-center h-8 2xl:h-[48px] text-white bg-woro-blue'
+                className='text-[13px] 2xl:text-[1rem] flex gap-1 items-center justify-center h-8 2xl:h-[48px] text-white bg-woro-blue'
               >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'

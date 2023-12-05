@@ -2,16 +2,15 @@ import Image from 'next/image';
 
 const MessageAside = () => {
   return (
-    <aside className='flex-shrink-0 grid grid-cols-3 gap-3 bg-white p-[20px_10px] 2xl:p-[30px_13px] '>
+    <aside className='flex-shrink-0 text-[13px] 2xl:text-[1rem] grid grid-cols-3 gap-2 2xl:gap-3 bg-white p-[20px_10px] 2xl:p-[30px_13px] '>
       {/* accounts */}
 
-      <section className='flex flex-col gap-6 font-bold child:rounded-lg child:flex child:flex-shrink-0  child:p-[11px] child:gap-2 child:items-center child:h-[66px] child:w-[169px] child:shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] child:relative child:cursor-pointer'>
+      <section className='flex flex-col gap-4 2xl:gap-6 font-bold child:rounded-lg child:flex child:flex-shrink-0 child:p-2 child:2xl:p-[11px] child:gap-2 child:items-center child:h-[50px] child:2xl:h-[66px] child:w-[139px] child:2xl:w-[169px] child:shadow-[0px_4px_20px_0px_rgba(190,_148,_243,_0.20)] child:relative child:cursor-pointer'>
         {/* woro messages */}
         <div>
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            width='31'
-            height='30'
+            className='2xl:w-[30px] w-5 h-5 2xl:h-[30px]'
             viewBox='0 0 31 30'
             fill='none'
           >
@@ -41,6 +40,7 @@ const MessageAside = () => {
             src='/assets/images/profile.png'
             width='44'
             height='44'
+            className='w-8 h-8 2xl:w-11 2xl:h-11 '
             alt='profile'
           ></Image>
           <span className='truncate'>@BruceBannerrrrr</span>
@@ -48,7 +48,7 @@ const MessageAside = () => {
             src='/assets/images/dashboard/youtube.png'
             width='13'
             height='13'
-            className='absolute bottom-2 left-9'
+            className='w-2 h-2 2xl:w-[13px] 2xl:h-[13px] absolute bottom-2 left-7 2xl:left-9'
             alt='youtube'
           ></Image>
         </div>
@@ -58,6 +58,7 @@ const MessageAside = () => {
             src='/assets/images/profile.png'
             width='44'
             height='44'
+            className='w-8 h-8 2xl:w-11 2xl:h-11 '
             alt='profile'
           ></Image>
           <span className='truncate'>@James</span>
@@ -65,7 +66,7 @@ const MessageAside = () => {
             src='/assets/images/dashboard/linkedIn.png'
             width='13'
             height='13'
-            className='absolute bottom-2 left-9'
+            className='w-2 h-2 2xl:w-[13px] 2xl:h-[13px] absolute bottom-2 left-7 2xl:left-9'
             alt='linkedIn'
           ></Image>
         </div>
@@ -75,6 +76,7 @@ const MessageAside = () => {
             src='/assets/images/profile.png'
             width='44'
             height='44'
+            className='w-8 h-8 2xl:w-11 2xl:h-11 '
             alt='profile'
           ></Image>
           <span className='truncate'>@Harry</span>
@@ -82,7 +84,7 @@ const MessageAside = () => {
             src='/assets/images/dashboard/twitter.png'
             width='13'
             height='13'
-            className='absolute bottom-2 left-9'
+            className='w-2 h-2 2xl:w-[13px] 2xl:h-[13px] absolute bottom-2 left-7 2xl:left-9'
             alt='twitter'
           ></Image>
         </div>
@@ -91,22 +93,22 @@ const MessageAside = () => {
       {/* messages */}
       <section className='col-span-2 flex flex-col gap-[11px]'>
         <div className='relative border-b-[0.5px] pb-1 border-[rgba(127,_119,_137,_0.50)]'>
-          <div className=' flex items-center gap-5 bg-[rgba(70,_75,_211,_0.05)] rounded-[10px] p-4 2xl:py-[22px]'>
+          <div className=' flex items-center gap-3 2xl:gap-5 bg-[rgba(70,_75,_211,_0.05)] rounded-[10px] p-4 2xl:py-[22px]'>
             {/* left */}
             <Image
               src='/assets/images/profile.png'
               width='50'
               height='50'
-              className='w-9 2xl:w-[50px]'
+              className='w-8 2xl:w-[50px]'
               alt='profile'
             />
             {/* right */}
             <div className='w-full'>
               <div className='flex items-center space-x-1 font-bold leading-tight 2xl:text-lg'>
                 <h6>Jonathan</h6>
-                <div className='rounded-full w-2 h-2 bg-[#00FABA]'></div>
+                <div className='rounded-full w-1 2xl:w-2 h-1 2xl:h-2 bg-[#00FABA]'></div>
               </div>
-              <div className='flex text-sm 2xl:text-[1rem] items-center space-x-2'>
+              <div className='flex text-[11px] 2xl:text-[1rem] items-center space-x-2'>
                 <div className='rounded-full w-[6px] h-[6px] bg-[#7F7789]'></div>
                 <p className='max-w-[100px] truncate'>Hello...</p>
                 <div className='rounded-full w-[6px] h-[6px] bg-[#7F7789]'></div>
@@ -119,6 +121,7 @@ const MessageAside = () => {
               xmlns='http://www.w3.org/2000/svg'
               width='4'
               height='14'
+              className='w-[2px] h-3 2xl:w-1 2xl:h-[14px]'
               viewBox='0 0 4 14'
               fill='none'
             >
@@ -130,22 +133,22 @@ const MessageAside = () => {
         </div>
 
         <div className='relative border-b-[0.5px] pb-1 border-[rgba(127,_119,_137,_0.50)]'>
-          <div className=' flex items-center gap-5  rounded-[10px] p-4 2xl:py-[22px]'>
+          <div className=' flex items-center gap-3 2xl:gap-5 bg-[rgba(70,_75,_211,_0.05)] rounded-[10px] p-4 2xl:py-[22px]'>
             {/* left */}
             <Image
               src='/assets/images/profile.png'
               width='50'
               height='50'
-              className='w-9 2xl:w-[50px]'
+              className='w-8 2xl:w-[50px]'
               alt='profile'
             />
             {/* right */}
             <div className='w-full'>
               <div className='flex items-center space-x-1 font-bold leading-tight 2xl:text-lg'>
                 <h6>Jonathan</h6>
-                <div className='rounded-full w-2 h-2 bg-[#00FABA]'></div>
+                <div className='rounded-full w-1 2xl:w-2 h-1 2xl:h-2 bg-[#00FABA]'></div>
               </div>
-              <div className='flex text-sm 2xl:text-[1rem] items-center space-x-2'>
+              <div className='flex text-[11px] 2xl:text-[1rem] items-center space-x-2'>
                 <div className='rounded-full w-[6px] h-[6px] bg-[#7F7789]'></div>
                 <p className='max-w-[100px] truncate'>Hello...</p>
                 <div className='rounded-full w-[6px] h-[6px] bg-[#7F7789]'></div>
@@ -158,6 +161,7 @@ const MessageAside = () => {
               xmlns='http://www.w3.org/2000/svg'
               width='4'
               height='14'
+              className='w-[2px] h-3 2xl:w-1 2xl:h-[14px]'
               viewBox='0 0 4 14'
               fill='none'
             >
@@ -169,22 +173,22 @@ const MessageAside = () => {
         </div>
 
         <div className='relative border-b-[0.5px] pb-1 border-[rgba(127,_119,_137,_0.50)]'>
-          <div className=' flex items-center gap-5  rounded-[10px] p-4 2xl:py-[22px]'>
+          <div className=' flex items-center gap-3 2xl:gap-5 bg-[rgba(70,_75,_211,_0.05)] rounded-[10px] p-4 2xl:py-[22px]'>
             {/* left */}
             <Image
               src='/assets/images/profile.png'
               width='50'
               height='50'
-              className='w-9 2xl:w-[50px]'
+              className='w-8 2xl:w-[50px]'
               alt='profile'
             />
             {/* right */}
             <div className='w-full'>
               <div className='flex items-center space-x-1 font-bold leading-tight 2xl:text-lg'>
                 <h6>Jonathan</h6>
-                <div className='rounded-full w-2 h-2 bg-[#00FABA]'></div>
+                <div className='rounded-full w-1 2xl:w-2 h-1 2xl:h-2 bg-[#00FABA]'></div>
               </div>
-              <div className='flex text-sm 2xl:text-[1rem] items-center space-x-2'>
+              <div className='flex text-[11px] 2xl:text-[1rem] items-center space-x-2'>
                 <div className='rounded-full w-[6px] h-[6px] bg-[#7F7789]'></div>
                 <p className='max-w-[100px] truncate'>Hello...</p>
                 <div className='rounded-full w-[6px] h-[6px] bg-[#7F7789]'></div>
@@ -197,6 +201,7 @@ const MessageAside = () => {
               xmlns='http://www.w3.org/2000/svg'
               width='4'
               height='14'
+              className='w-[2px] h-3 2xl:w-1 2xl:h-[14px]'
               viewBox='0 0 4 14'
               fill='none'
             >

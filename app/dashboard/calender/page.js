@@ -165,6 +165,9 @@ const page = () => {
           .rbc-time-header-gutter {
             max-width: 57px;
           }
+          .rbc-time-view {
+            border-radius: 11px;
+          }
         }
       `}</style>
     </div>

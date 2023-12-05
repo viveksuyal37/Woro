@@ -53,7 +53,7 @@ const Header = () => {
               background:
                 'linear-gradient(139deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.70) 51.35%, rgba(255, 255, 255, 0.50) 100%)',
             }}
-            className='flex relative gap-2 2xl:gap-4 items-center p-[6px_19px_6px_14px] rounded-[20px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]'
+            className='flex relative gap-2 2xl:gap-4 items-center p-[6px_8px] 2xl:p-[6px_19px_6px_14px] rounded-[11px] 2xl:rounded-[20px] shadow-[_0px_4px_20px_0px_rgba(190,_148,_243,_0.20)]'
           >
             {/* profile */}
             <div className='w-[35px] 2xl:w-[50px]  h-[35px] 2xl:h-[50px]'>
@@ -73,8 +73,7 @@ const Header = () => {
                 </h6>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
-                  width='24'
-                  height='24'
+                  className='w-4 h-4 2xl:w-6 2xl:h-6'
                   viewBox='0 0 24 24'
                   fill='none'
                 >
@@ -93,13 +92,14 @@ const Header = () => {
                 background:
                   'linear-gradient(225deg, #B500C3 21.66%, #9D51FF 76.10%)',
               }}
-              className='flex items-center justify-center w-[28px]  2xl:w-[32px] h-[28px]  2xl:h-[32px] rounded-full'
+              className='flex items-center justify-center w-6 h-6 rounded-full 2xl:w-8 2xl:h-8'
             >
               <Image
                 src='/assets/images/plan1.png'
                 alt='plan badge'
                 width='25'
                 height='25'
+                className='w-4 h-4 2xl:w-[25px] 2xl:h-[25px]'
               />
             </div>
 
@@ -192,7 +192,7 @@ const Modal = ({ isModalOpen, setIsModelOpen, dropIconRef }) => {
       >
         <svg
           xmlns='http://www.w3.org/2000/svg'
-          className='w-[21px] h-[21px] 2xl:w-[29px] 2xl:h-[29px]'
+          className='w-[18px] h-[18px] 2xl:w-[29px] 2xl:h-[29px]'
           viewBox='0 0 29 30'
           fill='none'
         >
@@ -211,7 +211,7 @@ const Modal = ({ isModalOpen, setIsModelOpen, dropIconRef }) => {
       >
         <svg
           xmlns='http://www.w3.org/2000/svg'
-          className='w-[21px] h-[21px] 2xl:w-[29px] 2xl:h-[29px]'
+          className='w-[18px] h-[18px] 2xl:w-[29px] 2xl:h-[29px]'
           viewBox='0 0 29 30'
           fill='none'
         >
@@ -232,7 +232,7 @@ const Modal = ({ isModalOpen, setIsModelOpen, dropIconRef }) => {
       >
         <svg
           xmlns='http://www.w3.org/2000/svg'
-          className='w-[21px] h-[21px] 2xl:w-[29px] 2xl:h-[29px]'
+          className='w-[18px] h-[18px] 2xl:w-[29px] 2xl:h-[29px]'
           viewBox='0 0 29 30'
           fill='none'
         >
