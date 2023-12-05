@@ -162,7 +162,7 @@ const MidFooter = () => {
             d='M15 12a3 3 0 11-6 0 3 3 0 016 0z'
           />
         </svg>
-        <p>What's new</p>
+        <p className='leading-[10px]'>What's new</p>
       </div>
     </div>
   );

@@ -22,22 +22,23 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import { APP_PASSWORD } from '@/constants/password';
 
 export default function RootLayout({ children }) {
-  let auth = true;
+  const [auth, setAuth] = useState(
+    process.env.NODE_ENV === 'production' ? false : true,
+  );
 
-  // const [auth, setAuth] = useState(
-  //   process.env.NODE_ENV === 'production' ? false : true,
-  // );
+  useEffect(() => {
+    // add password auth
+    if (
+      typeof window !== 'undefined' &&
+      process.env.NODE_ENV === 'production'
+    ) {
+      const password = prompt('Enter the password to proceed.');
 
-  // useEffect(() => {
-  //   // add password auth on production env
-  //   if (process.env.NODE_ENV === 'production') {
-  //     const password = prompt('Enter the password to proceed.');
-
-  //     if (APP_PASSWORD === password) {
-  //       setAuth(true);
-  //     }
-  //   }
-  // }, []);
+      if (APP_PASSWORD === password) {
+        setAuth(true);
+      }
+    }
+  }, []);
 
   return auth ? (
     <html lang='en'>

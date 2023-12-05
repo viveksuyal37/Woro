@@ -28,7 +28,7 @@ const PostInfo = ({ expandedCard }) => {
           <h6
             onClick={() => setActiveItem(0)}
             className={classNames(
-              'cursor-pointer transition-all duration-300 ease-in',
+              'cursor-pointer transition-all duration-300 linear',
               {
                 'text-woro-blue': activeItem === 0,
                 'translate-y-[-4px]': activeItem === 0,
@@ -39,7 +39,7 @@ const PostInfo = ({ expandedCard }) => {
           </h6>
           <div
             className={classNames(
-              'bg-woro-blue h-[2px] 2xl:h-[3px] w-full absolute bottom-[-5px] 2xl:bottom-[-9px] transition-opacity duration-300',
+              'bg-woro-blue h-[2px] 2xl:h-[3px] w-full absolute bottom-[-3px] 2xl:bottom-[-9px] transition-opacity duration-300',
               {
                 'opacity-0': activeItem === 1,
               },
@@ -50,7 +50,7 @@ const PostInfo = ({ expandedCard }) => {
           <h6
             onClick={() => setActiveItem(1)}
             className={classNames(
-              'cursor-pointer transition-all duration-300 ease-in',
+              'cursor-pointer transition-all duration-300 linear',
               {
                 'text-woro-blue': activeItem === 1,
                 'translate-y-[-4px]': activeItem === 1,
@@ -61,7 +61,7 @@ const PostInfo = ({ expandedCard }) => {
           </h6>
           <div
             className={classNames(
-              'bg-woro-blue h-[2px] 2xl:h-[3px] w-full absolute bottom-[-5px] 2xl:bottom-[-9px] transition-opacity duration-300',
+              'bg-woro-blue h-[2px] 2xl:h-[3px] w-full absolute bottom-[-3px] 2xl:bottom-[-9px] transition-opacity duration-300',
               {
                 'opacity-0': activeItem === 0,
               },

@@ -42,7 +42,7 @@ const Header = () => {
           <button className='rounded-full text-[13px] 2xl:text-[18px]  font-bold text-[#7F1DFE]  border 2xl:border-2 border-[#7F1DFE] p-[9px_16px] 2xl:p-[13px_24px] h-[35px] 2xl:h-[49px] leading-[0px] hover:bg-woro-blue hover:text-white'>
             Get Support Now
           </button>
-          <button className='rounded-full text-[12px] 2xl:text-[18px] text-[#7F1DFE] font-bold border-2 border-[#7F1DFE] w-[35px]  h-[35px] 2xl:w-[49px]  2xl:h-[49px] hover:bg-woro-blue hover:text-white'>
+          <button className='rounded-full text-sm 2xl:text-[18px] text-[#7F1DFE] font-bold  border 2xl:border-2 border-[#7F1DFE] w-[35px]  h-[35px] 2xl:w-[49px]  2xl:h-[49px] hover:bg-woro-blue hover:text-white'>
             ?
           </button>
 
