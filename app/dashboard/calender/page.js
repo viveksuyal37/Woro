@@ -34,7 +34,10 @@ const page = () => {
 
     return (
       <div className='flex gap-5 mb-3 2xl:mb-5'>
-        <button onClick={goToPrev}>
+        <button
+          className='p-1 2xl:p-[6px] bg-white rounded-md shadow-md'
+          onClick={goToPrev}
+        >
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='24'
@@ -51,7 +54,10 @@ const page = () => {
 
         <h2 className='text-xl font-bold 2xl:text-2xl me-1'>{label}</h2>
 
-        <button onClick={goToNext}>
+        <button
+          className='p-1 2xl:p-[6px] bg-white rounded-md shadow-md'
+          onClick={goToNext}
+        >
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='24'
