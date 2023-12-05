@@ -18,7 +18,9 @@ import './globals.css';
 import 'react-toastify/dist/ReactToastify.min.css';
 
 export default function RootLayout({ children }) {
-  const [auth, setAuth] = useState(false);
+  const [auth, setAuth] = useState(
+    process.env.NODE_ENV === 'production' ? false : true,
+  );
 
   useEffect(() => {
     // add password auth on production env
@@ -43,7 +45,7 @@ export default function RootLayout({ children }) {
   ) : (
     <html lang='en'>
       <body
-        className={`${fonts.urbanist.className} flex items-center justify-center`}
+        className={`${fonts.urbanist.className} flex w-screen h-screen items-center justify-center`}
       >
         <h1>Nice try</h1>
       </body>
