@@ -1,1 +1,1 @@
-export const APP_PASSWORD = 'woro@123';
+export const APP_PASSWORD = 'woro@#ViveK';
