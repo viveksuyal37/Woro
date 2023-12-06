@@ -14,11 +14,11 @@ const AccordionItem = ({ title, content, isOpen, toggleAccordion }) => (
       " text-[#242128] transition-all duration-500 ease-in cursor-pointer"
     )}
   >
-    <div className="flex items-center justify-between py-[35px] border-b border-b-[#7F7789]">
-      <h3 className="text-[1rem]  font-semibold">{title}</h3>
+    <div className="flex items-center justify-between py-6 2xl:py-[35px] border-b border-b-[#7F7789]">
+      <h3 className="text-sm 2xl:text-[1rem]  font-semibold">{title}</h3>
       <svg
         style={{ transform: isOpen ? "rotate(180deg)" : "" }}
-        className="w-6 h-6 "
+        className="w-4 h-4 2xl:w-6 2xl:h-6 "
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -33,7 +33,9 @@ const AccordionItem = ({ title, content, isOpen, toggleAccordion }) => (
     </div>
     {isOpen && (
       <div className="pt-[22px] rounded-md">
-        <p className="leading-tight text-[#7F7789] text-[14px]">{content}</p>
+        <p className="leading-tight text-[#7F7789] text-[12px] 2xl:text-[14px]">
+          {content}
+        </p>
       </div>
     )}
   </div>

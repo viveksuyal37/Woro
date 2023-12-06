@@ -1,13 +1,15 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   isVisible: false,
   itemSelected: false,
   selectedPlatforms: false,
+  schedulePosts: false,
+  success: false,
 };
 
 const circularMenuSlice = createSlice({
-  name: "circularMenuState",
+  name: 'circularMenuState',
   initialState,
   reducers: {
     toggleCircularMenu: (state, action) => {
@@ -25,6 +27,19 @@ const circularMenuSlice = createSlice({
     clearSelectedPlatforms: (state, action) => {
       state.selectedPlatforms = false;
     },
+    clearMenuState: (state, action) => {
+      state.isVisible = false;
+      state.itemSelected = false;
+      state.selectedPlatforms = false;
+      state.success = false;
+      state.schedulePosts = false;
+    },
+    savePostsChanges: (state, action) => {
+      state.schedulePosts = true;
+    },
+    confirmPostsScheduling: (state, action) => {
+      state.success = true;
+    },
   },
 });
 
@@ -33,7 +48,10 @@ export const {
   setSelectedItem,
   clearSelection,
   setSelectedPlatforms,
-  clearSelectedPlatforms
+  clearSelectedPlatforms,
+  clearMenuState,
+  savePostsChanges,
+  confirmPostsScheduling,
 } = circularMenuSlice.actions;
 
 export const getCircularMenuState = (state) => state.circularMenu;

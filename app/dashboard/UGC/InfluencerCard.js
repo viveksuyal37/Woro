@@ -12,16 +12,17 @@ const InfluencerCard = () => {
         onClick={() => {
           setOpenModal(true);
         }}
-        className="rounded-[5px] flex flex-col gap-[22px] p-[30px_26px] max-h-[260px] max-w-[463px] border border-[#7F7789] cursor-pointer"
+        className="rounded-[5px] flex flex-col text-sm 2xl:text-[1rem] gap-4 2xl:gap-[22px] p-[30px_26px] max-h-[260px] max-w-[350px] 2xl:max-w-[463px] border border-[#7F7789] cursor-pointer"
       >
         {/* top */}
         <div className="flex items-center justify-between">
-          <div className="flex space-x-[20px]">
+          <div className="flex space-x-3 2xl:space-x-[20px]">
             <Image
               src="/assets/images/profile.png"
               alt="profile"
               width="61"
               height="61"
+              className="w-11 h-11 2xl:h-[61px] 2xl:w-[61px]"
             />
             <div>
               <p>
@@ -30,7 +31,7 @@ const InfluencerCard = () => {
               <p className="text-[#7F7789]">Location</p>
             </div>
             <Image
-              className="h-max"
+              className="w-4 h-4 2xl:w-6 2xl:h-6"
               src="/assets/images/dashboard/fb.png"
               alt="social"
               width="24"
@@ -39,8 +40,7 @@ const InfluencerCard = () => {
           </div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="36"
-            height="36"
+            className="w-6 h-6 2xl:w-9 2xl:h-9"
             viewBox="0 0 36 36"
             fill="none"
           >
@@ -53,7 +53,7 @@ const InfluencerCard = () => {
 
         {/* mid */}
         <div className="flex gap-[22px]">
-          <div className="flex flex-col gap-[7px]">
+          <div className="flex flex-col 2xl:gap-[7px]">
             <div className="flex space-x-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@ const InfluencerCard = () => {
             <span className="text-[14px] text-[#7F7789]">Total followers</span>
           </div>
 
-          <div className="flex flex-col gap-[7px]">
+          <div className="flex flex-col 2xl:gap-[7px]">
             <div className="flex space-x-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +93,7 @@ const InfluencerCard = () => {
         </div>
 
         {/* bottom */}
-        <p className="text-[14px] text-[#7F7789] leading-tight ">
+        <p className="text-[12px] 2xl:text-[14px] text-[#7F7789] leading-tight ">
           👋 Hey there, fabulous friends! I'm [Influencer's Name], your go-to
           source for all things trendy and fun. 🎉.📸 When I'm not behind the
           camera capturing ....

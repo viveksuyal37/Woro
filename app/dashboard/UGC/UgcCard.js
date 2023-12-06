@@ -10,10 +10,10 @@ const UgcCard = () => {
         onClick={() => {
           setOpenModal(true);
         }}
-        className="cursor-pointer rounded-[5px] flex flex-col gap-[13px] p-[30px] max-h-[393px] max-w-[463px] border border-[#7F7789] "
+        className="cursor-pointer rounded-[5px] flex flex-col gap-[13px] p-[10px] 2xl:p-[30px] max-h-[330px] 2xl:max-h-[393px] max-w-[360px] 2xl:max-w-[463px] border border-[#7F7789] "
       >
         {/* top */}
-        <div className="flex w-[403px] h-[228px] overflow-hidden rounded-[5px] justify-between">
+        <div className="flex w-[339px] 2xl:w-[403px]  overflow-hidden rounded-[5px] justify-between">
           <Image
             src="/assets/images/dashboard/ugcImg.png"
             alt="ugcImage"
@@ -23,13 +23,14 @@ const UgcCard = () => {
         </div>
 
         {/* mid */}
-        <div className="flex items-center justify-between">
-          <div className="flex space-x-[10px]">
+        <div className="flex text-sm 2xl:text-[1rem] items-center justify-between">
+          <div className="flex space-x-2 2xl:space-x-[10px]">
             <Image
               src="/assets/images/profile.png"
               alt="profile"
               width="51"
               height="51"
+              className="w-10 2xl:w-[51px] "
             />
             <div>
               <p>
@@ -38,17 +39,18 @@ const UgcCard = () => {
               <p className="text-[#7F7789]">Location</p>
             </div>
             <Image
-              className="h-max"
+              className="w-5 h-max 2xl:w-7"
               src="/assets/images/dashboard/fb.png"
               alt="social"
               width="28"
               height="28"
+             
             />
           </div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="34"
-            height="34"
+          
+            className="2xl:w-[34px] w-7 h-7 2xl:h-[34px]"
             viewBox="0 0 34 34"
             fill="none"
           >
@@ -60,7 +62,7 @@ const UgcCard = () => {
         </div>
 
         {/* bottom */}
-        <p className="text-[14px] text-[#7F7789] leading-tight ">
+        <p className="text-[11px] 2xl:text-[14px] text-[#7F7789] leading-tight ">
           👋 Hey there, fabulous friends!. #trending #levelup #flowers #fun
           #gaming #funny...
         </p>

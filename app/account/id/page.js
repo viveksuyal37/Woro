@@ -2,23 +2,23 @@ import Image from "next/image";
 
 const page = () => {
   return (
-    <section className="w-full h-full bg-white rounded-[10px] p-[46px]">
-      <h3 className="text-woro-blue text-[24px] font-bold">Account ID</h3>
+    <section className="w-full h-full bg-white rounded-[10px] p-8 2xl:p-[46px]">
+      <h3 className="text-woro-blue text-xl 2xl:text-[24px] font-bold">Account ID</h3>
 
-      <div className="flex text-center  mx-auto max-w-[773px] h-full flex-col gap-[22px] items-center justify-center">
+      <div className="flex text-center  mx-auto max-w-[773px] h-full flex-col gap-3 2xl:gap-[22px] items-center justify-center">
         <Image
           src="/assets/images/dashboard/accountId.png"
           width="218"
           height="184"
+          className="2xl:w-[218px] w-[150px]"
           alt="accountID"
         />
-        <h3 className="text-[24px] font-bold">This is your account ID</h3>
+        <h3 className="text-xl 2xl:text-[24px] font-bold">This is your account ID</h3>
 
-        <div className="bg-[#F2F2F2] p-4 rounded-[50px] flex gap-[5px] text-[18px] cursor-pointer">
+        <div className="bg-[#F2F2F2] p-4 rounded-[50px] flex gap-[5px] text-sm 2xl:text-[18px] cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+           className="w-4 h-4 2xl:w-6 2xl:h-6 "
             viewBox="0 0 24 24"
             fill="none"
           >
@@ -30,7 +30,7 @@ const page = () => {
           <p>WayneTech123#1233</p>
         </div>
 
-        <p className="text-[14px]  text-[#7F7789]">
+        <p className="text-[11px] leading-tight 2xl:text-[14px]  text-[#7F7789]">
           We will utilize the provided account ID as the designated means of
           communication via e-mail. This unique account identifier shall serve
           as the primary point of contact for all correspondence and

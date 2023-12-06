@@ -21,16 +21,20 @@ const page = () => {
   ];
 
   return (
-    <section className="w-full h-full bg-white rounded-[10px] p-[46px]">
+    <section className="w-full h-full text-sm 2xl:text-[1rem] bg-white rounded-[10px] p-7 2xl:p-[46px]">
       {accounts?.map((account, indx) => {
         return (
-          <div key={nanoid(4)} className="flex items-center justify-between border-b p-[22px_18px] border-b-[#7F7789]">
-            <div className="flex items-center gap-[22px]">
+          <div
+            key={nanoid(4)}
+            className="flex items-center justify-between border-b p-[1rem_12px] 2xl:p-[22px_18px] border-b-[#7F7789]"
+          >
+            <div className="flex items-center gap-4 2xl:gap-[22px]">
               <div>
                 <Image
                   src="/assets/images/profile.png"
                   width="58"
                   height="58"
+                  className="w-10 2xl:w-[58px]"
                   alt="profile"
                 ></Image>
               </div>
@@ -55,8 +59,7 @@ const page = () => {
               {activeAccount === indx ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="38"
-                  height="38"
+                  className="2xl:w-[38px] w-7 h-7 2xl:h-[38px]"
                   viewBox="0 0 38 38"
                   fill="none"
                 >
@@ -72,8 +75,7 @@ const page = () => {
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="38"
-                  height="38"
+                  className="2xl:w-[38px] w-7 h-7 2xl:h-[38px]"
                   viewBox="0 0 38 38"
                   fill="none"
                 >
@@ -92,13 +94,11 @@ const page = () => {
         );
       })}
 
-      <div className="flex gap-[10px] items-center justify-center py-[19px] mt-[22px] border border-[#242128] border-dashed rounded-[10px] w-full h-[78px]">
-       
+      <div className="flex gap-[10px] items-center justify-center py-[19px] mt-[22px] border border-[#242128] border-dashed rounded-[10px] w-full h-[60px] 2xl:h-[78px]">
         <div className="bg-woro-blue rounded-full p-[8px] flex items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+           className="w-4 h-4 2xl:w-6 2xl:h-6"
             viewBox="0 0 24 24"
             fill="none"
           >
@@ -108,7 +108,7 @@ const page = () => {
             />
           </svg>
         </div>
-          <p className="text-[#7F7789] text-[18px]">Add account</p>
+        <p className="text-[#7F7789] text-[1rem] 2xl:text-[18px]">Add account</p>
       </div>
     </section>
   );

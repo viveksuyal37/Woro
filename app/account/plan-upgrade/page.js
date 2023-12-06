@@ -1,17 +1,18 @@
 const page = () => {
   return (
-    <section className="w-full h-full bg-white rounded-[10px] p-[46px_92px]">
-      <h2 className="text-[24px] font-bold">Upgrade plan</h2>
-      <p className="text-[#7F7789] mt-[22px] leading-tight mb-[46px]">
+    <section className="w-full overflow-y-auto h-full bg-white rounded-[10px] p-8 3xl:p-[46px_92px]">
+      <h2 className="text-xl 2xl:text-[24px] font-bold">Upgrade plan</h2>
+      <p className="text-[#7F7789] text-sm 2xl:text-[1rem] mt-[22px] leading-tight mb-8 2xl:mb-[46px]">
         Lorem ipsum dolor sit amet consectetur. Sodales ullamcorper at velit
         pretium. Id nunc cursus enim risus purus nisi. Lorem ipsum dolor sit
         amet consectetur. Sodales ullamcorper at velit pretium. Id nunc cursus
         enim risus purus nisi
       </p>
-      <div className="flex gap-[46px]">
-        <div className="border border-[#7F7789] leading-tight rounded-[5px] w-[328px] p-[46px_28px_38px_46px] h-[428px] cursor-pointer group hover:text-white hover hover:bg-woro-blue">
-          <h2 className="text-[24px] font-bold mb-[22px]">Basic</h2>
-          <h3 className="text-[36px] font-bold mb-[11px]">Free</h3>
+      <div className="flex gap-[46px] text-sm 2xl:text-[1rem]">
+
+        <div className="border border-[#7F7789] leading-tight rounded-[5px] w-[270px] 2xl:w-[328px] p-8 2xl:p-[46px_28px_38px_46px] h-[350px] 2xl:h-[428px] cursor-pointer group hover:text-white hover hover:bg-woro-blue">
+          <h2 className="text-xl 2xl:text-[24px] font-bold mb-1 2xl:mb-[22px]">Basic</h2>
+          <h3 className="text-3xl 2xl:text-[36px] font-bold mb-[11px]">Free</h3>
           <p className="text-[#7F7789]  group-hover:text-white mb-[20px]">
             Lorem ipsum dolor sit amet consectetur.
           </p>
@@ -79,13 +80,12 @@ const page = () => {
           </div>
         </div>
 
-        <div className="border relative border-[#7F7789] leading-tight rounded-[5px] w-[328px] p-[46px_28px_38px_46px] h-[428px] cursor-pointer group hover:text-white hover hover:bg-woro-blue">
+        <div className="border border-[#7F7789] leading-tight rounded-[5px] w-[270px] 2xl:w-[328px] p-8 2xl:p-[46px_28px_38px_46px] h-[350px] 2xl:h-[428px] cursor-pointer group hover:text-white hover hover:bg-woro-blue relative">
           <div className="flex items-center gap-2">
             <span className="font-bold ">Popular</span>{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
+             className="2xl:w-[20px] w-4 h-4 2xl:h-[20px]"
               viewBox="0 0 20 20"
               fill="none"
             >
@@ -95,8 +95,8 @@ const page = () => {
               />
             </svg>
           </div>
-          <h2 className="text-[24px] font-bold mt-[11px] mb-[22px]">Premium</h2>
-          <h3 className="text-[36px] inline font-bold ">₹ 400 </h3>{" "}
+          <h2 className="text-xl 2xl:text-[24px] font-bold mt-[11px] mb-1 2xl:mb-[22px]">Premium</h2>
+          <h3 className="text-3xl 2xl:text-[36px] inline font-bold ">₹ 400 </h3>{" "}
           <span>/month</span>
           <p className="text-[#7F7789] mt-[11px] mb-[20px] group-hover:text-white">
             Lorem ipsum dolor sit amet consectetur.
@@ -148,18 +148,17 @@ const page = () => {
               <p>Lorem ipsum dolor sit amet</p>
             </div>
           </div>
-          <div className="absolute bottom-[38px] w-full max-w-[236px] flex justify-center items-center bg-woro-blue rounded-[3px] font-bold text-white h-[48px] group-hover:text-woro-blue group-hover:bg-white">
+          <div className="absolute bottom-4 2xl:bottom-[38px] w-full max-w-[200px] 2xl:max-w-[236px] flex justify-center items-center bg-woro-blue rounded-[3px] font-bold text-white h-[48px] group-hover:text-woro-blue group-hover:bg-white">
             Upgrade to this plan
           </div>
         </div>
 
-        <div className="border relative border-[#7F7789] leading-tight rounded-[5px] w-[328px] p-[46px_28px_38px_46px] h-[428px] cursor-pointer group hover:text-white hover hover:bg-woro-blue">
+        <div className="border border-[#7F7789] leading-tight rounded-[5px] w-[270px] 2xl:w-[328px] p-8 2xl:p-[46px_28px_38px_46px] h-[350px] 2xl:h-[428px] cursor-pointer group hover:text-white hover hover:bg-woro-blue relative">
           <div className="flex mb-[22px] gap-2">
-            <h2 className="text-[24px] font-bold ">Diamond</h2>
+            <h2 className="text-xl 2xl:text-[24px] font-bold ">Diamond</h2>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
+             className="w-6 h-6 2xl:w-[30px] 2xl:h-[30px]"
               viewBox="0 0 30 30"
               fill="none"
             >
@@ -182,7 +181,7 @@ const page = () => {
               </defs>
             </svg>
           </div>
-          <h3 className="text-[36px] inline font-bold ">₹ 900 </h3>{" "}
+          <h3 className="text-[30px] 2xl:text-[36px] inline font-bold ">₹ 900 </h3>{" "}
           <span>/month</span>
           <p className="text-[#7F7789]  group-hover:text-white mt-[11px] mb-[20px]">
             Lorem ipsum dolor sit amet consectetur.
@@ -234,7 +233,7 @@ const page = () => {
               <p>Lorem ipsum dolor sit amet</p>
             </div>
           </div>
-          <div className="absolute bottom-[38px] w-full max-w-[236px] flex justify-center items-center bg-woro-blue rounded-[3px] font-bold text-white h-[48px] group-hover:text-woro-blue group-hover:bg-white">
+          <div className="absolute bottom-4 2xl:bottom-[38px] w-full max-w-[200px] 2xl:max-w-[236px] flex justify-center items-center bg-woro-blue rounded-[3px] font-bold text-white h-[48px] group-hover:text-woro-blue group-hover:bg-white">
             Upgrade to this plan
           </div>
         </div>
